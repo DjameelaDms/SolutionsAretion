@@ -752,14 +752,16 @@ const TestimonialsSection = () => {
           
           {/* CTA to Contact */}
           <div className="mt-8">
-            <button 
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            <a 
+              href="https://aretion.co.uk/contact"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-secondary"
               data-testid="testimonials-contact-btn"
             >
               Become a Partner
               <ArrowRight className="ml-2 h-4 w-4" />
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
@@ -822,11 +824,11 @@ const ContactSection = () => {
                 For immediate inquiries, email us directly at:
               </p>
               <a 
-                href="mailto:post@aretion.co.uk"
+                href="mailto:solutions@aretion.co.uk"
                 className="inline-flex items-center text-[#C4A77D] font-semibold hover:text-white transition-colors text-lg"
                 data-testid="contact-direct-email"
               >
-                post@aretion.co.uk
+                solutions@aretion.co.uk
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </div>

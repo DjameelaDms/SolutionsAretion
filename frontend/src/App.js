@@ -19,7 +19,17 @@ import {
   CheckCircle,
   ArrowRight,
   Clock,
-  Building
+  Building,
+  Droplets,
+  Thermometer,
+  Flame,
+  LayoutDashboard,
+  Database,
+  Lock,
+  Shield,
+  Satellite,
+  Zap,
+  Hospital
 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
@@ -73,7 +83,7 @@ const solutions = [
   {
     id: 2,
     title: "Specialized Chatbot",
-    description: "Secure AI chatbot trained on hospital data, providing accurate, source-based answers with minimal hallucination.",
+    description: "Secure AI chatbot trained on organizational data, providing accurate, source-based answers with minimal hallucination.",
     icon: Brain,
     comingSoon: false,
     size: "",
@@ -91,7 +101,7 @@ const solutions = [
   {
     id: 4,
     title: "Triage",
-    description: "Digital system for recognizing and identifying mass-casualty victims, fully integrated with hospital HIS.",
+    description: "Digital system for recognizing and identifying mass-casualty victims, fully integrated with facility systems.",
     icon: Users,
     comingSoon: false,
     size: "",
@@ -100,7 +110,7 @@ const solutions = [
   {
     id: 5,
     title: "EM:CC",
-    description: "Emergency Medicine Cluster Coverage connecting hospitals in the same region for safe patient journey management.",
+    description: "Emergency Medicine Cluster Coverage connecting facilities in the same region for safe patient journey management.",
     icon: Radio,
     comingSoon: false,
     size: "",
@@ -126,15 +136,6 @@ const solutions = [
   },
   {
     id: 8,
-    title: "Medical IoT",
-    description: "Real-time connection of medical devices for improved situational awareness.",
-    icon: Wifi,
-    comingSoon: false,
-    size: "",
-    bgImage: SOLUTION_IMAGES.iot
-  },
-  {
-    id: 9,
     title: "Protocol Designer",
     description: "AI SaaS platform to design and manage custom disaster and emergency protocols.",
     icon: FileText,
@@ -265,15 +266,15 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight mb-4 text-center" data-testid="hero-headline">
-              Ecosystem for Smarter Hospital Operations
+              Ecosystem for Smarter Critical Infrastructure Operations
             </h1>
             <p className="font-heading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
-              Smarter Hospitals. Better Outcomes. Ahead of the Curve.
+              Smarter Systems. Better Outcomes. Ahead of the Curve.
             </p>
             
             <div className="font-heading text-[#3D1C1C]/80 leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
               <p>
-                At ARETION Informatics Solutions, we understand that modern healthcare demands more than incremental improvements—it demands transformation. Hospitals and healthcare institutions face unprecedented challenges: rising operational complexity, patient safety imperatives, and the need to deliver exceptional care at scale.
+                At ARETION Informatics Solutions, we understand that modern organizations demand more than incremental improvements—it demands transformation. Critical infrastructure and organizations face unprecedented challenges: rising operational complexity, safety imperatives, and the need to deliver exceptional performance at scale.
               </p>
               <p className="font-semibold text-[#1E3A5F]">
                 We don't just offer solutions. We partner with you to reimagine what's possible.
@@ -282,7 +283,7 @@ const HeroSection = () => {
               <div className="mt-8">
                 <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">What Sets Us Apart</h3>
                 <p className="mb-4">
-                  Our expertise spans the full stack—from intelligent systems architecture to advanced statistical disease modeling, process automation, and predictive analytics. Our team of full-stack engineers, data scientists, and domain specialists work in concert to solve the problems that matter most:
+                  Our expertise spans the full stack—from intelligent systems architecture to advanced statistical modeling, process automation, and predictive analytics. Our team of full-stack engineers, data scientists, and domain specialists work in concert to solve the problems that matter most:
                 </p>
                 <ul className="space-y-2 ml-4">
                   <li className="flex items-start gap-2">
@@ -291,7 +292,7 @@ const HeroSection = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>Safer Patient Care:</strong> Real-time insights, risk prediction, and evidence-driven clinical decision support</span>
+                    <span><strong>Safer Operations:</strong> Real-time insights, risk prediction, and evidence-driven decision support</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
@@ -303,15 +304,15 @@ const HeroSection = () => {
               <div className="mt-8">
                 <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">Who We Serve</h3>
                 <p>
-                  Whether you're a regional hospital seeking operational excellence, a large healthcare network pursuing system-wide transformation, or a research institution advancing medical science, ARETION is built for you.
+                  Whether you're a regional facility seeking operational excellence, a large network pursuing system-wide transformation, or a research institution advancing science, ARETION is built for you.
                 </p>
               </div>
               
               <p className="text-[#1E3A5F] font-medium mt-6">
-                The healthcare landscape is changing rapidly. The question isn't whether you'll adapt—it's whether you'll lead.
+                The landscape is changing rapidly. The question isn't whether you'll adapt—it's whether you'll lead.
               </p>
               <p className="font-semibold text-[#8B4513] text-lg">
-                Let's make your hospital smarter, together.
+                Let's make your systems smarter, together.
               </p>
             </div>
             
@@ -356,10 +357,10 @@ const SolutionsSection = () => {
             Our Solutions
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-4" data-testid="solutions-title">
-            Comprehensive Healthcare Informatics Suite
+            Comprehensive Infrastructure Suite
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
-            Discover our integrated platform designed to enhance safety, efficiency, and coordination within healthcare facilities.
+            Discover our integrated platform designed to enhance safety, efficiency, and coordination within critical infrastructure facilities.
           </p>
         </motion.div>
 
@@ -418,6 +419,205 @@ const SolutionsSection = () => {
   );
 };
 
+// Capabilities Section - Detailed Feature Descriptions
+const CapabilitiesSection = () => {
+  const sections = [
+    {
+      id: "early-warning",
+      title: "Early Warning Detection",
+      items: [
+        {
+          icon: Droplets,
+          title: "Detecting threats before they impact operations",
+          description: "Our environmental monitoring systems represent years of precision engineering to identify critical infrastructure failures before they cascade into operational crises. Deployed across facilities from emergency departments to research centers, these solutions continuously analyze water levels, temperature variations, and pressure anomalies in real-time. When patterns deviate from normal baselines, the system doesn't just alert—it begins orchestrating protective responses automatically. Leaders no longer need to wait for a flooding alarm to realize their basement is compromised. They know, because our sensors know first."
+        },
+        {
+          icon: Thermometer,
+          title: "Understanding your facility's vital signs",
+          description: "Temperature isn't just a comfort metric in critical infrastructure. It's a language that tells the story of system health. Our thermal monitoring platform listens to that language across every critical zone—from operating rooms maintaining surgical precision to data centers requiring absolute climate stability. The system learns what \"normal\" looks like for your unique facility, then watches for the whispers of trouble. A subtle temperature shift that a human might dismiss often precedes catastrophic equipment failure by hours."
+        }
+      ]
+    },
+    {
+      id: "fire-detection",
+      title: "Fire & Flame Detection",
+      items: [
+        {
+          icon: Flame,
+          title: "Integration that changes everything",
+          description: "Fire detection isn't new. What's new is making every fire detector in your facility intelligent and connected. Our platform unifies disparate detection systems into a coherent intelligence network. When one detector triggers, the entire facility responds with clarity—leadership knows where the threat is, what systems are activating, and how pathways need to shift. No confusion. No delay. No false alarms disrupting operations unnecessarily."
+        },
+        {
+          icon: LayoutDashboard,
+          title: "Vision across your entire facility",
+          description: "Every flame detector, every heat sensor, every smoke alarm—they're no longer isolated sentries. They're nodes in a unified command network. The dashboard shows not just where fire has been detected, but the trajectory of threats as they develop, allowing facility teams to stay ahead of escalation rather than chasing emergencies as they unfold."
+        }
+      ]
+    },
+    {
+      id: "data-center",
+      title: "Data Center & Critical Infrastructure",
+      items: [
+        {
+          icon: Database,
+          title: "When your data center is everything, security is everything",
+          description: "Records. Treatment histories. Research data. Lab results. The digital heartbeat of modern organizations. Our data center protection systems maintain constant surveillance of the environmental and security factors that keep this critical infrastructure alive. Temperature fluctuations, humidity imbalances, power supply anomalies, unauthorized access attempts—all monitored, all correlated, all responded to with automated precision."
+        },
+        {
+          icon: Lock,
+          title: "Continuity without compromise",
+          description: "Your systems must run. Always. Our infrastructure monitoring ensures that the moment any critical system shows signs of stress, failover mechanisms activate seamlessly. Backup power engages. Redundant cooling systems activate. Alternative data pathways come online. Operations never pause because your digital infrastructure never fails."
+        }
+      ]
+    },
+    {
+      id: "leadership",
+      title: "Leadership Protection & Secure Operations",
+      items: [
+        {
+          icon: Shield,
+          title: "Executive safety in an uncertain world",
+          description: "Your facility's leadership team faces threats that extend far beyond operational complexity. CBRNE events. Cyber intrusions. Physical breaches. Our secure operations center is designed as a sanctuary—a hardened command post where executives maintain secure communication and strategic coordination even when facility-wide systems are compromised. Biometric access control, environmental contamination detection, isolated communication channels, and emergency protocols create a space where leadership can make decisions with absolute confidence in information security and personal safety."
+        },
+        {
+          icon: Satellite,
+          title: "Communication that survives catastrophe",
+          description: "When conventional networks fail, backup systems activate. When buildings shake, encrypted channels hold steady. Your facility's leadership maintains the ability to communicate, coordinate, and command responses even under conditions that would silence lesser systems. This isn't redundancy—it's resilience architecture."
+        }
+      ]
+    },
+    {
+      id: "all-hazard",
+      title: "Holistic All-Hazard Response",
+      items: [
+        {
+          icon: Zap,
+          title: "One system. Every threat. Any scenario.",
+          description: "Floods. Fires. Cyber attacks. Chemical threats. Power failures. Equipment breakdowns. Water system compromises. Most facilities have separate response protocols for each scenario, creating fragmentation and confusion when multiple threats emerge simultaneously. Our platform treats the facility as an integrated organism—where the response to one threat automatically coordinates with protections against all others. When a flood is detected in the basement AND a cyber intrusion begins simultaneously, the system doesn't execute two independent response playbooks. It understands the correlation, predicts cascading effects, and coordinates protective measures across physical and digital infrastructure."
+        },
+        {
+          icon: Hospital,
+          title: "Built for the reality of modern operations",
+          description: "This isn't theoretical infrastructure protection. This is field-tested across hundreds of deployments. Refined through real emergencies. Strengthened by operational feedback from the teams who trust their most critical operations to these systems. Every component reflects the hard lessons learned when lives depend on decision speed and system reliability."
+        }
+      ]
+    }
+  ];
+
+  return (
+    <section id="capabilities" className="py-20 lg:py-28 bg-white" data-testid="capabilities-section">
+      <div className="container-main">
+        {/* Section Header */}
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
+            Our Capabilities
+          </span>
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-4">
+            Comprehensive Protection Systems
+          </h2>
+          <p className="font-body text-lg text-[#3D1C1C]/80">
+            From early warning detection to holistic all-hazard response, our integrated systems protect what matters most.
+          </p>
+        </motion.div>
+
+        {/* Capability Sections */}
+        <div className="space-y-20">
+          {sections.map((section, sectionIndex) => (
+            <motion.div 
+              key={section.id}
+              id={section.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#1E3A5F] mb-8 pb-4 border-b-2 border-[#C4A77D]">
+                Section {sectionIndex + 1}: {section.title}
+              </h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                {section.items.map((item, itemIndex) => (
+                  <motion.div
+                    key={itemIndex}
+                    className="bg-[#F5F0E8] rounded-lg p-8 border border-[#6B8CAE]/20"
+                    initial={{ opacity: 0, x: itemIndex % 2 === 0 ? -20 : 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
+                  >
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-lg bg-[#1E3A5F] flex items-center justify-center flex-shrink-0">
+                        <item.icon className="h-6 w-6 text-[#C4A77D]" />
+                      </div>
+                      <h4 className="font-heading text-xl font-semibold text-[#1E3A5F]">
+                        {item.title}
+                      </h4>
+                    </div>
+                    <p className="font-body text-[#3D1C1C]/80 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Why This Matters */}
+        <motion.div 
+          className="mt-20 bg-[#1E3A5F] rounded-lg p-8 md:p-12 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-6">
+            Why This Matters
+          </h3>
+          <p className="font-body text-white/90 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
+            Operations never stop. When your facility's early warning systems detect threats before they become crises, when your leadership team can coordinate response from a secure position, when your critical infrastructure fails over automatically rather than failing completely—operations continue uninterrupted. Treatment schedules hold. Processes proceed. Emergency departments function.
+          </p>
+          <p className="font-body text-[#C4A77D] text-lg font-semibold">
+            Your facility becomes more than a collection of buildings and equipment. It becomes a resilient organism designed to deliver through any scenario.
+          </p>
+        </motion.div>
+
+        {/* Call to Action */}
+        <motion.div 
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex flex-wrap justify-center gap-4">
+            <a 
+              href="https://aretion.co.uk/contact" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Schedule a Facility Assessment
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+            <button 
+              onClick={() => document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" })}
+              className="btn-secondary"
+            >
+              Watch System Overview
+            </button>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 // Benefits Section
 const BenefitsSection = () => {
   return (
@@ -439,8 +639,8 @@ const BenefitsSection = () => {
               Precision, Integration, Security
             </h2>
             <p className="font-body text-lg text-[#3D1C1C]/80 max-w-2xl mx-auto">
-              Our modular platform empowers healthcare organizations with tools they can grow over time, 
-              ensuring stronger safety and smarter clinical decisions.
+              Our modular platform empowers organizations with tools they can grow over time, 
+              ensuring stronger safety and smarter decisions.
             </p>
           </motion.div>
 
@@ -485,10 +685,10 @@ const DemoSection = () => {
               Get Started
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-6" data-testid="demo-title">
-              Ready to Transform Your Healthcare Operations?
+              Ready to Transform Your Operations?
             </h2>
             <p className="font-body text-lg text-[#3D1C1C]/80 mb-10 max-w-2xl mx-auto">
-              Our consultants are ready to help you navigate your healthcare goals. 
+              Our consultants are ready to help you navigate your operational goals. 
               Book a demo to see our solutions in action.
             </p>
 
@@ -518,7 +718,7 @@ const DemoSection = () => {
               <div className="stats-card">
                 <ShieldCheck className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
                 <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">Secure & Compliant</h4>
-                <p className="text-sm text-[#3D1C1C]/70">Built with healthcare standards</p>
+                <p className="text-sm text-[#3D1C1C]/70">Built with industry standards</p>
               </div>
             </div>
           </motion.div>
@@ -547,7 +747,7 @@ const TestimonialsSection = () => {
             Our Partners & Clients
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80 mb-8">
-            Working alongside leading healthcare institutions in Saudi Arabia and beyond.
+            Working alongside leading organizations in Saudi Arabia and beyond.
           </p>
           
           {/* CTA to Contact */}
@@ -593,7 +793,7 @@ const ContactSection = () => {
               Contact Us
             </h2>
             <p className="font-body text-white/80 mb-12">
-              Ready to explore innovative solutions for your healthcare organization? 
+              Ready to explore innovative solutions for your organization? 
               Get in touch with our team.
             </p>
 
@@ -922,6 +1122,7 @@ function App() {
       <main>
         <HeroSection />
         <SolutionsSection />
+        <CapabilitiesSection />
         <BenefitsSection />
         <DemoSection />
         <TestimonialsSection />

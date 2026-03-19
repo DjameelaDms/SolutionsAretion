@@ -183,7 +183,7 @@ const Header = () => {
             <img src={LOGO_URL} alt="ARETION" className="h-12 w-auto" />
             <div className="hidden sm:block">
               <span className="font-heading text-xl font-bold text-[#1E3A5F]">ARETION</span>
-              <span className="block text-xs font-subheading text-[#6B8CAE] tracking-wider">INFORMATICS SOLUTIONS</span>
+              <span className="block text-xs font-subheading text-[#6B8CAE] tracking-wider">SOLUTIONS</span>
             </div>
           </a>
 
@@ -265,7 +265,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight mb-4 text-center" data-testid="hero-headline">
-              Digital Ecosystem for Smarter Hospital Operations
+              Ecosystem for Smarter Hospital Operations
             </h1>
             <p className="font-heading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
               Smarter Hospitals. Better Outcomes. Ahead of the Curve.
@@ -569,43 +569,20 @@ const TestimonialsSection = () => {
 
 // Contact Section
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    organization: "",
-    interest: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      // Send to backend which will email and save to database
-      await axios.post(`${API}/contact`, formData);
-      
-      // Show thank you modal
-      setShowThankYou(true);
-      setFormData({ name: "", email: "", organization: "", interest: "", message: "" });
-    } catch (error) {
-      console.error("Failed to submit form:", error);
-      toast.error("Failed to send message. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const contactLinks = [
+    { title: "Sales Inquiry", url: "https://aretion.co.uk/contact" },
+    { title: "Implementation & Integration", url: "https://aretion.co.uk/contact" },
+    { title: "Research Collaboration", url: "https://aretion.co.uk/contact" },
+    { title: "Careers/Recruitment", url: "https://aretion.co.uk/contact" }
+  ];
 
   return (
     <section id="contact" className="contact-section py-20 lg:py-28" data-testid="contact-section">
       <div className="container-main">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
+        <div className="max-w-3xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
@@ -613,172 +590,49 @@ const ContactSection = () => {
               Get In Touch
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-6" data-testid="contact-title">
-              Contact Us Today
+              Contact Us
             </h2>
-            <p className="font-body text-white/80 mb-8">
+            <p className="font-body text-white/80 mb-12">
               Ready to explore innovative solutions for your healthcare organization? 
-              Fill out the form below or reach out directly.
+              Get in touch with our team.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4" data-testid="contact-form">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="form-input"
-                  data-testid="contact-name-input"
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="form-input"
-                  data-testid="contact-email-input"
-                />
-              </div>
-              <input
-                type="text"
-                placeholder="Organization"
-                value={formData.organization}
-                onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                className="form-input"
-                data-testid="contact-organization-input"
-              />
-              <select
-                value={formData.interest}
-                onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                className="form-input"
-                data-testid="contact-interest-select"
-              >
-                <option value="">Select Category</option>
-                <option value="sales">Sales Inquiry</option>
-                <option value="demo">Schedule a Demo</option>
-                <option value="implementation">Implementation & Integration</option>
-                <option value="partnership">Partnership</option>
-                <option value="research">Research Collaboration</option>
-                <option value="careers">Careers/Recruitment</option>
-                <option value="other">Other</option>
-              </select>
-              <textarea
-                placeholder="Your Message"
-                rows={4}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
-                className="form-input resize-none"
-                data-testid="contact-message-textarea"
-              />
-              <button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="btn-primary w-full sm:w-auto bg-[#C4A77D] hover:bg-[#8B4513]"
-                data-testid="contact-submit-btn"
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-            </form>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:pl-8"
-          >
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20" data-testid="contact-info">
-              <h3 className="font-subheading text-xl font-semibold text-white mb-8">Contact Information</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-5 w-5 text-[#C4A77D]" />
-                  </div>
-                  <div>
-                    <span className="block font-subheading font-semibold text-white mb-1">Email Us</span>
-                    <a 
-                      href="mailto:informatics@aretion.co.uk" 
-                      className="text-[#C4A77D] hover:text-white transition-colors"
-                      data-testid="contact-email-link"
-                    >
-                      informatics@aretion.co.uk
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                    <Building className="h-5 w-5 text-[#C4A77D]" />
-                  </div>
-                  <div>
-                    <span className="block font-subheading font-semibold text-white mb-1">ARETION & Company</span>
-                    <span className="text-white/70 text-sm">Informatics Solutions Division</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-5 w-5 text-[#C4A77D]" />
-                  </div>
-                  <div>
-                    <span className="block font-subheading font-semibold text-white mb-1">Response Time</span>
-                    <span className="text-white/70 text-sm">We typically respond within 24-48 hours</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-10 pt-8 border-t border-white/20">
-                <p className="text-white/80 text-sm mb-4">
-                  For immediate inquiries or partnerships, email us directly at:
-                </p>
-                <a 
-                  href="mailto:informatics@aretion.co.uk"
-                  className="inline-flex items-center text-[#C4A77D] font-semibold hover:text-white transition-colors"
-                  data-testid="contact-direct-email"
+            <div className="grid sm:grid-cols-2 gap-4" data-testid="contact-links">
+              {contactLinks.map((link, index) => (
+                <motion.a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all group"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  data-testid={`contact-link-${index}`}
                 >
-                  informatics@aretion.co.uk
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
+                  <span className="font-heading text-lg text-white">{link.title}</span>
+                  <ArrowRight className="h-5 w-5 text-[#C4A77D] group-hover:translate-x-1 transition-transform" />
+                </motion.a>
+              ))}
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-white/20">
+              <p className="text-white/80 text-sm mb-4">
+                For immediate inquiries, email us directly at:
+              </p>
+              <a 
+                href="mailto:post@aretion.co.uk"
+                className="inline-flex items-center text-[#C4A77D] font-semibold hover:text-white transition-colors text-lg"
+                data-testid="contact-direct-email"
+              >
+                post@aretion.co.uk
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Thank You Modal */}
-      <Dialog open={showThankYou} onOpenChange={setShowThankYou}>
-        <DialogContent className="max-w-md bg-[#F5F0E8] text-center">
-          <DialogHeader>
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 rounded-full bg-[#1E3A5F] flex items-center justify-center">
-                <CheckCircle className="h-8 w-8 text-white" />
-              </div>
-            </div>
-            <DialogTitle className="font-heading text-2xl text-[#1E3A5F]">
-              Thank You for Contacting Us!
-            </DialogTitle>
-          </DialogHeader>
-          <div className="py-4">
-            <p className="text-[#3D1C1C]/80 mb-4">
-              Your message has been sent successfully. Our team will review your inquiry and get back to you within 24-48 hours.
-            </p>
-          </div>
-          <button 
-            onClick={() => setShowThankYou(false)}
-            className="btn-primary w-full"
-            data-testid="thank-you-close-btn"
-          >
-            Close
-          </button>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };

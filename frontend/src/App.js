@@ -266,7 +266,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight mb-4 text-center" data-testid="hero-headline">
-              Ecosystem for Smarter Critical Infrastructure Operations
+              Intelligent Ecosystem for Transforming Critical Infrastructure Operations
             </h1>
             <p className="font-heading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
               Smarter Systems. Better Outcomes. Ahead of the Curve.
@@ -274,7 +274,7 @@ const HeroSection = () => {
             
             <div className="font-heading text-[#3D1C1C]/80 leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
               <p>
-                At ARETION Informatics Solutions, we understand that modern organizations demand more than incremental improvements—it demands transformation. Critical infrastructure and organizations face unprecedented challenges: rising operational complexity, safety imperatives, and the need to deliver exceptional performance at scale.
+                At ARETION Solutions, we understand that modern organizations demand more than incremental improvements—it demands transformation. Critical infrastructure and organizations face unprecedented challenges: rising operational complexity, safety imperatives, and the need to deliver exceptional performance at scale.
               </p>
               <p className="font-semibold text-[#1E3A5F]">
                 We don't just offer solutions. We partner with you to reimagine what's possible.
@@ -429,7 +429,7 @@ const CapabilitiesSection = () => {
         {
           icon: Droplets,
           title: "Detecting threats before they impact operations",
-          description: "Our environmental monitoring systems represent years of precision engineering to identify critical infrastructure failures before they cascade into operational crises. Deployed across facilities from emergency departments to research centers, these solutions continuously analyze water levels, temperature variations, and pressure anomalies in real-time. When patterns deviate from normal baselines, the system doesn't just alert—it begins orchestrating protective responses automatically. Leaders no longer need to wait for a flooding alarm to realize their basement is compromised. They know, because our sensors know first."
+          description: "Our environmental monitoring systems represent years of precision engineering to identify critical infrastructure failures before they cascade into operational crises. Deployed across facilities from emergency departments to research centers, these solutions continuously analyze water levels, temperature variations, and pressure anomalies in real-time. When patterns deviate from normal baselines, the system doesn't just alert—it begins orchestrating protective responses automatically. Leaders no longer need to wait for a flooding alarm to realize their basement is compromised."
         },
         {
           icon: Thermometer,
@@ -450,7 +450,7 @@ const CapabilitiesSection = () => {
         {
           icon: LayoutDashboard,
           title: "Vision across your entire facility",
-          description: "Every flame detector, every heat sensor, every smoke alarm—they're no longer isolated sentries. They're nodes in a unified command network. The dashboard shows not just where fire has been detected, but the trajectory of threats as they develop, allowing facility teams to stay ahead of escalation rather than chasing emergencies as they unfold."
+          description: "Every flame detector, every heat monitor, every smoke alarm—they're no longer isolated sentries. They're nodes in a unified command network. The dashboard shows not just where fire has been detected, but the trajectory of threats as they develop, allowing facility teams to stay ahead of escalation rather than chasing emergencies as they unfold."
         }
       ]
     },
@@ -538,7 +538,7 @@ const CapabilitiesSection = () => {
               transition={{ duration: 0.6 }}
             >
               <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#1E3A5F] mb-8 pb-4 border-b-2 border-[#C4A77D]">
-                Section {sectionIndex + 1}: {section.title}
+                {sectionIndex + 1}: {section.title}
               </h3>
               <div className="grid md:grid-cols-2 gap-8">
                 {section.items.map((item, itemIndex) => (

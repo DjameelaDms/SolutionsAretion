@@ -336,13 +336,6 @@ const HeroSection = () => {
                 Explore Solutions
                 <ChevronRight className="ml-2 h-4 w-4" />
               </button>
-              <button 
-                onClick={() => document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" })}
-                className="btn-secondary"
-                data-testid="hero-consultation-btn"
-              >
-                Request Consultation
-              </button>
             </div>
           </motion.div>
         </div>
@@ -709,7 +702,7 @@ const DemoSection = () => {
                 className="btn-primary" 
                 data-testid="demo-request-btn"
               >
-                Request a Live Demo
+                Contact Us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
             </div>

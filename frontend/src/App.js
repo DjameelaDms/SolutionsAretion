@@ -159,8 +159,7 @@ const solutions = [
 // Benefits Data
 const benefits = [
   { title: "Stronger Safety", description: "Enhanced readiness for any emergency scenario" },
-  { title: "Smarter Decisions", description: "Data-driven clinical decision support" },
-  { title: "Regional Coordination", description: "Better patient flow across facilities" },
+  { title: "Smarter Decisions", description: "Data-driven decision support" },
   { title: "Clear Visibility", description: "Comprehensive dashboards for leaders" },
   { title: "Modular Platform", description: "Scalable solutions that grow with you" }
 ];
@@ -609,12 +608,6 @@ const CapabilitiesSection = () => {
               Schedule a Facility Assessment
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
-            <button 
-              onClick={() => document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" })}
-              className="btn-secondary"
-            >
-              Watch System Overview
-            </button>
           </div>
         </motion.div>
       </div>

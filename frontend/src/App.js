@@ -29,7 +29,8 @@ import {
   Shield,
   Satellite,
   Zap,
-  Hospital
+  Hospital,
+  Video
 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
@@ -66,7 +67,8 @@ const SOLUTION_IMAGES = {
   protocol: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/98h2v114_Protocol%20designer.jpeg",
   codeblue: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/8qdv50zu_Tele%20Code%20Blue%20Kit.jpeg",
   triage: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/3vpmqdvv_Triage.jpeg",
-  teleintubation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/bu492laq_Tele-Intubation.jpeg"
+  teleintubation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/bu492laq_Tele-Intubation.jpeg",
+  consultation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/vu15sx4d_Screenshot%202026-03-20%20at%2016.28.33.png"
 };
 
 // Solutions Data
@@ -77,7 +79,7 @@ const solutions = [
     description: "Advanced ecosystem for facility safety with early warning, disaster prediction, and full closed-loop response system.",
     icon: ShieldCheck,
     comingSoon: false,
-    size: "md:col-span-2",
+    size: "",
     bgImage: SOLUTION_IMAGES.disasterms
   },
   {
@@ -142,6 +144,15 @@ const solutions = [
     comingSoon: false,
     size: "",
     bgImage: SOLUTION_IMAGES.protocol
+  },
+  {
+    id: 9,
+    title: "Consultation Platform",
+    description: "Introducing an invaluable solution for modern businesses: our consultation platform integrates with Zoom and other video conferencing tools, enabling effortless virtual consultations. It features robust scheduling capabilities and multiple payment gateways, making it easy for clients to book and pay for services. The user-friendly dashboard provides real-time analytics and insights, allowing users to track performance effectively. Additionally, integration with VOIP systems ensures automatic reminders, reducing no-shows and boosting client retention. This all-in-one platform streamlines the consultation process, enhances client engagement, and elevates the overall user experience, making it an essential tool for any organisation looking to optimise its consulting services.",
+    icon: Video,
+    comingSoon: false,
+    size: "",
+    bgImage: SOLUTION_IMAGES.consultation
   }
 ];
 
@@ -538,7 +549,7 @@ const CapabilitiesSection = () => {
               transition={{ duration: 0.6 }}
             >
               <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#1E3A5F] mb-8 pb-4 border-b-2 border-[#C4A77D]">
-                {sectionIndex + 1}: {section.title}
+                {section.title}
               </h3>
               <div className="grid md:grid-cols-2 gap-8">
                 {section.items.map((item, itemIndex) => (

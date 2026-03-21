@@ -167,7 +167,12 @@ const benefits = [
   { title: "Stronger Safety", description: "Enhanced readiness for any emergency scenario" },
   { title: "Smarter Decisions", description: "Data-driven decision support" },
   { title: "Clear Visibility", description: "Comprehensive dashboards for leaders" },
-  { title: "Modular Platform", description: "Scalable solutions that grow with you" }
+  { title: "Modular Platform", description: "Scalable solutions that grow with you" },
+  { title: "Operationally Ready", description: "Systems that respond to crisis with clarity and speed" },
+  { title: "Compliant by Design", description: "Audit-proof platforms meeting every regulatory requirement" },
+  { title: "Financially Justified", description: "Quantified ROI that transforms resilience from cost center to investment" },
+  { title: "Stakeholder Assured", description: "Communication protocols that build trust with boards, clients, and regulators" },
+  { title: "Continuously Validated", description: "Tested systems, not theoretical promises" }
 ];
 
 // Header Component

@@ -232,6 +232,15 @@ const Header = () => {
             >
               Contact
             </button>
+            <a 
+              href="https://aretion.co.uk/governance" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-subheading text-sm font-medium text-[#3D1C1C] hover:text-[#1E3A5F] transition-colors"
+              data-testid="nav-meet-team"
+            >
+              Meet Our Team
+            </a>
             <button 
               onClick={() => scrollToSection("demo")} 
               className="btn-primary"
@@ -263,6 +272,7 @@ const Header = () => {
               <button onClick={() => scrollToSection("solutions")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Solutions</button>
               <button onClick={() => scrollToSection("benefits")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Benefits</button>
               <button onClick={() => scrollToSection("contact")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Contact</button>
+              <a href="https://aretion.co.uk/governance" target="_blank" rel="noopener noreferrer" className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Meet Our Team</a>
               <button onClick={() => scrollToSection("demo")} className="btn-primary w-full">Book a Demo</button>
             </nav>
           </motion.div>

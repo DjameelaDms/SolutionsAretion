@@ -331,7 +331,7 @@ const HeroSection = () => {
               <div className="mt-8">
                 <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">Traction</h3>
                 <p>
-                  Deployed across healthcare networks in Saudi Arabia and expanding into UK/EU markets. Multi-year enterprise contracts with excellent renewal rates and strong net dollar retention.
+                  Deployed across healthcare networks in Saudi Arabia and expanding into Gulf markets. Multi-year enterprise contracts with excellent renewal rates and strong net dollar retention.
                 </p>
               </div>
               

@@ -49,6 +49,12 @@ import {
   DialogTitle,
 } from "./components/ui/dialog";
 import { ScrollArea } from "./components/ui/scroll-area";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./components/ui/tooltip";
 import { Toaster, toast } from "sonner";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -508,6 +514,7 @@ const CapabilitiesSection = () => {
   ];
 
   return (
+    <TooltipProvider>
     <section id="capabilities" className="py-20 lg:py-28 bg-white" data-testid="capabilities-section">
       <div className="container-main">
         {/* Section Header */}
@@ -530,7 +537,7 @@ const CapabilitiesSection = () => {
         </motion.div>
 
         {/* Capability Sections */}
-        <div className="space-y-20">
+        <div className="space-y-12">
           {sections.map((section, sectionIndex) => (
             <motion.div 
               key={section.id}
@@ -540,31 +547,39 @@ const CapabilitiesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#1E3A5F] mb-8 pb-4 border-b-2 border-[#C4A77D]">
+              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#1E3A5F] mb-6 pb-4 border-b-2 border-[#C4A77D]">
                 {section.title}
               </h3>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-4">
                 {section.items.map((item, itemIndex) => (
-                  <motion.div
-                    key={itemIndex}
-                    className="bg-[#F5F0E8] rounded-lg p-8 border border-[#6B8CAE]/20"
-                    initial={{ opacity: 0, x: itemIndex % 2 === 0 ? -20 : 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
-                  >
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-lg bg-[#1E3A5F] flex items-center justify-center flex-shrink-0">
-                        <item.icon className="h-6 w-6 text-[#C4A77D]" />
-                      </div>
-                      <h4 className="font-heading text-xl font-semibold text-[#1E3A5F]">
-                        {item.title}
-                      </h4>
-                    </div>
-                    <p className="font-body text-[#3D1C1C]/80 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </motion.div>
+                  <Tooltip key={itemIndex} delayDuration={100}>
+                    <TooltipTrigger asChild>
+                      <motion.div
+                        className="bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20 cursor-pointer hover:bg-[#1E3A5F] hover:border-[#1E3A5F] transition-all group"
+                        initial={{ opacity: 0, x: itemIndex % 2 === 0 ? -20 : 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 rounded-lg bg-[#1E3A5F] group-hover:bg-[#C4A77D] flex items-center justify-center flex-shrink-0 transition-colors">
+                            <item.icon className="h-5 w-5 text-[#C4A77D] group-hover:text-[#1E3A5F]" />
+                          </div>
+                          <h4 className="font-heading text-lg font-semibold text-[#1E3A5F] group-hover:text-white transition-colors">
+                            {item.title}
+                          </h4>
+                        </div>
+                      </motion.div>
+                    </TooltipTrigger>
+                    <TooltipContent 
+                      side="bottom" 
+                      className="max-w-md p-4 bg-[#1E3A5F] text-white border-none shadow-xl"
+                    >
+                      <p className="font-body text-sm leading-relaxed">
+                        {item.description}
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
                 ))}
               </div>
             </motion.div>
@@ -612,6 +627,7 @@ const CapabilitiesSection = () => {
         </motion.div>
       </div>
     </section>
+    </TooltipProvider>
   );
 };
 
@@ -636,8 +652,7 @@ const BenefitsSection = () => {
               Precision, Integration, Security
             </h2>
             <p className="font-body text-lg text-[#3D1C1C]/80 max-w-2xl mx-auto">
-              Our modular platform empowers organizations with tools they can grow over time, 
-              ensuring stronger safety and smarter decisions.
+              We assign a dedicated project manager to each project, ensuring the full implementation of our premium IT solutions. This approach not only exceeds end-user expectations but also facilitates real-time feedback and enhancements, guaranteeing that your investment yields exceptional results.
             </p>
           </motion.div>
 

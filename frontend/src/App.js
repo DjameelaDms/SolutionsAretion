@@ -154,7 +154,7 @@ const solutions = [
   {
     id: 9,
     title: "Consultation Platform",
-    description: "Introducing an invaluable solution for modern businesses: our consultation platform integrates with Zoom and other video conferencing tools, enabling effortless virtual consultations. It features robust scheduling capabilities and multiple payment gateways, making it easy for clients to book and pay for services. The user-friendly dashboard provides real-time analytics and insights, allowing users to track performance effectively. Additionally, integration with VOIP systems ensures automatic reminders, reducing no-shows and boosting client retention. This all-in-one platform streamlines the consultation process, enhances client engagement, and elevates the overall user experience, making it an essential tool for any organisation looking to optimise its consulting services.",
+    description: "Our ready-built consultation platform adapts to telemedicine providers, advisory firms, educational institutes, and international conferences.",
     icon: Video,
     comingSoon: false,
     size: "",

@@ -82,7 +82,7 @@ const solutions = [
   {
     id: 1,
     title: "DisasterMS",
-    description: "Enterprise SaaS with 85%+ gross margins. Closed-loop disaster response platform with proven deployment across healthcare and critical infrastructure.",
+    description: "Enterprise SaaS with strong gross margins. Closed-loop disaster response platform with proven deployment across healthcare and critical infrastructure.",
     icon: ShieldCheck,
     comingSoon: false,
     size: "",
@@ -91,7 +91,7 @@ const solutions = [
   {
     id: 2,
     title: "AI Chatbot Engine",
-    description: "Proprietary RAG architecture with <2% hallucination rate. White-label ready for enterprise licensing and OEM partnerships.",
+    description: "Proprietary RAG architecture with industry-leading accuracy. White-label ready for enterprise licensing and OEM partnerships.",
     icon: Brain,
     comingSoon: false,
     size: "",
@@ -100,7 +100,7 @@ const solutions = [
   {
     id: 3,
     title: "Predictive Analytics",
-    description: "ML models with 94% accuracy in climate-risk forecasting. Expanding TAM across insurance, utilities, and government sectors.",
+    description: "ML models with exceptional accuracy in climate-risk forecasting. Expanding TAM across insurance, utilities, and government sectors.",
     icon: TrendingUp,
     comingSoon: false,
     size: "",
@@ -109,7 +109,7 @@ const solutions = [
   {
     id: 4,
     title: "Mass Triage System",
-    description: "Patented victim identification technology. First-mover advantage in $2.1B emergency management software market.",
+    description: "Patented victim identification technology. First-mover advantage in the emergency management software market.",
     icon: Users,
     comingSoon: false,
     size: "",
@@ -118,7 +118,7 @@ const solutions = [
   {
     id: 5,
     title: "EM:CC Network",
-    description: "Network-effect business model connecting regional healthcare clusters. 40% YoY growth in contracted facilities.",
+    description: "Network-effect business model connecting regional healthcare clusters. Strong year-over-year growth in contracted facilities.",
     icon: Radio,
     comingSoon: false,
     size: "",
@@ -136,7 +136,7 @@ const solutions = [
   {
     id: 7,
     title: "Code Blue Kit",
-    description: "Hardware-software bundle with recurring revenue. 3-year customer contracts with 95% renewal rate.",
+    description: "Hardware-software bundle with recurring revenue. Long-term customer contracts with excellent renewal rates.",
     icon: HeartPulse,
     comingSoon: false,
     size: "",
@@ -145,7 +145,7 @@ const solutions = [
   {
     id: 8,
     title: "Protocol Designer",
-    description: "AI-powered SaaS with land-and-expand model. 150% net revenue retention across enterprise accounts.",
+    description: "AI-powered SaaS with land-and-expand model. Strong net revenue retention across enterprise accounts.",
     icon: FileText,
     comingSoon: false,
     size: "",
@@ -154,7 +154,7 @@ const solutions = [
   {
     id: 9,
     title: "Consultation Platform",
-    description: "Multi-vertical telehealth infrastructure. Platform-as-a-service model with 70%+ contribution margins.",
+    description: "Multi-vertical telehealth infrastructure. Platform-as-a-service model with strong contribution margins.",
     icon: Video,
     comingSoon: false,
     size: "",
@@ -164,14 +164,14 @@ const solutions = [
 
 // Benefits Data - Investor Value Propositions
 const benefits = [
-  { title: "Recurring Revenue", description: "85%+ of revenue from multi-year enterprise contracts" },
-  { title: "Capital Efficient", description: "18-month payback period on customer acquisition" },
-  { title: "Defensible Moat", description: "Proprietary IP with 12 patents pending" },
-  { title: "Scalable Architecture", description: "Cloud-native platform serving 10x growth without proportional cost" },
+  { title: "Recurring Revenue", description: "Majority of revenue from multi-year enterprise contracts" },
+  { title: "Capital Efficient", description: "Short payback period on customer acquisition" },
+  { title: "Defensible Moat", description: "Proprietary IP with multiple patents pending" },
+  { title: "Scalable Architecture", description: "Cloud-native platform supporting rapid growth without proportional cost" },
   { title: "Market Timing", description: "Regulatory tailwinds driving mandatory adoption" },
   { title: "Strategic Optionality", description: "Multiple exit pathways: IPO, strategic acquisition, or PE rollup" },
-  { title: "Proven Unit Economics", description: "LTV:CAC ratio exceeding 5:1 across all segments" },
-  { title: "Expansion Revenue", description: "Land-and-expand model with 150% net dollar retention" },
+  { title: "Proven Unit Economics", description: "Strong LTV:CAC ratio across all segments" },
+  { title: "Expansion Revenue", description: "Land-and-expand model with excellent net dollar retention" },
   { title: "Mission-Critical", description: "Zero churn on core contracts—customers can't afford downtime" }
 ];
 
@@ -300,12 +300,12 @@ const HeroSection = () => {
               The Infrastructure Layer for Critical Operations
             </h1>
             <p className="font-heading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
-              $47B TAM. Category-Defining Technology. Proven Revenue Model.
+              Large TAM. Category-Defining Technology. Proven Revenue Model.
             </p>
             
             <div className="font-heading text-[#3D1C1C]/80 leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
               <p>
-                ARETION is building the operating system for mission-critical infrastructure. Our integrated platform addresses a fragmented $47B market where legacy systems create operational risk and regulatory exposure for healthcare networks, utilities, and government facilities.
+                ARETION is building the operating system for mission-critical infrastructure. Our integrated platform addresses a fragmented market where legacy systems create operational risk and regulatory exposure for healthcare networks, utilities, and government facilities.
               </p>
               
               <div className="mt-8">
@@ -317,11 +317,11 @@ const HeroSection = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>Durable Competitive Advantage:</strong> 12 patents pending, proprietary AI models, and deep regulatory expertise</span>
+                    <span><strong>Durable Competitive Advantage:</strong> Multiple patents pending, proprietary AI models, and deep regulatory expertise</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>Capital-Efficient Growth:</strong> 85%+ gross margins with 18-month CAC payback</span>
+                    <span><strong>Capital-Efficient Growth:</strong> Strong gross margins with short CAC payback</span>
                   </li>
                 </ul>
               </div>
@@ -329,7 +329,7 @@ const HeroSection = () => {
               <div className="mt-8">
                 <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">Traction</h3>
                 <p>
-                  Deployed across healthcare networks in Saudi Arabia and expanding into UK/EU markets. Multi-year enterprise contracts with 95% renewal rates and 150% net dollar retention.
+                  Deployed across healthcare networks in Saudi Arabia and expanding into UK/EU markets. Multi-year enterprise contracts with excellent renewal rates and strong net dollar retention.
                 </p>
               </div>
               
@@ -379,7 +379,7 @@ const SolutionsSection = () => {
             Product Portfolio
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-4" data-testid="solutions-title">
-            Nine Revenue Engines, One Platform
+            Comprehensive Infrastructure Suite
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
             Each product addresses a distinct market need with standalone revenue potential and cross-sell synergies across the portfolio.
@@ -451,12 +451,12 @@ const CapabilitiesSection = () => {
         {
           icon: Droplets,
           title: "Real-time infrastructure intelligence",
-          description: "Our environmental monitoring systems represent 4+ years of R&D and field deployment. Protected by 3 pending patents, these solutions provide predictive insights that competitors cannot replicate. Deployed across 50+ facilities with <1% false positive rate—a 10x improvement over legacy systems."
+          description: "Our environmental monitoring systems represent years of R&D and field deployment. Protected by pending patents, these solutions provide predictive insights that competitors cannot replicate. Deployed across numerous facilities with an exceptionally low false positive rate—a significant improvement over legacy systems."
         },
         {
           icon: Thermometer,
           title: "Machine learning at the edge",
-          description: "Proprietary ML models trained on 2M+ hours of facility data enable predictive maintenance that reduces equipment failures by 73%. Each deployment generates training data that strengthens our competitive moat—a flywheel effect that accelerates with scale."
+          description: "Proprietary ML models trained on extensive facility data enable predictive maintenance that dramatically reduces equipment failures. Each deployment generates training data that strengthens our competitive moat—a flywheel effect that accelerates with scale."
         }
       ]
     },
@@ -467,12 +467,12 @@ const CapabilitiesSection = () => {
         {
           icon: Flame,
           title: "System-agnostic integration layer",
-          description: "Our middleware integrates with 40+ legacy detection systems, creating immediate value without rip-and-replace. This approach reduces sales cycles by 60% and creates switching costs that drive 95%+ retention rates."
+          description: "Our middleware integrates with many legacy detection systems, creating immediate value without rip-and-replace. This approach reduces sales cycles significantly and creates switching costs that drive excellent retention rates."
         },
         {
           icon: LayoutDashboard,
           title: "Command center dashboard",
-          description: "Real-time operational visibility across distributed facilities. Enterprise customers report 45% faster incident response times. Dashboard telemetry feeds our analytics engine, creating upsell opportunities for predictive modules."
+          description: "Real-time operational visibility across distributed facilities. Enterprise customers report significantly faster incident response times. Dashboard telemetry feeds our analytics engine, creating upsell opportunities for predictive modules."
         }
       ]
     },
@@ -483,12 +483,12 @@ const CapabilitiesSection = () => {
         {
           icon: Database,
           title: "Data center resilience",
-          description: "Purpose-built for healthcare data centers where downtime costs $9,000/minute. Our uptime SLA (99.99%) is backed by insurance—a unique market differentiator that closes enterprise deals."
+          description: "Purpose-built for healthcare data centers where downtime is extremely costly. Our uptime SLA is backed by insurance—a unique market differentiator that closes enterprise deals."
         },
         {
           icon: Lock,
           title: "Compliance automation",
-          description: "Automated compliance reporting for HIPAA, SOC 2, and regional healthcare regulations. Reduces customer audit costs by 80% and creates regulatory lock-in that competitors cannot easily overcome."
+          description: "Automated compliance reporting for HIPAA, SOC 2, and regional healthcare regulations. Dramatically reduces customer audit costs and creates regulatory lock-in that competitors cannot easily overcome."
         }
       ]
     },
@@ -499,12 +499,12 @@ const CapabilitiesSection = () => {
         {
           icon: Shield,
           title: "High-margin hardware bundle",
-          description: "Secure operations centers combine proprietary hardware with software subscriptions. Hardware drives 40% of deal value with 60%+ margins; software creates recurring revenue at 85%+ margins. Average contract value: $2.1M over 5 years."
+          description: "Secure operations centers combine proprietary hardware with software subscriptions. Hardware drives significant deal value with strong margins; software creates recurring revenue at even higher margins. Long-term contracts with substantial value."
         },
         {
           icon: Satellite,
           title: "Resilient communications",
-          description: "Satellite-backup communication systems ensure continuity during regional outages. This capability is mandatory for government contracts—a $3.2B addressable market we're positioned to capture."
+          description: "Satellite-backup communication systems ensure continuity during regional outages. This capability is mandatory for government contracts—a large addressable market we're positioned to capture."
         }
       ]
     },
@@ -515,12 +515,12 @@ const CapabilitiesSection = () => {
         {
           icon: Zap,
           title: "Unified response orchestration",
-          description: "Single platform replacing 7-12 point solutions. Customers consolidate vendor relationships, reducing their total cost of ownership by 35% while increasing our share of wallet. The platform creates natural expansion revenue as customers adopt additional modules."
+          description: "Single platform replacing multiple point solutions. Customers consolidate vendor relationships, significantly reducing their total cost of ownership while increasing our share of wallet. The platform creates natural expansion revenue as customers adopt additional modules."
         },
         {
           icon: Hospital,
           title: "Field-validated technology",
-          description: "Battle-tested across 200+ real emergency responses. This operational track record is our primary sales asset—prospects can speak with reference customers who've relied on our systems during actual crises. No competitor can match this validation."
+          description: "Battle-tested across hundreds of real emergency responses. This operational track record is our primary sales asset—prospects can speak with reference customers who've relied on our systems during actual crises. No competitor can match this validation."
         }
       ]
     }
@@ -738,17 +738,17 @@ const DemoSection = () => {
             <div className="grid sm:grid-cols-3 gap-6" data-testid="demo-features">
               <div className="stats-card">
                 <TrendingUp className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
-                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">40% YoY Growth</h4>
+                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">Strong Growth</h4>
                 <p className="text-sm text-[#3D1C1C]/70">Contracted revenue expansion</p>
               </div>
               <div className="stats-card">
                 <Building className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
-                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">$47B TAM</h4>
+                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">Large TAM</h4>
                 <p className="text-sm text-[#3D1C1C]/70">Addressable market opportunity</p>
               </div>
               <div className="stats-card">
                 <ShieldCheck className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
-                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">95% Retention</h4>
+                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">High Retention</h4>
                 <p className="text-sm text-[#3D1C1C]/70">Enterprise contract renewals</p>
               </div>
             </div>

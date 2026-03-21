@@ -242,7 +242,7 @@ const Header = () => {
               Contact
             </button>
             <a 
-              href="mailto:investors@aretion.co.uk?subject=Investor%20Deck%20Request"
+              href="mailto:solutions@aretion.co.uk?subject=Investor%20Deck%20Request"
               className="btn-primary"
               data-testid="nav-investor-deck"
             >
@@ -273,7 +273,7 @@ const Header = () => {
               <button onClick={() => scrollToSection("benefits")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Thesis</button>
               <a href="https://aretion.co.uk/governance" target="_blank" rel="noopener noreferrer" className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Leadership</a>
               <button onClick={() => scrollToSection("contact")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Contact</button>
-              <a href="mailto:investors@aretion.co.uk?subject=Investor%20Deck%20Request" className="btn-primary w-full text-center">Request Deck</a>
+              <a href="mailto:solutions@aretion.co.uk?subject=Investor%20Deck%20Request" className="btn-primary w-full text-center">Request Deck</a>
             </nav>
           </motion.div>
         )}
@@ -297,7 +297,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight mb-4 text-center" data-testid="hero-headline">
-              The Infrastructure Layer for Critical Operations
+              Intelligent Ecosystem for Critical Infrastructure
             </h1>
             <p className="font-heading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
               Large TAM. Category-Defining Technology. Proven Revenue Model.
@@ -317,7 +317,7 @@ const HeroSection = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>Durable Competitive Advantage:</strong> Multiple patents pending, proprietary AI models, and deep regulatory expertise</span>
+                    <span><strong>Durable Competitive Advantage:</strong> Four patents pending, proprietary AI models, and deep regulatory expertise</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
@@ -340,7 +340,7 @@ const HeroSection = () => {
             
             <div className="flex flex-wrap justify-center gap-4 mt-10">
               <a 
-                href="mailto:investors@aretion.co.uk?subject=Investor%20Deck%20Request"
+                href="mailto:solutions@aretion.co.uk?subject=Investor%20Deck%20Request"
                 className="btn-primary"
                 data-testid="hero-deck-btn"
               >
@@ -718,7 +718,7 @@ const DemoSection = () => {
 
             <div className="flex flex-wrap justify-center gap-4 mb-16">
               <a 
-                href="mailto:investors@aretion.co.uk?subject=Investor%20Deck%20Request"
+                href="mailto:solutions@aretion.co.uk?subject=Investor%20Deck%20Request"
                 className="btn-primary" 
                 data-testid="demo-request-btn"
               >
@@ -726,7 +726,7 @@ const DemoSection = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a 
-                href="mailto:investors@aretion.co.uk?subject=Schedule%20Management%20Call"
+                href="mailto:solutions@aretion.co.uk?subject=Schedule%20Management%20Call"
                 className="btn-secondary" 
                 data-testid="demo-call-btn"
               >
@@ -784,7 +784,7 @@ const TestimonialsSection = () => {
           {/* CTA to Contact */}
           <div className="mt-8">
             <a 
-              href="mailto:partnerships@aretion.co.uk?subject=Strategic%20Partnership%20Inquiry"
+              href="mailto:solutions@aretion.co.uk?subject=Strategic%20Partnership%20Inquiry"
               className="btn-secondary"
               data-testid="testimonials-contact-btn"
             >
@@ -801,10 +801,10 @@ const TestimonialsSection = () => {
 // Contact Section - Investor Relations
 const ContactSection = () => {
   const contactLinks = [
-    { title: "Investor Relations", url: "mailto:investors@aretion.co.uk?subject=Investor%20Inquiry" },
-    { title: "Strategic Partnerships", url: "mailto:partnerships@aretion.co.uk?subject=Partnership%20Inquiry" },
-    { title: "Media & Press", url: "mailto:press@aretion.co.uk?subject=Media%20Inquiry" },
-    { title: "General Inquiries", url: "mailto:info@aretion.co.uk?subject=General%20Inquiry" }
+    { title: "Investor Relations", url: "mailto:solutions@aretion.co.uk?subject=Investor%20Inquiry" },
+    { title: "Strategic Partnerships", url: "mailto:solutions@aretion.co.uk?subject=Partnership%20Inquiry" },
+    { title: "Media & Press", url: "mailto:solutions@aretion.co.uk?subject=Media%20Inquiry" },
+    { title: "General Inquiries", url: "mailto:solutions@aretion.co.uk?subject=General%20Inquiry" }
   ];
 
   return (
@@ -850,11 +850,11 @@ const ContactSection = () => {
                 For investor inquiries:
               </p>
               <a 
-                href="mailto:investors@aretion.co.uk"
+                href="mailto:solutions@aretion.co.uk"
                 className="inline-flex items-center text-[#C4A77D] font-semibold hover:text-white transition-colors text-lg"
                 data-testid="contact-direct-email"
               >
-                investors@aretion.co.uk
+                solutions@aretion.co.uk
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </div>

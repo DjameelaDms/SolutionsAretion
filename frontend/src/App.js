@@ -242,7 +242,9 @@ const Header = () => {
               Contact
             </button>
             <a 
-              href="mailto:solutions@aretion.co.uk?subject=Investor%20Deck%20Request"
+              href="https://aretion.co.uk/contact"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary"
               data-testid="nav-investor-deck"
             >
@@ -273,7 +275,7 @@ const Header = () => {
               <button onClick={() => scrollToSection("benefits")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Thesis</button>
               <a href="https://aretion.co.uk/governance" target="_blank" rel="noopener noreferrer" className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Leadership</a>
               <button onClick={() => scrollToSection("contact")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Contact</button>
-              <a href="mailto:solutions@aretion.co.uk?subject=Investor%20Deck%20Request" className="btn-primary w-full text-center">Request Deck</a>
+              <a href="https://aretion.co.uk/contact" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">Request Deck</a>
             </nav>
           </motion.div>
         )}
@@ -340,7 +342,9 @@ const HeroSection = () => {
             
             <div className="flex flex-wrap justify-center gap-4 mt-10">
               <a 
-                href="mailto:solutions@aretion.co.uk?subject=Investor%20Deck%20Request"
+                href="https://aretion.co.uk/contact"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary"
                 data-testid="hero-deck-btn"
               >
@@ -718,7 +722,9 @@ const DemoSection = () => {
 
             <div className="flex flex-wrap justify-center gap-4 mb-16">
               <a 
-                href="mailto:solutions@aretion.co.uk?subject=Investor%20Deck%20Request"
+                href="https://aretion.co.uk/contact"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary" 
                 data-testid="demo-request-btn"
               >
@@ -784,7 +790,9 @@ const TestimonialsSection = () => {
           {/* CTA to Contact */}
           <div className="mt-8">
             <a 
-              href="mailto:solutions@aretion.co.uk?subject=Strategic%20Partnership%20Inquiry"
+              href="https://aretion.co.uk/contact"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-secondary"
               data-testid="testimonials-contact-btn"
             >

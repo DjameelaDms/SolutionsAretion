@@ -109,7 +109,7 @@ const solutions = [
   {
     id: 4,
     title: "Mass Triage System",
-    description: "Patented victim identification technology. First-mover advantage in the emergency management software market.",
+    description: "Victim identification technology. First-mover advantage in the emergency management software market.",
     icon: Users,
     comingSoon: false,
     size: "",
@@ -118,7 +118,7 @@ const solutions = [
   {
     id: 5,
     title: "EM:CC Network",
-    description: "Network-effect business model connecting regional healthcare clusters. Strong year-over-year growth in contracted facilities.",
+    description: "Network-effect business model connecting regional healthcare clusters.",
     icon: Radio,
     comingSoon: false,
     size: "",
@@ -127,7 +127,7 @@ const solutions = [
   {
     id: 6,
     title: "Tele-Intubation",
-    description: "FDA-pathway telehealth solution. Strategic acquisition target for major medical device companies.",
+    description: "Robotic tele intubation. Strategic acquisition target for major medical device companies.",
     icon: Stethoscope,
     comingSoon: false,
     size: "",
@@ -136,7 +136,7 @@ const solutions = [
   {
     id: 7,
     title: "Code Blue Kit",
-    description: "Hardware-software bundle with recurring revenue. Long-term customer contracts with excellent renewal rates.",
+    description: "Hardware-software bundle with recurring revenue.",
     icon: HeartPulse,
     comingSoon: false,
     size: "",
@@ -455,7 +455,7 @@ const CapabilitiesSection = () => {
         {
           icon: Droplets,
           title: "Real-time infrastructure intelligence",
-          description: "Our environmental monitoring systems represent years of R&D and field deployment. Protected by pending patents, these solutions provide predictive insights that competitors cannot replicate. Deployed across numerous facilities with an exceptionally low false positive rate—a significant improvement over legacy systems."
+          description: "These solutions provide predictive insights that competitors cannot replicate. Deployed across numerous facilities with an exceptionally low false positive rate—a significant improvement over legacy systems."
         },
         {
           icon: Thermometer,
@@ -524,7 +524,7 @@ const CapabilitiesSection = () => {
         {
           icon: Hospital,
           title: "Field-validated technology",
-          description: "Battle-tested across hundreds of real emergency responses. This operational track record is our primary sales asset—prospects can speak with reference customers who've relied on our systems during actual crises. No competitor can match this validation."
+          description: "Created and tested by field disaster specialists. This operational track record is our primary sales asset—prospects can speak with reference customers who've relied on our systems during actual crises. No competitor can match this validation."
         }
       ]
     }
@@ -569,34 +569,59 @@ const CapabilitiesSection = () => {
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {section.items.map((item, itemIndex) => (
-                  <Tooltip key={itemIndex} delayDuration={100}>
-                    <TooltipTrigger asChild>
-                      <motion.div
-                        className="bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20 cursor-pointer hover:bg-[#1E3A5F] hover:border-[#1E3A5F] transition-all group"
-                        initial={{ opacity: 0, x: itemIndex % 2 === 0 ? -20 : 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
-                      >
-                        <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-[#1E3A5F] group-hover:bg-[#C4A77D] flex items-center justify-center flex-shrink-0 transition-colors">
-                            <item.icon className="h-5 w-5 text-[#C4A77D] group-hover:text-[#1E3A5F]" />
+                  <div key={itemIndex} className="hidden md:block">
+                    <Tooltip delayDuration={100}>
+                      <TooltipTrigger asChild>
+                        <motion.div
+                          className="bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20 cursor-pointer hover:bg-[#1E3A5F] hover:border-[#1E3A5F] transition-all group"
+                          initial={{ opacity: 0, x: itemIndex % 2 === 0 ? -20 : 20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
+                        >
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-lg bg-[#1E3A5F] group-hover:bg-[#C4A77D] flex items-center justify-center flex-shrink-0 transition-colors">
+                              <item.icon className="h-5 w-5 text-[#C4A77D] group-hover:text-[#1E3A5F]" />
+                            </div>
+                            <h4 className="font-heading text-lg font-semibold text-[#1E3A5F] group-hover:text-white transition-colors">
+                              {item.title}
+                            </h4>
                           </div>
-                          <h4 className="font-heading text-lg font-semibold text-[#1E3A5F] group-hover:text-white transition-colors">
-                            {item.title}
-                          </h4>
-                        </div>
-                      </motion.div>
-                    </TooltipTrigger>
-                    <TooltipContent 
-                      side="bottom" 
-                      className="max-w-md p-4 bg-[#1E3A5F] text-white border-none shadow-xl"
-                    >
-                      <p className="font-body text-sm leading-relaxed">
-                        {item.description}
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
+                        </motion.div>
+                      </TooltipTrigger>
+                      <TooltipContent 
+                        side="bottom" 
+                        className="max-w-md p-4 bg-[#1E3A5F] text-white border-none shadow-xl"
+                      >
+                        <p className="font-body text-sm leading-relaxed">
+                          {item.description}
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
+                ))}
+                {/* Mobile version - shows description directly */}
+                {section.items.map((item, itemIndex) => (
+                  <motion.div
+                    key={`mobile-${itemIndex}`}
+                    className="md:hidden bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-[#1E3A5F] flex items-center justify-center flex-shrink-0">
+                        <item.icon className="h-5 w-5 text-[#C4A77D]" />
+                      </div>
+                      <h4 className="font-heading text-lg font-semibold text-[#1E3A5F]">
+                        {item.title}
+                      </h4>
+                    </div>
+                    <p className="font-body text-sm text-[#3D1C1C]/80 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -784,7 +809,7 @@ const TestimonialsSection = () => {
             Enterprise Customers & Partners
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80 mb-8">
-            Trusted by healthcare networks and critical infrastructure operators across Saudi Arabia, UK, and expanding into EU markets.
+            Trusted by healthcare networks and critical infrastructure operators across Saudi Arabia.
           </p>
           
           {/* CTA to Contact */}
@@ -862,7 +887,7 @@ const ContactSection = () => {
                 className="inline-flex items-center text-[#C4A77D] font-semibold hover:text-white transition-colors text-lg"
                 data-testid="contact-direct-email"
               >
-                solutions@aretion.co.uk
+                Solutions@aretion.co.uk
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </div>

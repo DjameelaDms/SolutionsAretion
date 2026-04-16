@@ -90,7 +90,7 @@ const solutions = [
   },
   {
     id: 2,
-    title: "AI Chatbot Engine",
+    title: "AI Assistant",
     description: "Next-generation RAG architecture delivering unprecedented accuracy. Enterprise-ready AI that transforms how organizations access and act on critical knowledge.",
     icon: Brain,
     comingSoon: false,
@@ -165,13 +165,13 @@ const solutions = [
 // Benefits Data - Why We're Different
 const benefits = [
   { title: "Disruptive by Design", description: "Technology that challenges the status quo and creates new possibilities" },
+  { title: "Disaster Management Focus", description: "Purpose-built solutions for emergency response and crisis management" },
   { title: "AI-First Approach", description: "Machine learning and automation at the core of every solution" },
   { title: "Proven Innovation", description: "Four patents pending protecting our breakthrough methodologies" },
   { title: "Scalable Architecture", description: "Cloud-native platforms built for rapid deployment and growth" },
   { title: "Field-Tested", description: "Solutions refined through real-world emergency deployments" },
   { title: "Integration Ready", description: "Seamless connectivity with existing infrastructure and systems" },
   { title: "Future-Proof", description: "Continuously evolving technology that stays ahead of emerging challenges" },
-  { title: "Domain Expertise", description: "Built by specialists who understand critical infrastructure operations" },
   { title: "Mission-Critical Reliability", description: "Systems designed for zero downtime when it matters most" }
 ];
 
@@ -454,6 +454,11 @@ const CapabilitiesSection = () => {
           icon: Thermometer,
           title: "Machine learning at the edge",
           description: "Proprietary ML models trained on extensive facility data enable predictive maintenance that dramatically reduces equipment failures. Each deployment generates training data that strengthens our competitive moat—a flywheel effect that accelerates with scale."
+        },
+        {
+          icon: Shield,
+          title: "CBRN detection and response",
+          description: "Advanced Chemical, Biological, Radiological, and Nuclear threat detection integrated into our early warning ecosystem. Real-time monitoring and automated response protocols protect personnel and infrastructure from emerging threats."
         }
       ]
     },

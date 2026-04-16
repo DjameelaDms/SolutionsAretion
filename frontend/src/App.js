@@ -77,12 +77,12 @@ const SOLUTION_IMAGES = {
   consultation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/vu15sx4d_Screenshot%202026-03-20%20at%2016.28.33.png"
 };
 
-// Solutions Data - Investor Focused
+// Solutions Data - Disruptive Technology
 const solutions = [
   {
     id: 1,
     title: "DisasterMS",
-    description: "Enterprise SaaS with strong gross margins. Closed-loop disaster response platform with proven deployment across healthcare and critical infrastructure.",
+    description: "Revolutionary closed-loop disaster response platform. AI-driven early warning and autonomous response systems that redefine facility safety standards.",
     icon: ShieldCheck,
     comingSoon: false,
     size: "",
@@ -91,7 +91,7 @@ const solutions = [
   {
     id: 2,
     title: "AI Chatbot Engine",
-    description: "Proprietary RAG architecture with industry-leading accuracy. White-label ready for enterprise licensing and OEM partnerships.",
+    description: "Next-generation RAG architecture delivering unprecedented accuracy. Enterprise-ready AI that transforms how organizations access and act on critical knowledge.",
     icon: Brain,
     comingSoon: false,
     size: "",
@@ -100,7 +100,7 @@ const solutions = [
   {
     id: 3,
     title: "Predictive Analytics",
-    description: "ML models with exceptional accuracy in climate-risk forecasting. Expanding TAM across insurance, utilities, and government sectors.",
+    description: "Breakthrough ML models forecasting climate-related risks before they materialize. Turning data into foresight across healthcare, utilities, and government.",
     icon: TrendingUp,
     comingSoon: false,
     size: "",
@@ -109,7 +109,7 @@ const solutions = [
   {
     id: 4,
     title: "Mass Triage System",
-    description: "Victim identification technology. First-mover advantage in the emergency management software market.",
+    description: "First-of-its-kind digital victim identification technology. Transforming mass-casualty response with speed and precision never before possible.",
     icon: Users,
     comingSoon: false,
     size: "",
@@ -118,7 +118,7 @@ const solutions = [
   {
     id: 5,
     title: "EM:CC Network",
-    description: "Network-effect business model connecting regional healthcare clusters.",
+    description: "Pioneering network connecting regional healthcare clusters. Breaking down silos to enable seamless patient journey management across facilities.",
     icon: Radio,
     comingSoon: false,
     size: "",
@@ -127,7 +127,7 @@ const solutions = [
   {
     id: 6,
     title: "Tele-Intubation",
-    description: "Robotic tele intubation. Strategic acquisition target for major medical device companies.",
+    description: "Robotic tele-intubation redefining critical airway management. Bringing specialist expertise to any location, instantly.",
     icon: Stethoscope,
     comingSoon: false,
     size: "",
@@ -136,7 +136,7 @@ const solutions = [
   {
     id: 7,
     title: "Code Blue Kit",
-    description: "Hardware-software bundle with recurring revenue.",
+    description: "Revolutionary hardware-software system for remote emergency coordination. Transforming code blue response with real-time virtual collaboration.",
     icon: HeartPulse,
     comingSoon: false,
     size: "",
@@ -145,7 +145,7 @@ const solutions = [
   {
     id: 8,
     title: "Protocol Designer",
-    description: "AI-powered SaaS with land-and-expand model. Strong net revenue retention across enterprise accounts.",
+    description: "AI-powered platform revolutionizing how organizations design and execute emergency protocols. From weeks to hours.",
     icon: FileText,
     comingSoon: false,
     size: "",
@@ -154,7 +154,7 @@ const solutions = [
   {
     id: 9,
     title: "Consultation Platform",
-    description: "Multi-vertical telehealth infrastructure. Platform-as-a-service model with strong contribution margins.",
+    description: "Adaptive telehealth infrastructure serving telemedicine, advisory, and education sectors. One platform, unlimited applications.",
     icon: Video,
     comingSoon: false,
     size: "",
@@ -162,17 +162,17 @@ const solutions = [
   }
 ];
 
-// Benefits Data - Investor Value Propositions
+// Benefits Data - Why We're Different
 const benefits = [
-  { title: "Recurring Revenue", description: "Majority of revenue from multi-year enterprise contracts" },
-  { title: "Capital Efficient", description: "Short payback period on customer acquisition" },
-  { title: "Defensible Moat", description: "Proprietary IP with multiple patents pending" },
-  { title: "Scalable Architecture", description: "Cloud-native platform supporting rapid growth without proportional cost" },
-  { title: "Market Timing", description: "Regulatory tailwinds driving mandatory adoption" },
-  { title: "Strategic Optionality", description: "Multiple exit pathways: IPO, strategic acquisition, or PE rollup" },
-  { title: "Proven Unit Economics", description: "Strong LTV:CAC ratio across all segments" },
-  { title: "Expansion Revenue", description: "Land-and-expand model with excellent net dollar retention" },
-  { title: "Mission-Critical", description: "Zero churn on core contracts—customers can't afford downtime" }
+  { title: "Disruptive by Design", description: "Technology that challenges the status quo and creates new possibilities" },
+  { title: "AI-First Approach", description: "Machine learning and automation at the core of every solution" },
+  { title: "Proven Innovation", description: "Four patents pending protecting our breakthrough methodologies" },
+  { title: "Scalable Architecture", description: "Cloud-native platforms built for rapid deployment and growth" },
+  { title: "Field-Tested", description: "Solutions refined through real-world emergency deployments" },
+  { title: "Integration Ready", description: "Seamless connectivity with existing infrastructure and systems" },
+  { title: "Future-Proof", description: "Continuously evolving technology that stays ahead of emerging challenges" },
+  { title: "Domain Expertise", description: "Built by specialists who understand critical infrastructure operations" },
+  { title: "Mission-Critical Reliability", description: "Systems designed for zero downtime when it matters most" }
 ];
 
 // Header Component
@@ -216,14 +216,14 @@ const Header = () => {
               className="font-subheading text-sm font-medium text-[#3D1C1C] hover:text-[#1E3A5F] transition-colors"
               data-testid="nav-solutions"
             >
-              Portfolio
+              Solutions
             </button>
             <button 
               onClick={() => scrollToSection("benefits")} 
               className="font-subheading text-sm font-medium text-[#3D1C1C] hover:text-[#1E3A5F] transition-colors"
               data-testid="nav-benefits"
             >
-              Thesis
+              Why Us
             </button>
             <a 
               href="https://aretion.co.uk/governance" 
@@ -248,7 +248,7 @@ const Header = () => {
               className="btn-primary"
               data-testid="nav-investor-deck"
             >
-              Request Deck
+              Get In Touch
             </a>
           </nav>
 
@@ -271,11 +271,11 @@ const Header = () => {
             data-testid="mobile-nav"
           >
             <nav className="flex flex-col gap-4">
-              <button onClick={() => scrollToSection("solutions")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Portfolio</button>
-              <button onClick={() => scrollToSection("benefits")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Thesis</button>
+              <button onClick={() => scrollToSection("solutions")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Solutions</button>
+              <button onClick={() => scrollToSection("benefits")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Why Us</button>
               <a href="https://aretion.co.uk/governance" target="_blank" rel="noopener noreferrer" className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Leadership</a>
               <button onClick={() => scrollToSection("contact")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Contact</button>
-              <a href="https://aretion.co.uk/contact" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">Request Deck</a>
+              <a href="https://aretion.co.uk/contact" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">Get In Touch</a>
             </nav>
           </motion.div>
         )}
@@ -302,41 +302,34 @@ const HeroSection = () => {
               Intelligent Ecosystem for Critical Infrastructure
             </h1>
             <p className="font-heading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
-              Large TAM. Category-Defining Technology. Proven Revenue Model.
+              We Design and Deliver Disruptive Technology
             </p>
             
             <div className="font-heading text-[#3D1C1C]/80 leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
               <p>
-                ARETION is building the operating system for mission-critical infrastructure. Our integrated platform addresses a fragmented market where legacy systems create operational risk and regulatory exposure for healthcare networks, utilities, and government facilities.
+                ARETION creates breakthrough technology that transforms how critical infrastructure operates. We don't iterate on legacy systems—we replace them with intelligent, AI-powered platforms that anticipate problems before they occur and respond autonomously when they do.
               </p>
               
               <div className="mt-8">
-                <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">Investment Thesis</h3>
+                <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">Our Approach</h3>
                 <ul className="space-y-2 ml-4">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>Category Leadership:</strong> First integrated platform spanning disaster management, telehealth, and predictive analytics</span>
+                    <span><strong>Disruptive Innovation:</strong> First integrated platform spanning disaster management, telehealth, and predictive analytics</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>Durable Competitive Advantage:</strong> Four patents pending, proprietary AI models, and deep regulatory expertise</span>
+                    <span><strong>Proprietary Technology:</strong> Four patents pending, AI models trained on real-world deployments, deep domain expertise</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>Capital-Efficient Growth:</strong> Strong gross margins with short CAC payback</span>
+                    <span><strong>Proven Impact:</strong> Field-tested solutions trusted by healthcare networks across Saudi Arabia and the Gulf region</span>
                   </li>
                 </ul>
               </div>
               
-              <div className="mt-8">
-                <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">Traction</h3>
-                <p>
-                  Deployed across healthcare networks in Saudi Arabia and expanding into Gulf markets. Multi-year enterprise contracts with excellent renewal rates and strong net dollar retention.
-                </p>
-              </div>
-              
               <p className="font-semibold text-[#8B4513] text-lg mt-6">
-                We're raising our Series A to accelerate product expansion and geographic growth.
+                Challenging the status quo. Delivering what others say is impossible.
               </p>
             </div>
             
@@ -348,7 +341,7 @@ const HeroSection = () => {
                 className="btn-primary"
                 data-testid="hero-deck-btn"
               >
-                Request Investor Deck
+                Get In Touch
                 <ChevronRight className="ml-2 h-4 w-4" />
               </a>
               <button 
@@ -356,7 +349,7 @@ const HeroSection = () => {
                 className="btn-secondary"
                 data-testid="hero-explore-btn"
               >
-                View Portfolio
+                Explore Solutions
               </button>
             </div>
           </motion.div>
@@ -366,7 +359,7 @@ const HeroSection = () => {
   );
 };
 
-// Solutions Section - Product Portfolio
+// Solutions Section - Disruptive Technology Portfolio
 const SolutionsSection = () => {
   return (
     <section id="solutions" className="py-20 lg:py-28 bg-[#F5F0E8]" data-testid="solutions-section">
@@ -380,13 +373,13 @@ const SolutionsSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Product Portfolio
+            Our Technology
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-4" data-testid="solutions-title">
-            Comprehensive Infrastructure Suite
+            Disruptive Solutions Suite
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
-            Each product addresses a distinct market need with standalone revenue potential and cross-sell synergies across the portfolio.
+            Nine breakthrough platforms transforming how critical infrastructure organizations operate, respond, and protect what matters most.
           </p>
         </motion.div>
 
@@ -543,13 +536,13 @@ const CapabilitiesSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Competitive Moat
+            Innovation Edge
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-4">
             Technology Differentiation
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
-            Deep IP portfolio and operational validation create defensible advantages that compound with scale.
+            Proprietary technology and field-tested innovations that set us apart from conventional solutions.
           </p>
         </motion.div>
 
@@ -688,13 +681,13 @@ const BenefitsSection = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-              Value Creation
+              Why ARETION
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-6" data-testid="benefits-title">
-              Why Investors Choose ARETION
+              The Disruptive Difference
             </h2>
             <p className="font-body text-lg text-[#3D1C1C]/80 max-w-2xl mx-auto">
-              Capital-efficient growth model with multiple expansion vectors and clear path to market leadership.
+              We don't just improve existing systems—we reimagine what's possible when technology is designed without constraints.
             </p>
           </motion.div>
 
@@ -723,7 +716,7 @@ const BenefitsSection = () => {
   );
 };
 
-// Demo Section - Investor CTA
+// Demo Section - CTA
 const DemoSection = () => {
   return (
     <section id="demo" className="py-20 lg:py-28 bg-white" data-testid="demo-section">
@@ -736,13 +729,13 @@ const DemoSection = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-              Investor Access
+              Get Started
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-6" data-testid="demo-title">
-              Join Our Growth Story
+              Ready to Disrupt the Status Quo?
             </h2>
             <p className="font-body text-lg text-[#3D1C1C]/80 mb-10 max-w-2xl mx-auto">
-              We're building category-defining infrastructure technology. Request our investor materials to learn about partnership opportunities.
+              Join the organizations already transforming their operations with ARETION's disruptive technology platforms.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-16">
@@ -753,34 +746,36 @@ const DemoSection = () => {
                 className="btn-primary" 
                 data-testid="demo-request-btn"
               >
-                Request Investor Deck
+                Request a Demo
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a 
-                href="mailto:solutions@aretion.co.uk?subject=Schedule%20Management%20Call"
+                href="https://aretion.co.uk/contact"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-secondary" 
                 data-testid="demo-call-btn"
               >
-                Schedule a Call
+                Contact Us
               </a>
             </div>
 
-            {/* Key Metrics */}
+            {/* Key Differentiators */}
             <div className="grid sm:grid-cols-3 gap-6" data-testid="demo-features">
               <div className="stats-card">
-                <TrendingUp className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
-                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">Strong Growth</h4>
-                <p className="text-sm text-[#3D1C1C]/70">Contracted revenue expansion</p>
+                <Zap className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
+                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">AI-Powered</h4>
+                <p className="text-sm text-[#3D1C1C]/70">Intelligent automation at every level</p>
+              </div>
+              <div className="stats-card">
+                <Shield className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
+                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">Field-Proven</h4>
+                <p className="text-sm text-[#3D1C1C]/70">Tested in real emergency scenarios</p>
               </div>
               <div className="stats-card">
                 <Building className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
-                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">Large TAM</h4>
-                <p className="text-sm text-[#3D1C1C]/70">Addressable market opportunity</p>
-              </div>
-              <div className="stats-card">
-                <ShieldCheck className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
-                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">High Retention</h4>
-                <p className="text-sm text-[#3D1C1C]/70">Enterprise contract renewals</p>
+                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">Enterprise Ready</h4>
+                <p className="text-sm text-[#3D1C1C]/70">Scalable for any organization size</p>
               </div>
             </div>
           </motion.div>
@@ -790,7 +785,7 @@ const DemoSection = () => {
   );
 };
 
-// Testimonials Section - Strategic Partners
+// Testimonials Section - Trusted Partners
 const TestimonialsSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-[#F5F0E8]" data-testid="testimonials-section">
@@ -803,10 +798,10 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Strategic Relationships
+            Trusted Partners
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4" data-testid="testimonials-title">
-            Enterprise Customers & Partners
+            Transforming Critical Infrastructure
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80 mb-8">
             Trusted by healthcare networks and critical infrastructure operators across Saudi Arabia.

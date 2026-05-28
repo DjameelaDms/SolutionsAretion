@@ -1073,7 +1073,10 @@ const TestimonialsSection = () => {
               <p className="font-body text-[#3D1C1C]/80">Active Users</p>
             </div>
             <div className="text-center">
-              <div className="font-heading text-4xl sm:text-5xl font-bold text-[#8B4513] mb-2">Golden Hour</div>
+              <div className="font-heading text-4xl sm:text-5xl font-bold text-[#8B4513] mb-2">
+                <span className="text-[#1E3A5F] text-2xl sm:text-3xl block mb-1">Golden Minute</span>
+                <span>Golden <span className="line-through opacity-60">Hour</span></span>
+              </div>
               <p className="font-body text-[#3D1C1C]/80">Response Optimization</p>
             </div>
           </div>

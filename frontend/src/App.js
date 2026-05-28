@@ -795,6 +795,251 @@ const DemoSection = () => {
   );
 };
 
+// Market Opportunity Section
+const MarketOpportunitySection = () => {
+  const marketSegments = [
+    { segment: "Critical Infrastructure Protection", value: "$197B", growth: "5.1% CAGR" },
+    { segment: "Disaster Preparedness Systems", value: "$308B", growth: "8.2% CAGR" },
+    { segment: "Natural Disaster Detection (IoT)", value: "$25.2B", growth: "36.3% CAGR" },
+    { segment: "Business Continuity Management", value: "$2.09B", growth: "15.5% CAGR" },
+  ];
+
+  const growthDrivers = [
+    { icon: Zap, title: "Climate Urgency", description: "Increasing frequency and severity of natural disasters driving mandatory preparedness" },
+    { icon: Building, title: "Government Mandates", description: "Multi-billion dollar allocations for resilience infrastructure globally" },
+    { icon: Radio, title: "IoT & AI Maturity", description: "Technology now reliable enough for mission-critical deployment" },
+    { icon: Shield, title: "Regulatory Tailwinds", description: "Early warning systems becoming legally mandated across jurisdictions" },
+  ];
+
+  return (
+    <section className="py-20 lg:py-28 bg-white" data-testid="market-section">
+      <div className="container-main">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
+            Market Opportunity
+          </span>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4">
+            $500B+ Combined Addressable Market
+          </h2>
+          <p className="font-body text-lg text-[#3D1C1C]/80">
+            The global demand for critical infrastructure protection, disaster detection, and automated response technology is experiencing unprecedented growth.
+          </p>
+        </motion.div>
+
+        {/* Market Segments */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {marketSegments.map((item, index) => (
+            <motion.div
+              key={index}
+              className="bg-[#F5F0E8] rounded-lg p-6 text-center border border-[#6B8CAE]/20"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <div className="font-heading text-2xl sm:text-3xl font-bold text-[#1E3A5F] mb-1">{item.value}</div>
+              <div className="font-subheading text-sm font-semibold text-[#8B4513] mb-2">{item.growth}</div>
+              <p className="font-body text-sm text-[#3D1C1C]/70">{item.segment}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Why Now */}
+        <motion.div 
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3 className="font-heading text-2xl font-bold text-[#1E3A5F] text-center mb-8">Why Now?</h3>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {growthDrivers.map((driver, index) => (
+              <div key={index} className="flex gap-4 items-start">
+                <div className="w-12 h-12 rounded-lg bg-[#1E3A5F] flex items-center justify-center flex-shrink-0">
+                  <driver.icon className="h-6 w-6 text-[#C4A77D]" />
+                </div>
+                <div>
+                  <h4 className="font-heading text-lg font-semibold text-[#1E3A5F] mb-1">{driver.title}</h4>
+                  <p className="font-body text-sm text-[#3D1C1C]/70">{driver.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+// Why We Win Section (Competitive Moat)
+const WhyWeWinSection = () => {
+  const advantages = [
+    {
+      icon: Zap,
+      title: "Cutting-Edge Technology",
+      description: "AI-powered predictive detection that identifies disasters before they happen, with automated response in under one second."
+    },
+    {
+      icon: Users,
+      title: "Built by Domain Experts",
+      description: "Designed by senior specialists across disaster management, business continuity, healthcare operations, and clinical research."
+    },
+    {
+      icon: Shield,
+      title: "Battle-Tested Solutions",
+      description: "Created and tested by field disaster specialists in real emergency situations—not theoretical simulations."
+    },
+    {
+      icon: Building,
+      title: "Purpose-Built for Institutions",
+      description: "Specifically designed for governments, municipalities, and critical infrastructure operators—not retrofitted consumer technology."
+    },
+    {
+      icon: Lock,
+      title: "Integrated Platform",
+      description: "Unified solution covering detection, response, and continuity. Competitors offer siloed point solutions; we offer end-to-end protection."
+    },
+    {
+      icon: TrendingUp,
+      title: "Modular & Scalable",
+      description: "Architecture scales from single-site deployment to national infrastructure with minimal marginal cost increase."
+    }
+  ];
+
+  return (
+    <section className="py-20 lg:py-28 bg-[#F5F0E8]" data-testid="moat-section">
+      <div className="container-main">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
+            Competitive Advantage
+          </span>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4">
+            Why We Win
+          </h2>
+          <p className="font-body text-lg text-[#3D1C1C]/80">
+            A combination no competitor offers: integrated predictive and response platform built by experts who understand the operational reality of critical infrastructure.
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {advantages.map((item, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-lg p-6 border border-[#6B8CAE]/20"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <div className="w-12 h-12 rounded-lg bg-[#1E3A5F] flex items-center justify-center mb-4">
+                <item.icon className="h-6 w-6 text-[#C4A77D]" />
+              </div>
+              <h4 className="font-heading text-lg font-bold text-[#1E3A5F] mb-2">{item.title}</h4>
+              <p className="font-body text-sm text-[#3D1C1C]/70">{item.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Business Model Section
+const BusinessModelSection = () => {
+  const revenueStreams = [
+    { icon: Database, title: "Hardware & Devices", description: "Sensors, detection devices, and monitoring equipment with maintenance contracts", type: "Capital + Recurring" },
+    { icon: LayoutDashboard, title: "SaaS Platform", description: "Cloud-based monitoring, analytics, and command center subscription", type: "Annual Subscription" },
+    { icon: Users, title: "Consulting & Implementation", description: "Deployment, integration, and training services", type: "Project-Based" },
+    { icon: Shield, title: "Government Contracts", description: "Multi-year framework agreements with ministries and municipalities", type: "Long-Term Agreements" },
+    { icon: TrendingUp, title: "Data & Intelligence", description: "Premium predictive analytics, risk scoring, and insights", type: "Subscription" },
+    { icon: FileText, title: "Technology Licensing", description: "IP licensing to third-party integrators and partners", type: "Royalty/License" },
+  ];
+
+  return (
+    <section className="py-20 lg:py-28 bg-white" data-testid="business-model-section">
+      <div className="container-main">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
+            Business Model
+          </span>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4">
+            Multiple Revenue Streams
+          </h2>
+          <p className="font-body text-lg text-[#3D1C1C]/80">
+            Diversified income sources ensuring sustainable growth and predictable revenue through government-backed contracts.
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {revenueStreams.map((item, index) => (
+            <motion.div
+              key={index}
+              className="bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#1E3A5F] flex items-center justify-center">
+                  <item.icon className="h-5 w-5 text-[#C4A77D]" />
+                </div>
+                <span className="text-xs font-semibold text-[#8B4513] bg-[#8B4513]/10 px-2 py-1 rounded">{item.type}</span>
+              </div>
+              <h4 className="font-heading text-lg font-bold text-[#1E3A5F] mb-2">{item.title}</h4>
+              <p className="font-body text-sm text-[#3D1C1C]/70">{item.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Key Highlights */}
+        <motion.div 
+          className="mt-12 max-w-3xl mx-auto bg-[#1E3A5F] rounded-lg p-8 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3 className="font-heading text-xl font-bold text-white mb-4">Revenue Model Highlights</h3>
+          <div className="grid sm:grid-cols-3 gap-6 text-white">
+            <div>
+              <div className="font-heading text-2xl font-bold text-[#C4A77D]">Long-Term</div>
+              <p className="text-sm text-white/80">Government contracts with multi-year visibility</p>
+            </div>
+            <div>
+              <div className="font-heading text-2xl font-bold text-[#C4A77D]">Recurring</div>
+              <p className="text-sm text-white/80">SaaS subscriptions provide predictable revenue</p>
+            </div>
+            <div>
+              <div className="font-heading text-2xl font-bold text-[#C4A77D]">Scalable</div>
+              <p className="text-sm text-white/80">Platform scales without proportional cost increase</p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 // Testimonials Section - Trusted Partners
 const TestimonialsSection = () => {
   return (
@@ -1306,6 +1551,9 @@ function App() {
         <SolutionsSection />
         <CapabilitiesSection />
         <BenefitsSection />
+        <MarketOpportunitySection />
+        <WhyWeWinSection />
+        <BusinessModelSection />
         <DemoSection />
         <TestimonialsSection />
         <TrustComplianceSection />

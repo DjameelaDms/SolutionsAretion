@@ -306,6 +306,9 @@ const HeroSection = () => {
             </p>
             
             <div className="font-heading text-[#3D1C1C]/80 leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
+              <p className="text-lg font-medium text-[#1E3A5F]">
+                Our mission: To transform critical infrastructure safety through disruptive technology.
+              </p>
               <p>
                 ARETION creates breakthrough technology that transforms how critical infrastructure operates. We don't iterate on legacy systems—we replace them with intelligent, AI-powered platforms that anticipate problems before they occur and respond autonomously when they do.
               </p>
@@ -344,13 +347,15 @@ const HeroSection = () => {
                 Get In Touch
                 <ChevronRight className="ml-2 h-4 w-4" />
               </a>
-              <button 
-                onClick={() => document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" })}
+              <a 
+                href="https://aretion.co.uk/governance"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-secondary"
-                data-testid="hero-explore-btn"
+                data-testid="hero-team-btn"
               >
-                Explore Solutions
-              </button>
+                Meet Our Team
+              </a>
             </div>
           </motion.div>
         </div>
@@ -796,24 +801,65 @@ const TestimonialsSection = () => {
     <section className="py-20 lg:py-28 bg-[#F5F0E8]" data-testid="testimonials-section">
       <div className="container-main">
         <motion.div 
-          className="text-center max-w-3xl mx-auto"
+          className="text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Trusted Partners
+            Proven Impact
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4" data-testid="testimonials-title">
-            Transforming Critical Infrastructure
+            Trusted by Industry Leaders
           </h2>
-          <p className="font-body text-lg text-[#3D1C1C]/80 mb-8">
-            Trusted by healthcare networks and critical infrastructure operators across Saudi Arabia.
+          <p className="font-body text-lg text-[#3D1C1C]/80 mb-12">
+            Our solutions are deployed across critical infrastructure sectors, delivering measurable results.
           </p>
           
+          {/* Stats Grid */}
+          <div className="grid sm:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <div className="font-heading text-4xl sm:text-5xl font-bold text-[#1E3A5F] mb-2">12+</div>
+              <p className="font-body text-[#3D1C1C]/80">Major Companies</p>
+            </div>
+            <div className="text-center">
+              <div className="font-heading text-4xl sm:text-5xl font-bold text-[#1E3A5F] mb-2">100+</div>
+              <p className="font-body text-[#3D1C1C]/80">Active Users</p>
+            </div>
+            <div className="text-center">
+              <div className="font-heading text-4xl sm:text-5xl font-bold text-[#8B4513] mb-2">Golden Hour</div>
+              <p className="font-body text-[#3D1C1C]/80">Response Optimization</p>
+            </div>
+          </div>
+
+          {/* Client Sectors */}
+          <div className="bg-white/80 rounded-lg p-8 border border-[#6B8CAE]/20 mb-8">
+            <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-6">Our Clients Include</h3>
+            <div className="grid sm:grid-cols-3 gap-6">
+              <div className="flex items-center justify-center gap-3 p-4">
+                <Building className="h-8 w-8 text-[#1E3A5F]" />
+                <span className="font-subheading font-semibold text-[#3D1C1C]">Municipalities</span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4">
+                <Shield className="h-8 w-8 text-[#1E3A5F]" />
+                <span className="font-subheading font-semibold text-[#3D1C1C]">Ministries</span>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-4">
+                <Hospital className="h-8 w-8 text-[#1E3A5F]" />
+                <span className="font-subheading font-semibold text-[#3D1C1C]">Healthcare Industry</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Milestone */}
+          <div className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white px-6 py-3 rounded-full mb-8">
+            <CheckCircle className="h-5 w-5 text-[#C4A77D]" />
+            <span className="font-subheading font-semibold">All Products Ready to Deploy</span>
+          </div>
+          
           {/* CTA to Contact */}
-          <div className="mt-8">
+          <div className="mt-4">
             <a 
               href="https://aretion.co.uk/contact"
               target="_blank"
@@ -826,6 +872,81 @@ const TestimonialsSection = () => {
             </a>
           </div>
         </motion.div>
+      </div>
+    </section>
+  );
+};
+
+// Trust & Compliance Section
+const TrustComplianceSection = () => {
+  const certifications = [
+    {
+      title: "CSA STAR Level Two",
+      subtitle: "Security Trust Assurance and Risk",
+      description: "Third-Party Audit — CSA Three-Tiered Cloud Security Assurance Program"
+    },
+    {
+      title: "ISO/IEC 27001",
+      subtitle: "Information Security Management",
+      description: "Certified Information Security Management Standard"
+    },
+    {
+      title: "ISO/IEC 27017",
+      subtitle: "Cloud Security Controls",
+      description: "Code of Practice for Cloud-Specific Information Security Controls"
+    },
+    {
+      title: "ISO/IEC 27018",
+      subtitle: "Personal Data Protection",
+      description: "Code of Practice for Protecting Personal Data in the Cloud"
+    },
+    {
+      title: "PCI DSS v4.0.1",
+      subtitle: "Payment Security",
+      description: "Payment Card Industry Data Security Standard Compliant"
+    }
+  ];
+
+  return (
+    <section className="py-20 lg:py-28 bg-white" data-testid="compliance-section">
+      <div className="container-main">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
+            Trust & Compliance
+          </span>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4">
+            Enterprise-Grade Security
+          </h2>
+          <p className="font-body text-lg text-[#3D1C1C]/80">
+            Our platforms are built on a foundation of rigorous security standards and regulatory compliance.
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {certifications.map((cert, index) => (
+            <motion.div
+              key={index}
+              className="bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <div className="w-12 h-12 rounded-full bg-[#1E3A5F] flex items-center justify-center mx-auto mb-4">
+                <Lock className="h-6 w-6 text-[#C4A77D]" />
+              </div>
+              <h4 className="font-heading text-lg font-bold text-[#1E3A5F] mb-1">{cert.title}</h4>
+              <p className="font-subheading text-sm font-semibold text-[#8B4513] mb-2">{cert.subtitle}</p>
+              <p className="font-body text-sm text-[#3D1C1C]/70">{cert.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -1187,6 +1308,7 @@ function App() {
         <BenefitsSection />
         <DemoSection />
         <TestimonialsSection />
+        <TrustComplianceSection />
         <ContactSection />
       </main>
       <Footer />

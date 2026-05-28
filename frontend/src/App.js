@@ -1074,7 +1074,7 @@ const TestimonialsSection = () => {
             </div>
             <div className="text-center">
               <div className="font-heading text-4xl sm:text-5xl font-bold text-[#8B4513] mb-2">
-                Golden <span className="line-through opacity-60">Hour</span> <span className="font-body italic text-[#1E3A5F]">Minute</span>
+                Golden <span className="relative"><span className="opacity-50">Hour</span><span className="absolute left-0 right-0 top-1/2 h-[3px] bg-[#1E3A5F]"></span></span> <span className="font-body text-[#1E3A5F]">Minute</span>
               </div>
               <p className="font-body text-[#3D1C1C]/80">Response Optimization</p>
             </div>

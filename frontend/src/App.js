@@ -226,23 +226,7 @@ const Header = () => {
               Why Us
             </button>
             <a 
-              href="https://aretion.co.uk/governance" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-subheading text-sm font-medium text-[#3D1C1C] hover:text-[#1E3A5F] transition-colors"
-              data-testid="nav-meet-team"
-            >
-              Leadership
-            </a>
-            <button 
-              onClick={() => scrollToSection("contact")} 
-              className="font-subheading text-sm font-medium text-[#3D1C1C] hover:text-[#1E3A5F] transition-colors"
-              data-testid="nav-contact"
-            >
-              Contact
-            </button>
-            <a 
-              href="https://aretion.co.uk/contact"
+              href="https://aretion.org/contact"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -273,9 +257,7 @@ const Header = () => {
             <nav className="flex flex-col gap-4">
               <button onClick={() => scrollToSection("solutions")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Solutions</button>
               <button onClick={() => scrollToSection("benefits")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Why Us</button>
-              <a href="https://aretion.co.uk/governance" target="_blank" rel="noopener noreferrer" className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Leadership</a>
-              <button onClick={() => scrollToSection("contact")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Contact</button>
-              <a href="https://aretion.co.uk/contact" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">Get In Touch</a>
+              <a href="https://aretion.org/contact" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">Get In Touch</a>
             </nav>
           </motion.div>
         )}
@@ -338,7 +320,7 @@ const HeroSection = () => {
             
             <div className="flex flex-wrap justify-center gap-4 mt-10">
               <a 
-                href="https://aretion.co.uk/contact"
+                href="https://aretion.org/contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -660,7 +642,7 @@ const CapabilitiesSection = () => {
         >
           <div className="flex flex-wrap justify-center gap-4">
             <a 
-              href="https://aretion.co.uk/contact" 
+              href="https://aretion.org/contact" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-primary"
@@ -750,7 +732,7 @@ const DemoSection = () => {
 
             <div className="flex flex-wrap justify-center gap-4 mb-16">
               <a 
-                href="https://aretion.co.uk/contact"
+                href="https://aretion.org/contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary" 
@@ -760,7 +742,7 @@ const DemoSection = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a 
-                href="https://aretion.co.uk/contact"
+                href="https://aretion.org/contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary" 
@@ -1098,7 +1080,7 @@ const TestimonialsSection = () => {
           {/* CTA to Contact */}
           <div className="mt-4">
             <a 
-              href="https://aretion.co.uk/contact"
+              href="https://aretion.org/contact"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"
@@ -1189,13 +1171,13 @@ const TrustComplianceSection = () => {
   );
 };
 
-// Contact Section - Investor Relations
+// Contact Section
 const ContactSection = () => {
   const contactLinks = [
-    { title: "Investor Relations", url: "mailto:solutions@aretion.co.uk?subject=Investor%20Inquiry" },
-    { title: "Strategic Partnerships", url: "mailto:solutions@aretion.co.uk?subject=Partnership%20Inquiry" },
-    { title: "Media & Press", url: "mailto:solutions@aretion.co.uk?subject=Media%20Inquiry" },
-    { title: "General Inquiries", url: "mailto:solutions@aretion.co.uk?subject=General%20Inquiry" }
+    { title: "Investor Relations", url: "https://aretion.org/contact" },
+    { title: "Strategic Partnerships", url: "https://aretion.org/contact" },
+    { title: "Media & Press", url: "https://aretion.org/contact" },
+    { title: "General Inquiries", url: "https://aretion.org/contact" }
   ];
 
   return (
@@ -1241,11 +1223,11 @@ const ContactSection = () => {
                 For investor inquiries:
               </p>
               <a 
-                href="mailto:solutions@aretion.co.uk"
+                href="mailto:contact@aretion.org"
                 className="inline-flex items-center text-[#C4A77D] font-semibold hover:text-white transition-colors text-lg"
                 data-testid="contact-direct-email"
               >
-                Solutions@aretion.co.uk
+                contact@aretion.org
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </div>
@@ -1256,279 +1238,30 @@ const ContactSection = () => {
   );
 };
 
+
 // Footer
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const [activePolicy, setActivePolicy] = useState(null);
-
-  const policies = {
-    privacy: {
-      title: "Privacy Notice",
-      lastUpdated: "9 Feb 2026",
-      content: `We, ARETION & Company (the brand used on aretion.co.uk), understand that your privacy is important to you. We are committed to respecting your privacy and protecting your personal data.
-
-1. Data Controller
-When ARETION & Company collects and processes personal data in accordance with this Privacy Notice, we do so as a data controller.
-
-Company details:
-• Legal name: ARETION & Company
-• Registered office: 71-75 SHELTON STREET COVENT GARDEN, LONDON, WC2H 9JQ
-• Contact email: post@aretion.co.uk
-• Data Protection Officer: dpo@aretion.co.uk
-
-2. Who This Notice Applies To
-This Privacy Notice applies to:
-• Website visitors
-• People who contact us with enquiries
-• Representatives of clients, partners, suppliers
-• Individuals who request or receive services
-• Job applicants
-
-3. How We Collect Personal Data
-We collect personal data:
-• Directly from you (when you email us or submit an enquiry)
-• Automatically when you use our website
-• From your organisation
-• From third parties where appropriate
-
-4. Categories of Personal Data
-• Name, email address, telephone number
-• Organisation and role
-• The content of your messages
-• Website technical and usage data
-• Recruitment data (if applicable)
-
-5. Why We Use Personal Data
-• Providing and securing the website
-• Responding to enquiries and relationship management
-• Service delivery
-• Legal compliance and protection of rights
-
-6. Your Rights
-You may have the right to:
-• Request access to personal data
-• Request rectification
-• Request erasure
-• Request restriction of processing
-• Object to processing
-• Request data portability
-• Withdraw consent
-
-7. Contact and Complaints
-Contact: post@aretion.co.uk (please include "Privacy" in the subject line)
-Complaints: You have the right to lodge a complaint with the Information Commissioner's Office (ICO).`
-    },
-    terms: {
-      title: "Terms of Use",
-      lastUpdated: "7 Feb 2026",
-      content: `These Terms of Use apply to your access to and use of the ARETION & Company website. By using the Site, you agree to these Terms.
-
-1. About These Terms
-These Terms apply to your use of the Site and all content and functionality made available through the Site.
-
-2. About Us
-The Site is operated by ARETION & Company.
-Contact: Post@aretion.co.uk
-Registered office: 71-75 SHELTON STREET COVENT GARDEN, LONDON, WC2H 9JQ
-
-3. Copyright and Intellectual Property
-All Site Content is owned by or licensed to ARETION and is protected by applicable intellectual property laws. You may not copy, reproduce, modify, or distribute any Site Content without our prior written permission.
-
-4. Use of Site Content
-We grant you a limited, non-exclusive, non-transferable, revocable licence to access and use the Site for your internal, non-commercial use.
-
-5. Restrictions
-You may not:
-• Access, search, collect, or mine data from the Site by automated means
-• "Mirror" the Site Content
-• Use the Site to develop AI tools or machine learning systems
-• Use the Site in violation of applicable laws
-
-6. User Submissions
-If you submit materials to us, you grant ARETION a worldwide, non-exclusive, royalty-free licence to use your submission for purposes connected with operating the Site.
-
-7. Disclaimers
-The Site and Site Content are provided "as is" and "as available", without warranty of any kind.
-
-8. Limitation of Liability
-To the extent permitted by law, ARETION will not be liable for any loss or damage arising out of your use of the Site.
-
-9. Governing Law
-These Terms are governed by the laws of England and Wales.
-
-10. Contact
-Questions: compliance@aretion.co.uk`
-    },
-    conduct: {
-      title: "Code of Conduct",
-      lastUpdated: "10 Feb 2026",
-      content: `ARETION & Company and its subsidiaries are committed to the highest standards of ethical conduct, professional integrity, and legal compliance.
-
-Our Core Values:
-• Integrity - Act with honesty, fairness, and transparency
-• Patient-Centred Impact - Prioritise patient safety and wellbeing
-• Independence and Objectivity - Provide impartial, evidence-based advice
-• Respect - Value the dignity and rights of everyone
-• Accountability - Take responsibility for our work
-• Sustainability - Consider long-term environmental and social impact
-• Transparency - Communicate openly and honestly
-
-Key Principles:
-
-1. Anti-Bribery and Anti-Corruption
-Zero-tolerance policy on bribery and corruption in any form.
-
-2. Conflicts of Interest
-Committed to identifying, disclosing, and managing conflicts of interest fairly and transparently.
-
-3. Confidentiality and Data Protection
-Committed to protecting sensitive and confidential information, including patient data and client information.
-
-4. Professional Conduct
-• Provide honest, competent, evidence-based advice
-• Challenge advice that could harm patients
-• Respect patient autonomy and informed consent
-
-5. Fair Treatment and Inclusion
-• Equal opportunity in recruitment and career development
-• Fair pay and reward
-• Respectful treatment regardless of background
-• Zero tolerance for discrimination or harassment
-
-6. Speaking Up
-We encourage reporting concerns without fear of retaliation.
-
-Contact:
-• Compliance Team: compliance@aretion.co.uk
-• Whistleblowing Hotline: +44 20 3985 0907`
-    },
-    antibribery: {
-      title: "Anti-Bribery and Anti-Corruption Policy",
-      lastUpdated: "14 Feb 2026",
-      content: `ARETION & Company has ZERO TOLERANCE for bribery and corruption in any form.
-
-1. Policy Statement
-We are committed to conducting business ethically, transparently, and in full compliance with all applicable anti-bribery and anti-corruption laws.
-
-2. What is Bribery?
-Bribery is the offer, promise, giving, requesting, or acceptance of any advantage with the intention of:
-• Inducing someone to perform an improper function
-• Rewarding them for having done so
-• Influencing them to act improperly
-
-3. Prohibited Conduct
-• Offering or giving bribes
-• Receiving or soliciting bribes
-• Using third parties for bribery
-• Facilitation payments (strictly prohibited)
-
-4. Gifts and Hospitality
-Modest, reasonable gifts and hospitality may be appropriate if they:
-• Are of modest value (typically under £50)
-• Are not cash or cash equivalents
-• Are not connected to pending business decisions
-• Are transparent and properly recorded
-
-5. Government Officials
-Interactions with government officials require heightened care. Prior written approval from Compliance is required before providing any benefit.
-
-6. Third-Party Intermediaries
-We are responsible for the conduct of agents, consultants, and other intermediaries. Due diligence is required before engagement.
-
-7. Reporting
-If you suspect bribery or corruption, report immediately to:
-• Your manager
-• Compliance Team: compliance@aretion.co.uk
-• Whistleblowing Hotline: +44 20 3985 0907
-
-8. Protection Against Retaliation
-ARETION prohibits retaliation against anyone who reports concerns in good faith.
-
-9. Consequences
-Breaches may result in:
-• Disciplinary action including dismissal
-• Criminal prosecution
-• Civil liability
-• Regulatory sanctions`
-    }
-  };
 
   return (
-    <>
-      <footer className="footer-section py-12" data-testid="footer">
-        <div className="container-main">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Logo & Copyright */}
-            <div className="flex items-center gap-4">
-              <img src={LOGO_URL} alt="ARETION" className="h-10 w-auto brightness-0 invert" />
-              <span className="font-heading text-lg font-bold text-white">ARETION & Company</span>
-            </div>
-
-            {/* Footer Links */}
-            <nav className="flex flex-wrap justify-center gap-6" data-testid="footer-links">
-              <button 
-                onClick={() => setActivePolicy('privacy')} 
-                className="footer-link cursor-pointer" 
-                data-testid="footer-privacy"
-              >
-                Privacy Notice
-              </button>
-              <button 
-                onClick={() => setActivePolicy('terms')} 
-                className="footer-link cursor-pointer" 
-                data-testid="footer-terms"
-              >
-                Terms of Use
-              </button>
-              <button 
-                onClick={() => setActivePolicy('conduct')} 
-                className="footer-link cursor-pointer" 
-                data-testid="footer-conduct"
-              >
-                Code of Conduct
-              </button>
-              <button 
-                onClick={() => setActivePolicy('antibribery')} 
-                className="footer-link cursor-pointer" 
-                data-testid="footer-anti-bribery"
-              >
-                Anti-Bribery Policy
-              </button>
-            </nav>
-          </div>
-
-          {/* Copyright */}
-          <div className="mt-8 pt-8 border-t border-white/10 text-center">
-            <p className="text-white/60 text-sm" data-testid="footer-copyright">
-              © {currentYear} ARETION & Company. All rights reserved.
-            </p>
+    <footer className="footer-section py-12" data-testid="footer">
+      <div className="container-main">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Logo & Copyright */}
+          <div className="flex items-center gap-4">
+            <img src={LOGO_URL} alt="ARETION" className="h-10 w-auto brightness-0 invert" />
+            <span className="font-heading text-lg font-bold text-white">ARETION & Company</span>
           </div>
         </div>
-      </footer>
 
-      {/* Policy Modal */}
-      <Dialog open={activePolicy !== null} onOpenChange={() => setActivePolicy(null)}>
-        <DialogContent className="max-w-3xl max-h-[85vh] bg-[#F5F0E8]">
-          <DialogHeader>
-            <DialogTitle className="font-heading text-2xl text-[#1E3A5F]">
-              {activePolicy && policies[activePolicy]?.title}
-            </DialogTitle>
-            <p className="text-sm text-[#6B8CAE]">
-              Last updated: {activePolicy && policies[activePolicy]?.lastUpdated}
-            </p>
-          </DialogHeader>
-          <ScrollArea className="h-[60vh] pr-4">
-            <div className="prose prose-sm max-w-none">
-              {activePolicy && (
-                <pre className="whitespace-pre-wrap font-body text-sm text-[#3D1C1C] leading-relaxed bg-transparent border-none p-0">
-                  {policies[activePolicy]?.content}
-                </pre>
-              )}
-            </div>
-          </ScrollArea>
-        </DialogContent>
-      </Dialog>
-    </>
+        {/* Copyright */}
+        <div className="mt-8 pt-8 border-t border-white/10 text-center">
+          <p className="text-white/60 text-sm" data-testid="footer-copyright">
+            © {currentYear} ARETION & Company. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 };
 
@@ -1557,3 +1290,4 @@ function App() {
 }
 
 export default App;
+

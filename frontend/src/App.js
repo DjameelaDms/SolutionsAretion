@@ -1062,22 +1062,12 @@ const TestimonialsSection = () => {
             Our solutions are deployed across critical infrastructure sectors, delivering measurable results.
           </p>
           
-          {/* Stats Grid */}
-          <div className="grid sm:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <div className="font-heading text-4xl sm:text-5xl font-bold text-[#1E3A5F] mb-2">12+</div>
-              <p className="font-body text-[#3D1C1C]/80">Major Companies</p>
+          {/* Golden Minute Stat */}
+          <div className="text-center mb-12">
+            <div className="font-heading text-4xl sm:text-5xl font-bold text-[#8B4513] mb-2">
+              Golden <span className="relative"><span className="opacity-50">Hour</span><span className="absolute left-0 right-0 top-1/2 h-[3px] bg-[#1E3A5F]"></span></span> <span className="font-body text-[#1E3A5F]">Minute</span>
             </div>
-            <div className="text-center">
-              <div className="font-heading text-4xl sm:text-5xl font-bold text-[#1E3A5F] mb-2">100+</div>
-              <p className="font-body text-[#3D1C1C]/80">Active Users</p>
-            </div>
-            <div className="text-center">
-              <div className="font-heading text-4xl sm:text-5xl font-bold text-[#8B4513] mb-2">
-                Golden <span className="relative"><span className="opacity-50">Hour</span><span className="absolute left-0 right-0 top-1/2 h-[3px] bg-[#1E3A5F]"></span></span> <span className="font-body text-[#1E3A5F]">Minute</span>
-              </div>
-              <p className="font-body text-[#3D1C1C]/80">Response Optimization</p>
-            </div>
+            <p className="font-body text-[#3D1C1C]/80">Response Optimization</p>
           </div>
 
           {/* Client Sectors */}

@@ -1246,18 +1246,35 @@ const Footer = () => {
   return (
     <footer className="footer-section py-12" data-testid="footer">
       <div className="container-main">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo & Copyright */}
-          <div className="flex items-center gap-4">
-            <img src={LOGO_URL} alt="ARETION" className="h-10 w-auto brightness-0 invert" />
-            <span className="font-heading text-lg font-bold text-white">ARETION & Company</span>
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          {/* Logo & Company Info */}
+          <div>
+            <div className="flex items-center gap-4 mb-4">
+              <img src={LOGO_URL} alt="ARETION" className="h-10 w-auto brightness-0 invert" />
+              <span className="font-heading text-lg font-bold text-white">Arkan Alray Co</span>
+            </div>
+            <p className="text-white/60 text-sm mb-2">Registered in the Kingdom of Saudi Arabia</p>
+          </div>
+
+          {/* Contact Information */}
+          <div className="text-white/80 text-sm space-y-2">
+            <p className="font-semibold text-white mb-3">Contact Us</p>
+            <p>King Abdullah Financial District</p>
+            <p>Innovation Boulevard, Al Aqeeq</p>
+            <p>KAFD, Building 7229, Riyadh 13519</p>
+            <p className="mt-3">
+              <a href="tel:+966115256458" className="hover:text-white transition-colors">+966 11 525 6458</a>
+            </p>
+            <p>
+              <a href="mailto:Contact@aretion.org" className="hover:text-white transition-colors">Contact@aretion.org</a>
+            </p>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-white/10 text-center">
           <p className="text-white/60 text-sm" data-testid="footer-copyright">
-            © {currentYear} ARETION & Company. All rights reserved.
+            © {currentYear} Arkan Alray Co. All rights reserved.
           </p>
         </div>
       </div>

@@ -226,7 +226,7 @@ const Header = () => {
               Why Us
             </button>
             <a 
-              href="https://aretion.org/contact"
+              href="https://platform.aretion.org/contact"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -257,7 +257,7 @@ const Header = () => {
             <nav className="flex flex-col gap-4">
               <button onClick={() => scrollToSection("solutions")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Solutions</button>
               <button onClick={() => scrollToSection("benefits")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Why Us</button>
-              <a href="https://aretion.org/contact" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">Get In Touch</a>
+              <a href="https://platform.aretion.org/contact" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">Get In Touch</a>
             </nav>
           </motion.div>
         )}
@@ -320,7 +320,7 @@ const HeroSection = () => {
             
             <div className="flex flex-wrap justify-center gap-4 mt-10">
               <a 
-                href="https://aretion.org/contact"
+                href="https://platform.aretion.org/contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -642,7 +642,7 @@ const CapabilitiesSection = () => {
         >
           <div className="flex flex-wrap justify-center gap-4">
             <a 
-              href="https://aretion.org/contact" 
+              href="https://platform.aretion.org/contact" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-primary"
@@ -732,7 +732,7 @@ const DemoSection = () => {
 
             <div className="flex flex-wrap justify-center gap-4 mb-16">
               <a 
-                href="https://aretion.org/contact"
+                href="https://platform.aretion.org/contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary" 
@@ -742,7 +742,7 @@ const DemoSection = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a 
-                href="https://aretion.org/contact"
+                href="https://platform.aretion.org/contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary" 
@@ -1080,7 +1080,7 @@ const TestimonialsSection = () => {
           {/* CTA to Contact */}
           <div className="mt-4">
             <a 
-              href="https://aretion.org/contact"
+              href="https://platform.aretion.org/contact"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"
@@ -1174,10 +1174,10 @@ const TrustComplianceSection = () => {
 // Contact Section
 const ContactSection = () => {
   const contactLinks = [
-    { title: "Investor Relations", url: "https://aretion.org/contact" },
-    { title: "Strategic Partnerships", url: "https://aretion.org/contact" },
-    { title: "Media & Press", url: "https://aretion.org/contact" },
-    { title: "General Inquiries", url: "https://aretion.org/contact" }
+    { title: "Investor Relations", url: "https://platform.aretion.org/contact" },
+    { title: "Strategic Partnerships", url: "https://platform.aretion.org/contact" },
+    { title: "Media & Press", url: "https://platform.aretion.org/contact" },
+    { title: "General Inquiries", url: "https://platform.aretion.org/contact" }
   ];
 
   return (

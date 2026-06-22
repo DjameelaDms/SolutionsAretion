@@ -75,14 +75,83 @@
 
 /* Solution Card */
 .solution-card {
-    background: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(107, 140, 174, 0.2);
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
     overflow: hidden;
+    min-height: 300px;
+}
+
+.solution-card.has-bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.solution-card.has-bg-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.60) 0%, rgba(245, 240, 232, 0.65) 100%);
+    z-index: 0;
+}
+
+.solution-card-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.solution-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.solution-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--tan);
+}
+
+.solution-title {
+    font-family: 'Tajawal', 'Noto Naskh Arabic', serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+}
+
+.solution-description {
+    font-size: 0.875rem;
+    color: var(--maroon-dark);
+    opacity: 0.8;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-top: 0.5rem;
+}
+
+.solution-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--navy);
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 600;
+    border-radius: 2px;
+    margin-top: 1rem;
+    width: fit-content;
 }
 
 .solution-card:hover {

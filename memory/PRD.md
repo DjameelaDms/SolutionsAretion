@@ -62,6 +62,7 @@ Create a visually appealing and informative landing page for ARETION Informatics
   - "تعرف على فريقنا" → https://platform.aretion.org/advisors
   - All contact categories (Investor Relations, Partnerships, Media, General) → https://platform.aretion.org/contact
 - [x] **Backend Cleanup - June 2026**: Removed legacy /api/contact endpoint (dead code), simplified server.py
+- [x] **Solution Images Fixed - June 2026**: Updated SOLUTION_IMAGES with accessible Unsplash/Pexels URLs (old images returned 403)
 
 ### Tech Stack
 - Frontend: React + Tailwind CSS + Framer Motion

@@ -1,75 +1,103 @@
-# ARETION Informatics Solutions - Investor Landing Page PRD
+# ARETION / Arkan Alray Co - Landing Page PRD
 
 ## Original Problem Statement
-Create a visually appealing landing page for ARETION Informatics Solutions, featuring company branding (navy, brown, tan, cream colors), hero section with "Integrated Digital Ecosystem for Smarter Hospital Operations" tagline, all 9 healthcare solutions, contact form, demo booking section, testimonials/partners section, and footer with legal links.
+Create a visually appealing and informative landing page for ARETION Informatics Solutions (Now updated to Arkan Alray Co). The landing page should reflect the company's identity, provide comprehensive details about its disruptive technology for critical infrastructure, market opportunities, and competitive moat, and feature heavy SEO/GEO/AEO optimizations.
 
-**Content Personalization (March 2026):** Converted to investor-focused landing page with personalized language, ROI metrics, competitive moat positioning, and strategic exit optionality messaging.
+## Company Details
+- **Company Name**: Arkan Alray Co (شركة أركان الراي)
+- **Brand Name**: ARETION
+- **Location**: King Abdullah Financial District (KAFD), Innovation Street, Al Aqiq, Building 7229, Riyadh 13519, Saudi Arabia
+- **Contact**: +966 11 525 6458 | Contact@aretion.org
+- **Platform URL**: https://platform.aretion.org/contact
 
 ## User Personas
 - **Investors**: VCs, PE firms, and strategic investors evaluating growth opportunities
+- **Government Entities**: Saudi Arabia and GCC municipalities seeking disaster management solutions
+- **Healthcare Organizations**: Hospitals and health networks requiring emergency response systems
 - **Strategic Partners**: Enterprise customers and potential acquirers
-- **Healthcare Administrators**: Decision makers looking for hospital operations solutions
-- **IT Leaders**: Technical evaluators assessing informatics platforms
 
-## Core Requirements (Static)
-1. Header with ARETION logo and investor-focused navigation
-2. Hero section with investment thesis and TAM messaging
-3. 9 Products portfolio showcase with revenue/margin metrics
-4. Investment value proposition section
-5. Investor CTA section (Request Deck, Schedule Call)
-6. Strategic partners section
-7. Contact via investor relations email
-8. Footer with copyright 2026 and policy links
+## Core Requirements
+1. **Header**: Company logo and simplified navigation (Solutions, Why Us, Get In Touch)
+2. **Hero Section**: Disruptive technology focus, mission statement, "Get In Touch" CTA
+3. **Core Sections**: Solutions grid (9 items), Market Opportunity, Why We Win (Competitive Moat), Business Model, Capabilities (Mobile-optimized), Proven Impact ("Golden Minute"), Trust & Compliance (ISO, CSA STAR certifications)
+4. **Visual Identity**: Professional, engaging visuals with Framer Motion animations
+5. **Call to Action**: Prominent CTAs directing to `https://platform.aretion.org/contact`
+6. **Footer**: Company Info (Arkan Alray Co), Riyadh KAFD Address, and copyright
+7. **SEO/GEO/AEO**: Extensive JSON-LD schema, meta tags, local business, and voice search optimizations targeting Saudi Arabia/GCC
+8. **Localization**: Complete formal Arabic translation of the landing page (RTL layout)
 
-## Implementation Status - March 2026
+## Implementation Status - June 2026
 
-### Completed Features
-- [x] Investor-focused header: Portfolio, Thesis, Leadership, Contact, "Request Deck" CTA
-- [x] Hero section with $47B TAM, investment thesis, and traction metrics
-- [x] All 9 product cards with investor metrics (margins, TAM, retention, growth)
-- [x] Technology differentiation section (Competitive Moat)
-- [x] Value proposition section: "Why Investors Choose ARETION"
-- [x] Investor CTA: "Request Investor Deck" and "Schedule a Call"
-- [x] Key metrics display: 40% YoY Growth, $47B TAM, 95% Retention
-- [x] Contact section with Investor Relations, Partnerships, Media, General
-- [x] Optimized Framer Motion animations for faster loading
-- [x] Footer with all required legal links
+### ✅ Completed Features
+- [x] Header with ARETION logo and Arabic navigation
+- [x] Hero section with disruptive technology messaging
+- [x] All 9 solution cards with Arabic descriptions
+- [x] Capabilities section with technical features
+- [x] Market Opportunity section (qualitative, no exact figures)
+- [x] Why We Win (Competitive Moat) section
+- [x] Business Model section
+- [x] Proven Impact "Golden Minute" section
+- [x] Trust & Compliance section (ISO 27001, CSA STAR Level 2)
+- [x] Contact section with 4 categories (Investors, Partnerships, Media, General)
+- [x] Footer with Arkan Alray Co details and KAFD address
+- [x] Optimized Framer Motion animations
 - [x] Mobile responsiveness
+- [x] Heavy SEO/GEO/AEO optimization in index.html
+- [x] JSON-LD schemas (Organization, LocalBusiness, FAQPage, HowTo, Speakable)
+- [x] Arabic Company Profiles (PDF & DOCX) generated
+- [x] **Full Arabic Translation (RTL Layout) - COMPLETED June 2026**
+  - HTML `dir="rtl"` and `lang="ar"` attributes
+  - Arabic fonts (Tajawal, Noto Naskh Arabic)
+  - RTL-specific CSS adjustments
+  - All content translated with "sense-for-sense" approach
 
 ### Tech Stack
 - Frontend: React + Tailwind CSS + Framer Motion
-- Backend: FastAPI + MongoDB (legacy contact form, unused)
+- Backend: FastAPI + MongoDB (legacy, unused)
 - UI Components: Shadcn/UI + Lucide Icons
-
-### Content Updates (March 2026)
-- [x] Personalized investor-focused language across all sections
-- [x] Removed redundant content and marketing fluff
-- [x] Updated CTAs: "Book a Demo" → "Request Investor Deck" / "Schedule a Call"
-- [x] Navigation: Solutions → Portfolio, Benefits → Thesis, Meet Our Team → Leadership
-- [x] Email contacts: investors@aretion.co.uk, partnerships@aretion.co.uk
+- Fonts: Tajawal, Noto Naskh Arabic (Google Fonts)
+- Document Generation: reportlab, python-docx, arabic-reshaper, python-bidi
 
 ## Prioritized Backlog
 
-### P0 - Critical (None remaining)
-All MVP features completed
-
 ### P1 - High Priority
-- [ ] Refactor App.js (1150+ lines) into smaller components
-- [ ] Add actual investor metrics when available
-- [ ] SEO metadata and Open Graph tags
+- [ ] Refactor App.js (1200+ lines) into smaller components (HeroSection, SolutionsSection, Footer, etc.)
+- [ ] Add explicit RTL Tailwind utilities where needed
 
 ### P2 - Medium Priority
-- [ ] Remove legacy /api/contact backend endpoint (unused)
+- [ ] Remove legacy /api/contact backend endpoint (dead code)
+- [ ] Replace partner logo placeholders with actual logos when available
 - [ ] Add downloadable investor deck PDF
-- [ ] Analytics integration (GA4)
 
 ### P3 - Nice to Have
-- [ ] Video embed for pitch overview
-- [ ] Interactive financial projections
-- [ ] Case studies section
-- [ ] Cookie consent banner (GDPR)
+- [ ] Add language toggle (Arabic/English)
+- [ ] Video embed for company overview
+- [ ] Interactive case studies section
+
+## Code Architecture
+```
+/app/
+├── backend/
+│   ├── .env
+│   ├── requirements.txt
+│   └── server.py                  # Legacy FastAPI app (unused)
+├── frontend/
+│   ├── public/
+│   │   ├── index.html             # Heavy SEO/GEO/AEO schemas & meta tags
+│   │   ├── ARETION_Company_Profile_Arabic.pdf
+│   │   └── ARETION_Company_Profile_Arabic.docx
+│   ├── src/
+│   │   ├── App.css                # RTL-adjusted styles
+│   │   ├── index.css              # Arabic fonts, RTL base styles
+│   │   └── App.js                 # Full Arabic translation
+│   └── package.json
+├── generate_arabic_pdf.py
+├── generate_arabic_word.py
+└── memory/
+    └── PRD.md
+```
 
 ## Next Tasks
-1. Refactor App.js into component files for maintainability
-2. Add downloadable investor deck functionality
-3. Add Open Graph meta tags for social sharing
+1. Consider refactoring App.js into component files for maintainability
+2. Add partner logos when assets become available
+3. Implement language toggle if English version is needed

@@ -16,8 +16,10 @@ import {
   Menu,
   X,
   ChevronRight,
+  ChevronLeft,
   CheckCircle,
   ArrowRight,
+  ArrowLeft,
   Clock,
   Building,
   Droplets,
@@ -57,32 +59,32 @@ import {
 } from "./components/ui/tooltip";
 import { Toaster, toast } from "sonner";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// API Configuration
+const API_URL = process.env.REACT_APP_BACKEND_URL || "";
 
-// Assets
+// Logo URL
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/0hzqlwr8_A_Logo-39.png";
 
-// Solution Background Images (User Provided)
+// Solution Images
 const SOLUTION_IMAGES = {
-  disasterms: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/uhcudkwx_DisasterMS.jpeg",
-  chatbot: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/r17o5z6g_Chatbot.jpeg",
-  predictive: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/8p6d6ixy_Predictive%20Models.jpeg",
-  emcc: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/fo7g0r4a_EM%20-CC.jpeg",
-  iot: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/kuz3we6e_IOT.jpeg",
-  protocol: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/98h2v114_Protocol%20designer.jpeg",
-  codeblue: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/8qdv50zu_Tele%20Code%20Blue%20Kit.jpeg",
-  triage: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/3vpmqdvv_Triage.jpeg",
-  teleintubation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/bu492laq_Tele-Intubation.jpeg",
-  consultation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/vu15sx4d_Screenshot%202026-03-20%20at%2016.28.33.png"
+  disasterms: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/rk0yh9bv_Medical_Disaster.png",
+  chatbot: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/qz2a2s5y_chatbot.png",
+  predictive: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/djbwxkfm_Weather_Prediction.png",
+  triage: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/bwwmdxdj_mass_triage.png",
+  emcc: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/2l1wfmxb_emcc.png",
+  teleintubation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/a5mufowl_teleintubation.png",
+  codeblue: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/5p4e1nlp_Code_Blue_Kit.png",
+  protocol: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/h3svgqrj_protocol_designer.png",
+  consultation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/a5mufowl_teleintubation.png"
 };
 
-// Solutions Data - Disruptive Technology
+// Arabic Solutions Data
 const solutions = [
   {
     id: 1,
-    title: "DisasterMS",
-    description: "Revolutionary closed-loop disaster response platform. AI-driven early warning and autonomous response systems that redefine facility safety standards.",
+    title: "نظام إدارة الكوارث",
+    subtitle: "DisasterMS",
+    description: "منصة ثورية متكاملة للاستجابة للكوارث مدعومة بالذكاء الاصطناعي، توفر أنظمة إنذار مبكر واستجابة آلية تعيد تعريف معايير السلامة المؤسسية.",
     icon: ShieldCheck,
     comingSoon: false,
     size: "",
@@ -90,8 +92,9 @@ const solutions = [
   },
   {
     id: 2,
-    title: "AI Assistant",
-    description: "Next-generation RAG architecture delivering unprecedented accuracy. Enterprise-ready AI that transforms how organizations access and act on critical knowledge.",
+    title: "المساعد الذكي",
+    subtitle: "AI Assistant",
+    description: "بنية RAG من الجيل الجديد توفر دقة غير مسبوقة. ذكاء اصطناعي مؤسسي يحوّل طريقة وصول المؤسسات للمعرفة الحيوية واتخاذ القرارات.",
     icon: Brain,
     comingSoon: false,
     size: "",
@@ -99,8 +102,9 @@ const solutions = [
   },
   {
     id: 3,
-    title: "Predictive Analytics",
-    description: "Breakthrough ML models forecasting climate-related risks before they materialize. Turning data into foresight across healthcare, utilities, and government.",
+    title: "التحليلات التنبؤية",
+    subtitle: "Predictive Analytics",
+    description: "نماذج تعلم آلي متطورة للتنبؤ بالمخاطر المناخية قبل وقوعها، تخدم قطاعات الصحة والمرافق والجهات الحكومية.",
     icon: TrendingUp,
     comingSoon: false,
     size: "",
@@ -108,8 +112,9 @@ const solutions = [
   },
   {
     id: 4,
-    title: "Mass Triage System",
-    description: "First-of-its-kind digital victim identification technology. Transforming mass-casualty response with speed and precision never before possible.",
+    title: "نظام الفرز الجماعي",
+    subtitle: "Mass Triage System",
+    description: "تقنية رقمية رائدة لتحديد هوية المصابين، تحوّل الاستجابة للكوارث الجماعية بسرعة ودقة لم تكن ممكنة من قبل.",
     icon: Users,
     comingSoon: false,
     size: "",
@@ -117,8 +122,9 @@ const solutions = [
   },
   {
     id: 5,
-    title: "EM:CC Network",
-    description: "Pioneering network connecting regional healthcare clusters. Breaking down silos to enable seamless patient journey management across facilities.",
+    title: "شبكة الطوارئ الطبية",
+    subtitle: "EM:CC Network",
+    description: "شبكة رائدة تربط المجمعات الصحية الإقليمية، تكسر الحواجز لتمكين إدارة سلسة لرحلة المريض عبر المنشآت.",
     icon: Radio,
     comingSoon: false,
     size: "",
@@ -126,8 +132,9 @@ const solutions = [
   },
   {
     id: 6,
-    title: "Tele-Intubation",
-    description: "Robotic tele-intubation redefining critical airway management. Bringing specialist expertise to any location, instantly.",
+    title: "التنبيب عن بُعد",
+    subtitle: "Tele-Intubation",
+    description: "تقنية التنبيب الروبوتي عن بُعد تعيد تعريف إدارة مجرى الهواء الحرج، بتوفير خبرة متخصصة لأي موقع فوراً.",
     icon: Stethoscope,
     comingSoon: false,
     size: "",
@@ -135,8 +142,9 @@ const solutions = [
   },
   {
     id: 7,
-    title: "Code Blue Kit",
-    description: "Revolutionary hardware-software system for remote emergency coordination. Transforming code blue response with real-time virtual collaboration.",
+    title: "حقيبة الشفرة الزرقاء",
+    subtitle: "Code Blue Kit",
+    description: "نظام ثوري يجمع بين الأجهزة والبرمجيات للتنسيق عن بُعد في حالات الطوارئ، يحوّل الاستجابة لحالات التوقف القلبي.",
     icon: HeartPulse,
     comingSoon: false,
     size: "",
@@ -144,8 +152,9 @@ const solutions = [
   },
   {
     id: 8,
-    title: "Protocol Designer",
-    description: "AI-powered platform revolutionizing how organizations design and execute emergency protocols. From weeks to hours.",
+    title: "مصمم البروتوكولات",
+    subtitle: "Protocol Designer",
+    description: "منصة مدعومة بالذكاء الاصطناعي تحدث ثورة في تصميم وتنفيذ بروتوكولات الطوارئ، من أسابيع إلى ساعات.",
     icon: FileText,
     comingSoon: false,
     size: "",
@@ -153,8 +162,9 @@ const solutions = [
   },
   {
     id: 9,
-    title: "Consultation Platform",
-    description: "Adaptive telehealth infrastructure serving telemedicine, advisory, and education sectors. One platform, unlimited applications.",
+    title: "منصة الاستشارات",
+    subtitle: "Consultation Platform",
+    description: "بنية تحتية مرنة للرعاية الصحية عن بُعد تخدم قطاعات الطب عن بُعد والاستشارات والتعليم. منصة واحدة، تطبيقات لا محدودة.",
     icon: Video,
     comingSoon: false,
     size: "",
@@ -162,118 +172,102 @@ const solutions = [
   }
 ];
 
-// Benefits Data - Why We're Different
+// Arabic Benefits Data
 const benefits = [
-  { title: "Disruptive by Design", description: "Technology that challenges the status quo and creates new possibilities" },
-  { title: "Disaster Management Focus", description: "Purpose-built solutions for emergency response and crisis management" },
-  { title: "AI-First Approach", description: "Machine learning and automation at the core of every solution" },
-  { title: "Proven Innovation", description: "Four patents pending protecting our breakthrough methodologies" },
-  { title: "Scalable Architecture", description: "Cloud-native platforms built for rapid deployment and growth" },
-  { title: "Field-Tested", description: "Solutions refined through real-world emergency deployments" },
-  { title: "Integration Ready", description: "Seamless connectivity with existing infrastructure and systems" },
-  { title: "Future-Proof", description: "Continuously evolving technology that stays ahead of emerging challenges" },
-  { title: "Mission-Critical Reliability", description: "Systems designed for zero downtime when it matters most" }
+  { title: "ابتكار بالتصميم", description: "تقنيات تتحدى الوضع الراهن وتفتح آفاقاً جديدة" },
+  { title: "التركيز على إدارة الكوارث", description: "حلول مصممة خصيصاً للاستجابة للطوارئ وإدارة الأزمات" },
+  { title: "الذكاء الاصطناعي أولاً", description: "التعلم الآلي والأتمتة في صميم كل حل نقدمه" },
+  { title: "ابتكار مثبت", description: "أربع براءات اختراع قيد التسجيل تحمي منهجياتنا المبتكرة" },
+  { title: "بنية قابلة للتوسع", description: "منصات سحابية مصممة للنشر السريع والنمو المستدام" },
+  { title: "مختبرة ميدانياً", description: "حلول طُوّرت واختُبرت من قِبل متخصصين في حالات طوارئ حقيقية" },
+  { title: "جاهزة للتكامل", description: "اتصال سلس مع البنية التحتية والأنظمة القائمة" },
+  { title: "مستقبلية", description: "تطور مستمر للبقاء في طليعة التحديات الناشئة" },
+  { title: "موثوقية حرجة", description: "أنظمة مصممة لضمان عدم التوقف عند الحاجة الماسة" }
 ];
 
-// Header Component
+// Header Component - Arabic
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMobileMenuOpen(false);
+    setMobileMenuOpen(false);
   };
 
   return (
-    <header className={`header-sticky ${isScrolled ? "header-scrolled" : ""}`} data-testid="header">
-      <div className="container-main">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-3" data-testid="logo-link">
-            <img src={LOGO_URL} alt="ARETION" className="h-12 w-auto" />
-            <div className="hidden sm:block">
-              <span className="font-heading text-xl font-bold text-[#1E3A5F]">ARETION</span>
-              <span className="block text-xs font-subheading text-[#6B8CAE] tracking-wider">SOLUTIONS</span>
+    <TooltipProvider>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F5F0E8]/95 backdrop-blur-sm border-b border-[#6B8CAE]/10" data-testid="header">
+        <div className="container-main py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center gap-3" data-testid="header-logo">
+              <img src={LOGO_URL} alt="ARETION" className="h-10 w-auto" />
+              <span className="font-heading text-xl font-bold text-[#1E3A5F]">أريشن للحلول</span>
             </div>
-          </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8" data-testid="desktop-nav">
-            <button 
-              onClick={() => scrollToSection("solutions")} 
-              className="font-subheading text-sm font-medium text-[#3D1C1C] hover:text-[#1E3A5F] transition-colors"
-              data-testid="nav-solutions"
-            >
-              Solutions
-            </button>
-            <button 
-              onClick={() => scrollToSection("benefits")} 
-              className="font-subheading text-sm font-medium text-[#3D1C1C] hover:text-[#1E3A5F] transition-colors"
-              data-testid="nav-benefits"
-            >
-              Why Us
-            </button>
-            <a 
-              href="https://platform.aretion.org/contact"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-              data-testid="nav-investor-deck"
-            >
-              Get In Touch
-            </a>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2 text-[#1E3A5F]"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            data-testid="mobile-menu-toggle"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="md:hidden py-4 border-t border-[#6B8CAE]/20"
-            data-testid="mobile-nav"
-          >
-            <nav className="flex flex-col gap-4">
-              <button onClick={() => scrollToSection("solutions")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Solutions</button>
-              <button onClick={() => scrollToSection("benefits")} className="text-left font-subheading text-sm font-medium text-[#3D1C1C] py-2">Why Us</button>
-              <a href="https://platform.aretion.org/contact" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">Get In Touch</a>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-8" data-testid="desktop-nav">
+              <a 
+                href="https://platform.aretion.org/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                data-testid="nav-investor-deck"
+              >
+                تواصل معنا
+              </a>
+              <button 
+                onClick={() => scrollToSection("benefits")} 
+                className="font-subheading text-sm font-medium text-[#3D1C1C] hover:text-[#1E3A5F] transition-colors"
+                data-testid="nav-benefits"
+              >
+                لماذا نحن
+              </button>
+              <button 
+                onClick={() => scrollToSection("solutions")} 
+                className="font-subheading text-sm font-medium text-[#3D1C1C] hover:text-[#1E3A5F] transition-colors"
+                data-testid="nav-solutions"
+              >
+                الحلول
+              </button>
             </nav>
-          </motion.div>
-        )}
-      </div>
-    </header>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden p-2" 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              data-testid="mobile-menu-btn"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t border-[#6B8CAE]/10 pt-4" data-testid="mobile-menu">
+              <nav className="flex flex-col gap-4">
+                <button onClick={() => scrollToSection("solutions")} className="text-right font-subheading text-sm font-medium text-[#3D1C1C] py-2">الحلول</button>
+                <button onClick={() => scrollToSection("benefits")} className="text-right font-subheading text-sm font-medium text-[#3D1C1C] py-2">لماذا نحن</button>
+                <a href="https://platform.aretion.org/contact" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">تواصل معنا</a>
+              </nav>
+            </div>
+          )}
+        </div>
+      </header>
+    </TooltipProvider>
   );
 };
 
-// Hero Section - Investor Focused
+// Hero Section - Arabic
 const HeroSection = () => {
   return (
     <section className="hero-section" data-testid="hero-section">
       <div className="hero-pattern"></div>
       <div className="container-main relative z-10">
         <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] py-16">
-          {/* Text Content */}
           <motion.div 
             className="max-w-4xl"
             initial={{ opacity: 0, y: 30 }}
@@ -281,40 +275,40 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1E3A5F] leading-tight mb-4 text-center" data-testid="hero-headline">
-              Intelligent Ecosystem for Critical Infrastructure
+              منظومة ذكية للبنية التحتية الحيوية
             </h1>
             <p className="font-heading text-lg sm:text-xl text-[#8B4513] font-semibold text-center mb-8">
-              We Design and Deliver Disruptive Technology
+              نصمم ونقدم تقنيات مبتكرة
             </p>
             
-            <div className="font-heading text-[#3D1C1C]/80 leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
+            <div className="font-heading text-[#3D1C1C]/80 leading-relaxed space-y-6 text-right max-w-3xl mx-auto">
               <p className="text-lg font-medium text-[#1E3A5F]">
-                Our mission: To transform critical infrastructure safety through disruptive technology.
+                رسالتنا: تحويل سلامة البنية التحتية الحيوية من خلال التقنيات المبتكرة.
               </p>
               <p>
-                ARETION creates breakthrough technology that transforms how critical infrastructure operates. We don't iterate on legacy systems—we replace them with intelligent, AI-powered platforms that anticipate problems before they occur and respond autonomously when they do.
+                تبتكر أريشن تقنيات متقدمة تحوّل طريقة عمل البنية التحتية الحيوية. نحن لا نطور الأنظمة القديمة، بل نستبدلها بمنصات ذكية مدعومة بالذكاء الاصطناعي تتنبأ بالمشكلات قبل وقوعها وتستجيب لها آلياً.
               </p>
               
               <div className="mt-8">
-                <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">Our Approach</h3>
-                <ul className="space-y-2 ml-4">
-                  <li className="flex items-start gap-2">
+                <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">منهجيتنا</h3>
+                <ul className="space-y-2 mr-4">
+                  <li className="flex items-start gap-2 flex-row-reverse">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>Disruptive Innovation:</strong> First integrated platform spanning disaster management, telehealth, and predictive analytics</span>
+                    <span><strong>ابتكار مبتكر:</strong> أول منصة متكاملة تجمع إدارة الكوارث والرعاية الصحية عن بُعد والتحليلات التنبؤية</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-2 flex-row-reverse">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>Proprietary Technology:</strong> Four patents pending, AI models trained on real-world deployments, deep domain expertise</span>
+                    <span><strong>تقنية خاصة:</strong> أربع براءات اختراع قيد التسجيل، ونماذج ذكاء اصطناعي مدربة على نشرات فعلية، وخبرة عميقة في المجال</span>
                   </li>
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-2 flex-row-reverse">
                     <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>Proven Impact:</strong> Field-tested solutions trusted by healthcare networks across Saudi Arabia and the Gulf region</span>
+                    <span><strong>أثر مثبت:</strong> حلول مختبرة ميدانياً موثوقة من الشبكات الصحية في المملكة العربية السعودية ومنطقة الخليج</span>
                   </li>
                 </ul>
               </div>
               
               <p className="font-semibold text-[#8B4513] text-lg mt-6">
-                Challenging the status quo. Delivering what others say is impossible.
+                نتحدى الوضع الراهن. ننجز ما يقول الآخرون أنه مستحيل.
               </p>
             </div>
             
@@ -326,8 +320,8 @@ const HeroSection = () => {
                 className="btn-primary"
                 data-testid="hero-deck-btn"
               >
-                Get In Touch
-                <ChevronRight className="ml-2 h-4 w-4" />
+                <ChevronLeft className="ml-2 h-4 w-4" />
+                تواصل معنا
               </a>
               <a 
                 href="https://aretion.co.uk/governance"
@@ -336,7 +330,7 @@ const HeroSection = () => {
                 className="btn-secondary"
                 data-testid="hero-team-btn"
               >
-                Meet Our Team
+                تعرف على فريقنا
               </a>
             </div>
           </motion.div>
@@ -346,32 +340,32 @@ const HeroSection = () => {
   );
 };
 
-// Solutions Section - Disruptive Technology Portfolio
+// Solutions Section - Arabic
 const SolutionsSection = () => {
   return (
     <section id="solutions" className="py-20 lg:py-28 bg-[#F5F0E8]" data-testid="solutions-section">
       <div className="container-main">
         {/* Section Header */}
         <motion.div 
-          className="max-w-2xl mb-16"
+          className="max-w-2xl mr-auto mb-16 text-right"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Our Technology
+            تقنياتنا
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-4" data-testid="solutions-title">
-            Disruptive Solutions Suite
+            باقة الحلول المبتكرة
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
-            Nine breakthrough platforms transforming how critical infrastructure organizations operate, respond, and protect what matters most.
+            تسع منصات متطورة تحوّل طريقة عمل مؤسسات البنية التحتية الحيوية واستجابتها وحمايتها لما يهم.
           </p>
         </motion.div>
 
         {/* Solutions Grid */}
-        <div className="solutions-grid" data-testid="solutions-grid">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {solutions.map((solution, index) => (
             <motion.div
               key={solution.id}
@@ -380,42 +374,18 @@ const SolutionsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              data-testid={`solution-card-${solution.id}`}
-              style={solution.bgImage ? {
-                position: 'relative',
-                overflow: 'hidden'
-              } : {}}
+              style={solution.bgImage ? { backgroundImage: `url(${solution.bgImage})` } : {}}
             >
-              {solution.bgImage && (
-                <div 
-                  className="absolute inset-0 z-0"
-                  style={{
-                    backgroundImage: `url(${solution.bgImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    filter: 'blur(1px)',
-                    opacity: 0.2,
-                    transform: 'scale(1.05)'
-                  }}
-                />
-              )}
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded bg-[#1E3A5F]/10 flex items-center justify-center">
-                    <solution.icon className="h-6 w-6 text-[#1E3A5F]" />
-                  </div>
-                  {solution.comingSoon ? (
-                    <span className="badge-coming-soon">Coming Soon</span>
-                  ) : (
-                    <span className="badge-available">Available</span>
-                  )}
+              <div className="solution-card-content text-right">
+                <div className="solution-icon-wrapper mr-auto ml-0">
+                  <solution.icon className="solution-icon" />
                 </div>
-                <h3 className="font-subheading text-xl font-semibold text-[#1E3A5F] mb-2">
-                  {solution.title}
-                </h3>
-                <p className="font-body text-[#3D1C1C]/70 text-sm leading-relaxed">
-                  {solution.description}
-                </p>
+                <div>
+                  <h3 className="solution-title">{solution.title}</h3>
+                  <p className="solution-subtitle text-xs text-[#6B8CAE] mb-2">{solution.subtitle}</p>
+                </div>
+                <p className="solution-description">{solution.description}</p>
+                <span className="solution-badge">متاح</span>
               </div>
             </motion.div>
           ))}
@@ -425,116 +395,115 @@ const SolutionsSection = () => {
   );
 };
 
-// Capabilities Section - Competitive Moat
+// Capabilities Section - Arabic
 const CapabilitiesSection = () => {
   const sections = [
     {
       id: "early-warning",
-      title: "Proprietary Early Warning Technology",
+      title: "تقنية الإنذار المبكر الخاصة",
       items: [
         {
           icon: Droplets,
-          title: "Real-time infrastructure intelligence",
-          description: "These solutions provide predictive insights that competitors cannot replicate. Deployed across numerous facilities with an exceptionally low false positive rate—a significant improvement over legacy systems."
+          title: "ذكاء البنية التحتية الآني",
+          description: "حلول توفر رؤى تنبؤية لا يستطيع المنافسون تقليدها. منتشرة في منشآت عديدة بمعدل إنذارات كاذبة منخفض للغاية - تحسن كبير على الأنظمة القديمة."
         },
         {
           icon: Thermometer,
-          title: "Machine learning at the edge",
-          description: "Proprietary ML models trained on extensive facility data enable predictive maintenance that dramatically reduces equipment failures. Each deployment generates training data that strengthens our competitive moat—a flywheel effect that accelerates with scale."
+          title: "التعلم الآلي الطرفي",
+          description: "نماذج تعلم آلي خاصة مدربة على بيانات منشآت واسعة تمكن من الصيانة التنبؤية وتقليل أعطال المعدات بشكل كبير. كل نشر يولد بيانات تدريب تعزز ميزتنا التنافسية."
         },
         {
           icon: Shield,
-          title: "CBRN detection and response",
-          description: "Advanced Chemical, Biological, Radiological, and Nuclear threat detection integrated into our early warning ecosystem. Real-time monitoring and automated response protocols protect personnel and infrastructure from emerging threats."
+          title: "كشف والاستجابة للتهديدات CBRN",
+          description: "كشف متقدم للتهديدات الكيميائية والبيولوجية والإشعاعية والنووية متكامل في منظومة الإنذار المبكر. مراقبة آنية وبروتوكولات استجابة آلية لحماية الأفراد والبنية التحتية."
         }
       ]
     },
     {
       id: "fire-detection",
-      title: "Unified Detection Platform",
+      title: "منصة الكشف الموحدة",
       items: [
         {
           icon: Flame,
-          title: "System-agnostic integration layer",
-          description: "Our middleware integrates with many legacy detection systems, creating immediate value without rip-and-replace. This approach reduces sales cycles significantly and creates switching costs that drive excellent retention rates."
+          title: "طبقة التكامل الشاملة",
+          description: "برمجياتنا الوسيطة تتكامل مع أنظمة الكشف القديمة المتعددة، مما يخلق قيمة فورية دون استبدال كامل. هذا النهج يقلل دورات المبيعات بشكل كبير ويخلق تكاليف تحويل تدفع معدلات احتفاظ ممتازة."
         },
         {
           icon: LayoutDashboard,
-          title: "Command center dashboard",
-          description: "Real-time operational visibility across distributed facilities. Enterprise customers report significantly faster incident response times. Dashboard telemetry feeds our analytics engine, creating upsell opportunities for predictive modules."
+          title: "لوحة قيادة مركز التحكم",
+          description: "رؤية تشغيلية آنية عبر المنشآت الموزعة. يفيد عملاؤنا من المؤسسات بأوقات استجابة أسرع بشكل ملحوظ للحوادث. بيانات اللوحة تغذي محرك التحليلات لدينا."
         }
       ]
     },
     {
       id: "data-center",
-      title: "Critical Infrastructure Protection",
+      title: "حماية البنية التحتية الحيوية",
       items: [
         {
           icon: Database,
-          title: "Data center resilience",
-          description: "Purpose-built for healthcare data centers where downtime is extremely costly. Our uptime SLA is backed by insurance—a unique market differentiator that closes enterprise deals."
+          title: "مرونة مراكز البيانات",
+          description: "مصممة خصيصاً لمراكز بيانات الرعاية الصحية حيث تكلفة التوقف باهظة. اتفاقية مستوى الخدمة لوقت التشغيل لدينا مدعومة بالتأمين - ميزة سوقية فريدة تُغلق الصفقات المؤسسية."
         },
         {
           icon: Lock,
-          title: "Compliance automation",
-          description: "Automated compliance reporting for HIPAA, SOC 2, and regional healthcare regulations. Dramatically reduces customer audit costs and creates regulatory lock-in that competitors cannot easily overcome."
+          title: "أتمتة الامتثال",
+          description: "تقارير امتثال آلية لـ HIPAA و SOC 2 والتنظيمات الصحية الإقليمية. تقليل كبير لتكاليف التدقيق لدى العملاء وخلق قفل تنظيمي يصعب على المنافسين تجاوزه."
         }
       ]
     },
     {
       id: "leadership",
-      title: "Executive Continuity Solutions",
+      title: "حلول استمرارية القيادة",
       items: [
         {
           icon: Shield,
-          title: "High-margin hardware bundle",
-          description: "Secure operations centers combine proprietary hardware with software subscriptions. Hardware drives significant deal value with strong margins; software creates recurring revenue at even higher margins. Long-term contracts with substantial value."
+          title: "حزمة أجهزة وبرمجيات عالية الهامش",
+          description: "مراكز عمليات آمنة تجمع أجهزة خاصة مع اشتراكات برمجية. الأجهزة تدفع قيمة صفقة كبيرة بهوامش قوية؛ البرمجيات تخلق إيرادات متكررة بهوامش أعلى."
         },
         {
           icon: Satellite,
-          title: "Resilient communications",
-          description: "Satellite-backup communication systems ensure continuity during regional outages. This capability is mandatory for government contracts—a large addressable market we're positioned to capture."
+          title: "اتصالات مرنة",
+          description: "أنظمة اتصالات احتياطية عبر الأقمار الصناعية تضمن الاستمرارية أثناء الانقطاعات الإقليمية. هذه القدرة إلزامية للعقود الحكومية - سوق كبير قابل للاستهداف نحن مؤهلون لاقتناصه."
         }
       ]
     },
     {
       id: "all-hazard",
-      title: "Platform Architecture",
+      title: "بنية المنصة",
       items: [
         {
           icon: Zap,
-          title: "Unified response orchestration",
-          description: "Single platform replacing multiple point solutions. Customers consolidate vendor relationships, significantly reducing their total cost of ownership while increasing our share of wallet. The platform creates natural expansion revenue as customers adopt additional modules."
+          title: "تنسيق استجابة موحد",
+          description: "منصة واحدة تستبدل حلولاً نقطية متعددة. العملاء يوحدون علاقات الموردين، مما يقلل تكلفة الملكية الإجمالية بشكل كبير مع زيادة حصتنا من محفظتهم."
         },
         {
           icon: Hospital,
-          title: "Field-validated technology",
-          description: "Created and tested by field disaster specialists. This operational track record is our primary sales asset—prospects can speak with reference customers who've relied on our systems during actual crises. No competitor can match this validation."
+          title: "تقنية مُثبتة ميدانياً",
+          description: "أُنشئت واختُبرت من قبل متخصصين ميدانيين في الكوارث. هذا السجل التشغيلي هو أصلنا البيعي الرئيسي - يمكن للعملاء المحتملين التحدث مع عملاء مرجعيين اعتمدوا على أنظمتنا أثناء أزمات فعلية."
         }
       ]
     }
   ];
 
   return (
-    <TooltipProvider>
     <section id="capabilities" className="py-20 lg:py-28 bg-white" data-testid="capabilities-section">
       <div className="container-main">
         {/* Section Header */}
         <motion.div 
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-2xl mr-auto mb-16 text-right"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Innovation Edge
+            الميزة التنافسية
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-4">
-            Technology Differentiation
+            التميز التقني
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
-            Proprietary technology and field-tested innovations that set us apart from conventional solutions.
+            تقنيات خاصة وابتكارات مُختبرة ميدانياً تميزنا عن الحلول التقليدية.
           </p>
         </motion.div>
 
@@ -549,61 +518,28 @@ const CapabilitiesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#1E3A5F] mb-6 pb-4 border-b-2 border-[#C4A77D]">
+              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#1E3A5F] mb-6 pb-4 border-b-2 border-[#C4A77D] text-right">
                 {section.title}
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {section.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="hidden md:block">
-                    <Tooltip delayDuration={100}>
-                      <TooltipTrigger asChild>
-                        <motion.div
-                          className="bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20 cursor-pointer hover:bg-[#1E3A5F] hover:border-[#1E3A5F] transition-all group"
-                          initial={{ opacity: 0, x: itemIndex % 2 === 0 ? -20 : 20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
-                        >
-                          <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-lg bg-[#1E3A5F] group-hover:bg-[#C4A77D] flex items-center justify-center flex-shrink-0 transition-colors">
-                              <item.icon className="h-5 w-5 text-[#C4A77D] group-hover:text-[#1E3A5F]" />
-                            </div>
-                            <h4 className="font-heading text-lg font-semibold text-[#1E3A5F] group-hover:text-white transition-colors">
-                              {item.title}
-                            </h4>
-                          </div>
-                        </motion.div>
-                      </TooltipTrigger>
-                      <TooltipContent 
-                        side="bottom" 
-                        className="max-w-md p-4 bg-[#1E3A5F] text-white border-none shadow-xl"
-                      >
-                        <p className="font-body text-sm leading-relaxed">
-                          {item.description}
-                        </p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </div>
-                ))}
-                {/* Mobile version - shows description directly */}
-                {section.items.map((item, itemIndex) => (
                   <motion.div
-                    key={`mobile-${itemIndex}`}
-                    className="md:hidden bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20"
+                    key={itemIndex}
+                    className="bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
                   >
-                    <div className="flex items-center gap-4 mb-4">
+                    <div className="flex items-center gap-4 mb-4 flex-row-reverse">
                       <div className="w-10 h-10 rounded-lg bg-[#1E3A5F] flex items-center justify-center flex-shrink-0">
                         <item.icon className="h-5 w-5 text-[#C4A77D]" />
                       </div>
-                      <h4 className="font-heading text-lg font-semibold text-[#1E3A5F]">
+                      <h4 className="font-heading text-lg font-semibold text-[#1E3A5F] text-right">
                         {item.title}
                       </h4>
                     </div>
-                    <p className="font-body text-sm text-[#3D1C1C]/80 leading-relaxed">
+                    <p className="font-body text-sm text-[#3D1C1C]/80 leading-relaxed text-right">
                       {item.description}
                     </p>
                   </motion.div>
@@ -612,59 +548,17 @@ const CapabilitiesSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Why This Matters */}
-        <motion.div 
-          className="mt-20 bg-[#1E3A5F] rounded-lg p-8 md:p-12 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-6">
-            Why This Matters
-          </h3>
-          <p className="font-body text-white/90 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
-            Operations never stop. When your facility's early warning systems detect threats before they become crises, when your leadership team can coordinate response from a secure position, when your critical infrastructure fails over automatically rather than failing completely—operations continue uninterrupted. Treatment schedules hold. Processes proceed. Emergency departments function.
-          </p>
-          <p className="font-body text-[#C4A77D] text-lg font-semibold">
-            Your facility becomes more than a collection of buildings and equipment. It becomes a resilient organism designed to deliver through any scenario.
-          </p>
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div 
-          className="mt-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="flex flex-wrap justify-center gap-4">
-            <a 
-              href="https://platform.aretion.org/contact" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              Schedule a Facility Assessment
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </div>
-        </motion.div>
       </div>
     </section>
-    </TooltipProvider>
   );
 };
 
-// Benefits Section
+// Benefits Section - Arabic
 const BenefitsSection = () => {
   return (
     <section id="benefits" className="benefits-section py-20 lg:py-28" data-testid="benefits-section">
       <div className="container-main">
         <div className="max-w-4xl mx-auto">
-          {/* Content */}
           <motion.div 
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
@@ -673,32 +567,29 @@ const BenefitsSection = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-              Why ARETION
+              لماذا أريشن
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-6" data-testid="benefits-title">
-              The Disruptive Difference
+              الفرق المبتكر
             </h2>
             <p className="font-body text-lg text-[#3D1C1C]/80 max-w-2xl mx-auto">
-              We don't just improve existing systems—we reimagine what's possible when technology is designed without constraints.
+              نحن لا نحسّن الأنظمة القائمة فحسب، بل نعيد تصور ما هو ممكن عندما تُصمم التقنية بلا قيود.
             </p>
           </motion.div>
 
           {/* Benefits Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-testid="benefits-list">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
-                className="flex items-start gap-4 p-6 bg-white/80 rounded border border-[#6B8CAE]/20"
-                initial={{ opacity: 0, y: 10 }}
+                className="benefit-card text-right"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-subheading font-semibold text-[#1E3A5F]">{benefit.title}</h4>
-                  <p className="text-sm text-[#3D1C1C]/70">{benefit.description}</p>
-                </div>
+                <h4 className="font-heading text-lg font-semibold text-[#1E3A5F] mb-2">{benefit.title}</h4>
+                <p className="text-sm text-[#3D1C1C]/70">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -708,89 +599,20 @@ const BenefitsSection = () => {
   );
 };
 
-// Demo Section - CTA
-const DemoSection = () => {
-  return (
-    <section id="demo" className="py-20 lg:py-28 bg-white" data-testid="demo-section">
-      <div className="container-main">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-              Get Started
-            </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-6" data-testid="demo-title">
-              Ready to Disrupt the Status Quo?
-            </h2>
-            <p className="font-body text-lg text-[#3D1C1C]/80 mb-10 max-w-2xl mx-auto">
-              Join the organizations already transforming their operations with ARETION's disruptive technology platforms.
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
-              <a 
-                href="https://platform.aretion.org/contact"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary" 
-                data-testid="demo-request-btn"
-              >
-                Request a Demo
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-              <a 
-                href="https://platform.aretion.org/contact"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary" 
-                data-testid="demo-call-btn"
-              >
-                Contact Us
-              </a>
-            </div>
-
-            {/* Key Differentiators */}
-            <div className="grid sm:grid-cols-3 gap-6" data-testid="demo-features">
-              <div className="stats-card">
-                <Zap className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
-                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">AI-Powered</h4>
-                <p className="text-sm text-[#3D1C1C]/70">Intelligent automation at every level</p>
-              </div>
-              <div className="stats-card">
-                <Shield className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
-                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">Field-Proven</h4>
-                <p className="text-sm text-[#3D1C1C]/70">Tested in real emergency scenarios</p>
-              </div>
-              <div className="stats-card">
-                <Building className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
-                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">Enterprise Ready</h4>
-                <p className="text-sm text-[#3D1C1C]/70">Scalable for any organization size</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Market Opportunity Section
+// Market Opportunity Section - Arabic
 const MarketOpportunitySection = () => {
   const marketSegments = [
-    { segment: "Critical Infrastructure Protection", value: "$197B", growth: "5.1% CAGR" },
-    { segment: "Disaster Preparedness Systems", value: "$308B", growth: "8.2% CAGR" },
-    { segment: "Natural Disaster Detection (IoT)", value: "$25.2B", growth: "36.3% CAGR" },
-    { segment: "Business Continuity Management", value: "$2.09B", growth: "15.5% CAGR" },
+    { segment: "حماية البنية التحتية الحيوية", value: "197 مليار $", growth: "نمو 5.1%" },
+    { segment: "أنظمة الاستعداد للكوارث", value: "308 مليار $", growth: "نمو 8.2%" },
+    { segment: "كشف الكوارث الطبيعية (IoT)", value: "25.2 مليار $", growth: "نمو 36.3%" },
+    { segment: "إدارة استمرارية الأعمال", value: "2.09 مليار $", growth: "نمو 15.5%" },
   ];
 
   const growthDrivers = [
-    { icon: Zap, title: "Climate Urgency", description: "Increasing frequency and severity of natural disasters driving mandatory preparedness" },
-    { icon: Building, title: "Government Mandates", description: "Multi-billion dollar allocations for resilience infrastructure globally" },
-    { icon: Radio, title: "IoT & AI Maturity", description: "Technology now reliable enough for mission-critical deployment" },
-    { icon: Shield, title: "Regulatory Tailwinds", description: "Early warning systems becoming legally mandated across jurisdictions" },
+    { icon: Zap, title: "إلحاح المناخ", description: "تزايد تواتر وحدة الكوارث الطبيعية يدفع الاستعداد الإلزامي" },
+    { icon: Building, title: "التفويضات الحكومية", description: "مخصصات بمليارات الدولارات للبنية التحتية المرنة عالمياً" },
+    { icon: Radio, title: "نضج IoT والذكاء الاصطناعي", description: "التقنية أصبحت موثوقة بما يكفي للنشر في المهام الحرجة" },
+    { icon: Shield, title: "رياح تنظيمية مواتية", description: "أنظمة الإنذار المبكر أصبحت إلزامية قانونياً عبر الولايات القضائية" },
   ];
 
   return (
@@ -804,13 +626,13 @@ const MarketOpportunitySection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Market Opportunity
+            فرصة السوق
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4">
-            $500B+ Combined Addressable Market
+            سوق قابل للاستهداف يتجاوز 500 مليار دولار
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
-            The global demand for critical infrastructure protection, disaster detection, and automated response technology is experiencing unprecedented growth.
+            الطلب العالمي على حماية البنية التحتية الحيوية وكشف الكوارث وتقنيات الاستجابة الآلية يشهد نمواً غير مسبوق.
           </p>
         </motion.div>
 
@@ -840,10 +662,10 @@ const MarketOpportunitySection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="font-heading text-2xl font-bold text-[#1E3A5F] text-center mb-8">Why Now?</h3>
+          <h3 className="font-heading text-2xl font-bold text-[#1E3A5F] text-center mb-8">لماذا الآن؟</h3>
           <div className="grid sm:grid-cols-2 gap-6">
             {growthDrivers.map((driver, index) => (
-              <div key={index} className="flex gap-4 items-start">
+              <div key={index} className="flex gap-4 items-start flex-row-reverse text-right">
                 <div className="w-12 h-12 rounded-lg bg-[#1E3A5F] flex items-center justify-center flex-shrink-0">
                   <driver.icon className="h-6 w-6 text-[#C4A77D]" />
                 </div>
@@ -860,38 +682,38 @@ const MarketOpportunitySection = () => {
   );
 };
 
-// Why We Win Section (Competitive Moat)
+// Why We Win Section - Arabic
 const WhyWeWinSection = () => {
   const advantages = [
     {
       icon: Zap,
-      title: "Cutting-Edge Technology",
-      description: "AI-powered predictive detection that identifies disasters before they happen, with automated response in under one second."
+      title: "تقنيات متطورة",
+      description: "كشف تنبؤي مدعوم بالذكاء الاصطناعي يحدد الكوارث قبل وقوعها، مع استجابة آلية في أقل من ثانية."
     },
     {
       icon: Users,
-      title: "Built by Domain Experts",
-      description: "Designed by senior specialists across disaster management, business continuity, healthcare operations, and clinical research."
+      title: "بناها خبراء المجال",
+      description: "صممها كبار المتخصصين في إدارة الكوارث واستمرارية الأعمال وعمليات الرعاية الصحية والبحث السريري."
     },
     {
       icon: Shield,
-      title: "Battle-Tested Solutions",
-      description: "Created and tested by field disaster specialists in real emergency situations—not theoretical simulations."
+      title: "حلول مُختبرة ميدانياً",
+      description: "أنشأها واختبرها متخصصون ميدانيون في الكوارث في حالات طوارئ حقيقية - وليس محاكاة نظرية."
     },
     {
       icon: Building,
-      title: "Purpose-Built for Institutions",
-      description: "Specifically designed for governments, municipalities, and critical infrastructure operators—not retrofitted consumer technology."
+      title: "مصممة للمؤسسات",
+      description: "مصممة خصيصاً للحكومات والبلديات ومشغلي البنية التحتية الحيوية - وليست تقنية استهلاكية مُعدّلة."
     },
     {
       icon: Lock,
-      title: "Integrated Platform",
-      description: "Unified solution covering detection, response, and continuity. Competitors offer siloed point solutions; we offer end-to-end protection."
+      title: "منصة متكاملة",
+      description: "حل موحد يغطي الكشف والاستجابة والاستمرارية. المنافسون يقدمون حلولاً منعزلة؛ نحن نقدم حماية شاملة."
     },
     {
       icon: TrendingUp,
-      title: "Modular & Scalable",
-      description: "Architecture scales from single-site deployment to national infrastructure with minimal marginal cost increase."
+      title: "معيارية وقابلة للتوسع",
+      description: "بنية تتوسع من نشر في موقع واحد إلى بنية تحتية وطنية مع زيادة هامشية ضئيلة في التكلفة."
     }
   ];
 
@@ -906,13 +728,13 @@ const WhyWeWinSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Competitive Advantage
+            الميزة التنافسية
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4">
-            Why We Win
+            لماذا ننتصر
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
-            A combination no competitor offers: integrated predictive and response platform built by experts who understand the operational reality of critical infrastructure.
+            مزيج لا يقدمه أي منافس: منصة تنبؤية واستجابة متكاملة بناها خبراء يفهمون الواقع التشغيلي للبنية التحتية الحيوية.
           </p>
         </motion.div>
 
@@ -920,13 +742,13 @@ const WhyWeWinSection = () => {
           {advantages.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-lg p-6 border border-[#6B8CAE]/20"
+              className="bg-white rounded-lg p-6 border border-[#6B8CAE]/20 text-right"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="w-12 h-12 rounded-lg bg-[#1E3A5F] flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-lg bg-[#1E3A5F] flex items-center justify-center mb-4 mr-auto ml-0">
                 <item.icon className="h-6 w-6 text-[#C4A77D]" />
               </div>
               <h4 className="font-heading text-lg font-bold text-[#1E3A5F] mb-2">{item.title}</h4>
@@ -939,15 +761,15 @@ const WhyWeWinSection = () => {
   );
 };
 
-// Business Model Section
+// Business Model Section - Arabic
 const BusinessModelSection = () => {
   const revenueStreams = [
-    { icon: Database, title: "Hardware & Devices", description: "Sensors, detection devices, and monitoring equipment with maintenance contracts", type: "Capital + Recurring" },
-    { icon: LayoutDashboard, title: "SaaS Platform", description: "Cloud-based monitoring, analytics, and command center subscription", type: "Annual Subscription" },
-    { icon: Users, title: "Consulting & Implementation", description: "Deployment, integration, and training services", type: "Project-Based" },
-    { icon: Shield, title: "Government Contracts", description: "Multi-year framework agreements with ministries and municipalities", type: "Long-Term Agreements" },
-    { icon: TrendingUp, title: "Data & Intelligence", description: "Premium predictive analytics, risk scoring, and insights", type: "Subscription" },
-    { icon: FileText, title: "Technology Licensing", description: "IP licensing to third-party integrators and partners", type: "Royalty/License" },
+    { icon: Database, title: "الأجهزة والمعدات", description: "أجهزة استشعار ومراقبة مع عقود صيانة", type: "رأسمالي + متكرر" },
+    { icon: LayoutDashboard, title: "منصة SaaS", description: "اشتراك سحابي للمراقبة والتحليلات ومركز القيادة", type: "اشتراك سنوي" },
+    { icon: Users, title: "الاستشارات والتنفيذ", description: "خدمات النشر والتكامل والتدريب", type: "قائم على المشروع" },
+    { icon: Shield, title: "العقود الحكومية", description: "اتفاقيات إطارية متعددة السنوات مع الوزارات والبلديات", type: "اتفاقيات طويلة الأجل" },
+    { icon: TrendingUp, title: "البيانات والذكاء", description: "تحليلات تنبؤية متقدمة وتقييم المخاطر والرؤى", type: "اشتراك" },
+    { icon: FileText, title: "ترخيص التقنية", description: "ترخيص الملكية الفكرية للمكاملين والشركاء", type: "ترخيص/حقوق ملكية" },
   ];
 
   return (
@@ -961,13 +783,13 @@ const BusinessModelSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Business Model
+            نموذج الأعمال
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4">
-            Multiple Revenue Streams
+            مصادر إيرادات متعددة
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
-            Diversified income sources ensuring sustainable growth and predictable revenue through government-backed contracts.
+            مصادر دخل متنوعة تضمن نمواً مستداماً وإيرادات متوقعة من خلال عقود مدعومة حكومياً.
           </p>
         </motion.div>
 
@@ -975,13 +797,13 @@ const BusinessModelSection = () => {
           {revenueStreams.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20"
+              className="bg-[#F5F0E8] rounded-lg p-6 border border-[#6B8CAE]/20 text-right"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-4 flex-row-reverse">
                 <div className="w-10 h-10 rounded-lg bg-[#1E3A5F] flex items-center justify-center">
                   <item.icon className="h-5 w-5 text-[#C4A77D]" />
                 </div>
@@ -1001,19 +823,19 @@ const BusinessModelSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="font-heading text-xl font-bold text-white mb-4">Revenue Model Highlights</h3>
+          <h3 className="font-heading text-xl font-bold text-white mb-4">أبرز ملامح نموذج الإيرادات</h3>
           <div className="grid sm:grid-cols-3 gap-6 text-white">
             <div>
-              <div className="font-heading text-2xl font-bold text-[#C4A77D]">Long-Term</div>
-              <p className="text-sm text-white/80">Government contracts with multi-year visibility</p>
+              <div className="font-heading text-2xl font-bold text-[#C4A77D]">طويل الأجل</div>
+              <p className="text-sm text-white/80">عقود حكومية برؤية متعددة السنوات</p>
             </div>
             <div>
-              <div className="font-heading text-2xl font-bold text-[#C4A77D]">Recurring</div>
-              <p className="text-sm text-white/80">SaaS subscriptions provide predictable revenue</p>
+              <div className="font-heading text-2xl font-bold text-[#C4A77D]">متكرر</div>
+              <p className="text-sm text-white/80">اشتراكات SaaS توفر إيرادات متوقعة</p>
             </div>
             <div>
-              <div className="font-heading text-2xl font-bold text-[#C4A77D]">Scalable</div>
-              <p className="text-sm text-white/80">Platform scales without proportional cost increase</p>
+              <div className="font-heading text-2xl font-bold text-[#C4A77D]">قابل للتوسع</div>
+              <p className="text-sm text-white/80">المنصة تتوسع دون زيادة نسبية في التكلفة</p>
             </div>
           </div>
         </motion.div>
@@ -1022,7 +844,76 @@ const BusinessModelSection = () => {
   );
 };
 
-// Testimonials Section - Trusted Partners
+// Demo Section - Arabic
+const DemoSection = () => {
+  return (
+    <section id="demo" className="py-20 lg:py-28 bg-white" data-testid="demo-section">
+      <div className="container-main">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
+              ابدأ الآن
+            </span>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3A5F] mb-6" data-testid="demo-title">
+              مستعد لتحدي الوضع الراهن؟
+            </h2>
+            <p className="font-body text-lg text-[#3D1C1C]/80 mb-10 max-w-2xl mx-auto">
+              انضم إلى المؤسسات التي تحوّل عملياتها بالفعل مع منصات أريشن التقنية المبتكرة.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-4 mb-16">
+              <a 
+                href="https://platform.aretion.org/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary" 
+                data-testid="demo-request-btn"
+              >
+                <ArrowLeft className="ml-2 h-4 w-4" />
+                اطلب عرضاً توضيحياً
+              </a>
+              <a 
+                href="https://platform.aretion.org/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary" 
+                data-testid="demo-call-btn"
+              >
+                تواصل معنا
+              </a>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="grid sm:grid-cols-3 gap-6" data-testid="demo-features">
+              <div className="stats-card">
+                <Zap className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
+                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">مدعوم بالذكاء الاصطناعي</h4>
+                <p className="text-sm text-[#3D1C1C]/70">أتمتة ذكية في كل مستوى</p>
+              </div>
+              <div className="stats-card">
+                <Shield className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
+                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">مُثبت ميدانياً</h4>
+                <p className="text-sm text-[#3D1C1C]/70">مُختبر في سيناريوهات طوارئ حقيقية</p>
+              </div>
+              <div className="stats-card">
+                <Building className="h-8 w-8 text-[#1E3A5F] mx-auto mb-4" />
+                <h4 className="font-subheading font-semibold text-[#1E3A5F] mb-2">جاهز للمؤسسات</h4>
+                <p className="text-sm text-[#3D1C1C]/70">قابل للتوسع لأي حجم مؤسسة</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Testimonials Section - Arabic
 const TestimonialsSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-[#F5F0E8]" data-testid="testimonials-section">
@@ -1035,46 +926,46 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Proven Impact
+            الأثر المُثبت
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4" data-testid="testimonials-title">
-            Trusted by Industry Leaders
+            موثوقون من قادة القطاع
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80 mb-12">
-            Our solutions are deployed across critical infrastructure sectors, delivering measurable results.
+            حلولنا منتشرة عبر قطاعات البنية التحتية الحيوية، تحقق نتائج قابلة للقياس.
           </p>
           
           {/* Golden Minute Stat */}
           <div className="text-center mb-12">
             <div className="font-heading text-4xl sm:text-5xl font-bold text-[#8B4513] mb-2">
-              Golden <span className="relative"><span className="opacity-50">Hour</span><span className="absolute left-0 right-0 top-1/2 h-[3px] bg-[#1E3A5F]"></span></span> <span className="font-body text-[#1E3A5F]">Minute</span>
+              الذهبية <span className="relative"><span className="opacity-50">الساعة</span><span className="absolute left-0 right-0 top-1/2 h-[3px] bg-[#1E3A5F]"></span></span> <span className="font-body text-[#1E3A5F]">الدقيقة</span>
             </div>
-            <p className="font-body text-[#3D1C1C]/80">Response Optimization</p>
+            <p className="font-body text-[#3D1C1C]/80">تحسين زمن الاستجابة</p>
           </div>
 
           {/* Client Sectors */}
           <div className="bg-white/80 rounded-lg p-8 border border-[#6B8CAE]/20 mb-8">
-            <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-6">Our Clients Include</h3>
+            <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-6">عملاؤنا يشملون</h3>
             <div className="grid sm:grid-cols-3 gap-6">
-              <div className="flex items-center justify-center gap-3 p-4">
+              <div className="flex items-center justify-center gap-3 p-4 flex-row-reverse">
                 <Building className="h-8 w-8 text-[#1E3A5F]" />
-                <span className="font-subheading font-semibold text-[#3D1C1C]">Municipalities</span>
+                <span className="font-subheading font-semibold text-[#3D1C1C]">البلديات</span>
               </div>
-              <div className="flex items-center justify-center gap-3 p-4">
+              <div className="flex items-center justify-center gap-3 p-4 flex-row-reverse">
                 <Shield className="h-8 w-8 text-[#1E3A5F]" />
-                <span className="font-subheading font-semibold text-[#3D1C1C]">Ministries</span>
+                <span className="font-subheading font-semibold text-[#3D1C1C]">الوزارات</span>
               </div>
-              <div className="flex items-center justify-center gap-3 p-4">
+              <div className="flex items-center justify-center gap-3 p-4 flex-row-reverse">
                 <Hospital className="h-8 w-8 text-[#1E3A5F]" />
-                <span className="font-subheading font-semibold text-[#3D1C1C]">Healthcare Industry</span>
+                <span className="font-subheading font-semibold text-[#3D1C1C]">القطاع الصحي</span>
               </div>
             </div>
           </div>
 
           {/* Milestone */}
-          <div className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white px-6 py-3 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white px-6 py-3 rounded-full mb-8 flex-row-reverse">
             <CheckCircle className="h-5 w-5 text-[#C4A77D]" />
-            <span className="font-subheading font-semibold">All Products Ready to Deploy</span>
+            <span className="font-subheading font-semibold">جميع المنتجات جاهزة للنشر</span>
           </div>
           
           {/* CTA to Contact */}
@@ -1086,8 +977,8 @@ const TestimonialsSection = () => {
               className="btn-secondary"
               data-testid="testimonials-contact-btn"
             >
-              Explore Partnership
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowLeft className="ml-2 h-4 w-4" />
+              استكشف الشراكة
             </a>
           </div>
         </motion.div>
@@ -1096,33 +987,33 @@ const TestimonialsSection = () => {
   );
 };
 
-// Trust & Compliance Section
+// Trust & Compliance Section - Arabic
 const TrustComplianceSection = () => {
   const certifications = [
     {
-      title: "CSA STAR Level Two",
-      subtitle: "Security Trust Assurance and Risk",
-      description: "Third-Party Audit — CSA Three-Tiered Cloud Security Assurance Program"
+      title: "CSA STAR المستوى الثاني",
+      subtitle: "ثقة الأمان والمخاطر",
+      description: "تدقيق طرف ثالث — برنامج ضمان أمان السحابة ثلاثي المستويات من CSA"
     },
     {
       title: "ISO/IEC 27001",
-      subtitle: "Information Security Management",
-      description: "Certified Information Security Management Standard"
+      subtitle: "إدارة أمن المعلومات",
+      description: "معيار إدارة أمن المعلومات المعتمد"
     },
     {
       title: "ISO/IEC 27017",
-      subtitle: "Cloud Security Controls",
-      description: "Code of Practice for Cloud-Specific Information Security Controls"
+      subtitle: "ضوابط أمان السحابة",
+      description: "مدونة الممارسات لضوابط أمن المعلومات الخاصة بالسحابة"
     },
     {
       title: "ISO/IEC 27018",
-      subtitle: "Personal Data Protection",
-      description: "Code of Practice for Protecting Personal Data in the Cloud"
+      subtitle: "حماية البيانات الشخصية",
+      description: "مدونة الممارسات لحماية البيانات الشخصية في السحابة"
     },
     {
       title: "PCI DSS v4.0.1",
-      subtitle: "Payment Security",
-      description: "Payment Card Industry Data Security Standard Compliant"
+      subtitle: "أمان الدفع",
+      description: "متوافق مع معيار أمان بيانات صناعة بطاقات الدفع"
     }
   ];
 
@@ -1137,13 +1028,13 @@ const TrustComplianceSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#8B4513] mb-4">
-            Trust & Compliance
+            الثقة والامتثال
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4">
-            Enterprise-Grade Security
+            أمان على مستوى المؤسسات
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
-            Our platforms are built on a foundation of rigorous security standards and regulatory compliance.
+            منصاتنا مبنية على أساس معايير أمان صارمة وامتثال تنظيمي.
           </p>
         </motion.div>
 
@@ -1171,13 +1062,13 @@ const TrustComplianceSection = () => {
   );
 };
 
-// Contact Section
+// Contact Section - Arabic
 const ContactSection = () => {
   const contactLinks = [
-    { title: "Investor Relations", url: "https://platform.aretion.org/contact" },
-    { title: "Strategic Partnerships", url: "https://platform.aretion.org/contact" },
-    { title: "Media & Press", url: "https://platform.aretion.org/contact" },
-    { title: "General Inquiries", url: "https://platform.aretion.org/contact" }
+    { title: "علاقات المستثمرين", url: "https://platform.aretion.org/contact" },
+    { title: "الشراكات الاستراتيجية", url: "https://platform.aretion.org/contact" },
+    { title: "الإعلام والصحافة", url: "https://platform.aretion.org/contact" },
+    { title: "الاستفسارات العامة", url: "https://platform.aretion.org/contact" }
   ];
 
   return (
@@ -1191,13 +1082,13 @@ const ContactSection = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block font-subheading text-xs font-semibold tracking-[0.2em] uppercase text-[#C4A77D] mb-4">
-              Connect
+              تواصل
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-6" data-testid="contact-title">
-              Let's Talk
+              لنتحدث
             </h2>
             <p className="font-body text-white/80 mb-12">
-              Whether you're an investor, potential partner, or enterprise customer—we'd like to hear from you.
+              سواء كنت مستثمراً أو شريكاً محتملاً أو عميلاً مؤسسياً — نود أن نسمع منك.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4" data-testid="contact-links">
@@ -1205,7 +1096,9 @@ const ContactSection = () => {
                 <motion.a
                   key={index}
                   href={link.url}
-                  className="flex items-center justify-between p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all group"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all group flex-row-reverse"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -1213,22 +1106,22 @@ const ContactSection = () => {
                   data-testid={`contact-link-${index}`}
                 >
                   <span className="font-heading text-lg text-white">{link.title}</span>
-                  <ArrowRight className="h-5 w-5 text-[#C4A77D] group-hover:translate-x-1 transition-transform" />
+                  <ArrowLeft className="h-5 w-5 text-[#C4A77D] group-hover:-translate-x-1 transition-transform" />
                 </motion.a>
               ))}
             </div>
 
             <div className="mt-12 pt-8 border-t border-white/20">
               <p className="text-white/80 text-sm mb-4">
-                For investor inquiries:
+                للتواصل المباشر:
               </p>
               <a 
                 href="mailto:contact@aretion.org"
-                className="inline-flex items-center text-[#C4A77D] font-semibold hover:text-white transition-colors text-lg"
+                className="inline-flex items-center text-[#C4A77D] font-semibold hover:text-white transition-colors text-lg flex-row-reverse"
                 data-testid="contact-direct-email"
               >
                 contact@aretion.org
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-4 w-4" />
               </a>
             </div>
           </motion.div>
@@ -1238,8 +1131,7 @@ const ContactSection = () => {
   );
 };
 
-
-// Footer
+// Footer - Arabic
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -1248,22 +1140,22 @@ const Footer = () => {
       <div className="container-main">
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Logo & Company Info */}
-          <div>
-            <div className="flex items-center gap-4 mb-4">
+          <div className="text-right">
+            <div className="flex items-center gap-4 justify-end mb-4">
+              <span className="font-heading text-lg font-bold text-white">شركة أركان الراي</span>
               <img src={LOGO_URL} alt="ARETION" className="h-10 w-auto brightness-0 invert" />
-              <span className="font-heading text-lg font-bold text-white">Arkan Alray Co</span>
             </div>
-            <p className="text-white/60 text-sm mb-2">Registered in the Kingdom of Saudi Arabia</p>
+            <p className="text-white/60 text-sm mb-2">مسجلة في المملكة العربية السعودية</p>
           </div>
 
           {/* Contact Information */}
-          <div className="text-white/80 text-sm space-y-2">
-            <p className="font-semibold text-white mb-3">Contact Us</p>
-            <p>King Abdullah Financial District</p>
-            <p>Innovation Boulevard, Al Aqeeq</p>
-            <p>KAFD, Building 7229, Riyadh 13519</p>
+          <div className="text-white/80 text-sm space-y-2 text-right">
+            <p className="font-semibold text-white mb-3">تواصل معنا</p>
+            <p>مركز الملك عبدالله المالي</p>
+            <p>شارع الابتكار، العقيق</p>
+            <p>مبنى 7229، الرياض 13519</p>
             <p className="mt-3">
-              <a href="tel:+966115256458" className="hover:text-white transition-colors">+966 11 525 6458</a>
+              <a href="tel:+966115256458" className="hover:text-white transition-colors" dir="ltr">+966 11 525 6458</a>
             </p>
             <p>
               <a href="mailto:Contact@aretion.org" className="hover:text-white transition-colors">Contact@aretion.org</a>
@@ -1274,7 +1166,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-white/10 text-center">
           <p className="text-white/60 text-sm" data-testid="footer-copyright">
-            © {currentYear} Arkan Alray Co. All rights reserved.
+            © {currentYear} شركة أركان الراي. جميع الحقوق محفوظة.
           </p>
         </div>
       </div>
@@ -1285,7 +1177,7 @@ const Footer = () => {
 // Main App Component
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" dir="rtl">
       <Toaster position="top-right" richColors />
       <Header />
       <main>
@@ -1307,4 +1199,3 @@ function App() {
 }
 
 export default App;
-

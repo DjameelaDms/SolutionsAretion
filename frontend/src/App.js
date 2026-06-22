@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext, useContext } from "react";
 import "@/App.css";
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -32,7 +32,8 @@ import {
   Satellite,
   Zap,
   Hospital,
-  Video
+  Video,
+  Globe
 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
@@ -61,6 +62,32 @@ import { Toaster, toast } from "sonner";
 
 // API Configuration
 const API_URL = process.env.REACT_APP_BACKEND_URL || "";
+
+// Language Context
+const LanguageContext = createContext();
+
+export const useLanguage = () => useContext(LanguageContext);
+
+// Language Provider
+const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState(() => {
+    // Check localStorage for saved preference
+    const saved = localStorage.getItem('aretion-language');
+    return saved || 'ar';
+  });
+
+  const toggleLanguage = () => {
+    const newLang = language === 'ar' ? 'en' : 'ar';
+    setLanguage(newLang);
+    localStorage.setItem('aretion-language', newLang);
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
 
 // Logo URL
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/0hzqlwr8_A_Logo-39.png";
@@ -188,6 +215,7 @@ const benefits = [
 // Header Component - Arabic
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -209,7 +237,26 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8" data-testid="desktop-nav">
+            <nav className="hidden md:flex items-center gap-6" data-testid="desktop-nav">
+              {/* Language Toggle */}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button 
+                    onClick={toggleLanguage}
+                    className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#1E3A5F]/10 hover:bg-[#1E3A5F]/20 transition-colors"
+                    data-testid="language-toggle"
+                  >
+                    <Globe className="h-4 w-4 text-[#1E3A5F]" />
+                    <span className="font-subheading text-sm font-medium text-[#1E3A5F]">
+                      {language === 'ar' ? 'EN' : 'عربي'}
+                    </span>
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{language === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'}</p>
+                </TooltipContent>
+              </Tooltip>
+              
               <a 
                 href="https://platform.aretion.org/contact"
                 target="_blank"
@@ -249,6 +296,17 @@ const Header = () => {
           {mobileMenuOpen && (
             <div className="md:hidden mt-4 pb-4 border-t border-[#6B8CAE]/10 pt-4" data-testid="mobile-menu">
               <nav className="flex flex-col gap-4">
+                {/* Mobile Language Toggle */}
+                <button 
+                  onClick={toggleLanguage}
+                  className="flex items-center justify-end gap-2 py-2"
+                  data-testid="mobile-language-toggle"
+                >
+                  <span className="font-subheading text-sm font-medium text-[#1E3A5F]">
+                    {language === 'ar' ? 'English' : 'العربية'}
+                  </span>
+                  <Globe className="h-4 w-4 text-[#1E3A5F]" />
+                </button>
                 <button onClick={() => scrollToSection("solutions")} className="text-right font-subheading text-sm font-medium text-[#3D1C1C] py-2">الحلول</button>
                 <button onClick={() => scrollToSection("benefits")} className="text-right font-subheading text-sm font-medium text-[#3D1C1C] py-2">لماذا نحن</button>
                 <a href="https://platform.aretion.org/contact" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">تواصل معنا</a>
@@ -290,19 +348,19 @@ const HeroSection = () => {
               </p>
               
               <div className="mt-8">
-                <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4">منهجيتنا</h3>
-                <ul className="space-y-2 mr-4">
-                  <li className="flex items-start gap-2 flex-row-reverse">
-                    <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>ابتكار مبتكر:</strong> أول منصة متكاملة تجمع إدارة الكوارث والرعاية الصحية عن بُعد والتحليلات التنبؤية</span>
+                <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-4 text-right">منهجيتنا</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-1" />
+                    <span className="text-right flex-1"><strong>ابتكار مبتكر:</strong> أول منصة متكاملة تجمع إدارة الكوارث والرعاية الصحية عن بُعد والتحليلات التنبؤية</span>
                   </li>
-                  <li className="flex items-start gap-2 flex-row-reverse">
-                    <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>تقنية خاصة:</strong> أربع براءات اختراع قيد التسجيل، ونماذج ذكاء اصطناعي مدربة على نشرات فعلية، وخبرة عميقة في المجال</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-1" />
+                    <span className="text-right flex-1"><strong>تقنية خاصة:</strong> أربع براءات اختراع قيد التسجيل، ونماذج ذكاء اصطناعي مدربة على نشرات فعلية، وخبرة عميقة في المجال</span>
                   </li>
-                  <li className="flex items-start gap-2 flex-row-reverse">
-                    <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-0.5" />
-                    <span><strong>أثر مثبت:</strong> حلول مختبرة ميدانياً موثوقة من الشبكات الصحية في المملكة العربية السعودية ومنطقة الخليج</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-1" />
+                    <span className="text-right flex-1"><strong>أثر مثبت:</strong> حلول مختبرة ميدانياً موثوقة من الشبكات الصحية في المملكة العربية السعودية ومنطقة الخليج</span>
                   </li>
                 </ul>
               </div>
@@ -731,7 +789,7 @@ const WhyWeWinSection = () => {
             الميزة التنافسية
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1E3A5F] mb-4">
-            لماذا ننتصر
+            لماذا لا يوجد منافس لنا
           </h2>
           <p className="font-body text-lg text-[#3D1C1C]/80">
             مزيج لا يقدمه أي منافس: منصة تنبؤية واستجابة متكاملة بناها خبراء يفهمون الواقع التشغيلي للبنية التحتية الحيوية.
@@ -826,7 +884,7 @@ const BusinessModelSection = () => {
           <h3 className="font-heading text-xl font-bold text-white mb-4">أبرز ملامح نموذج الإيرادات</h3>
           <div className="grid sm:grid-cols-3 gap-6 text-white">
             <div>
-              <div className="font-heading text-2xl font-bold text-[#C4A77D]">طويل الأجل</div>
+              <div className="font-heading text-2xl font-bold text-[#C4A77D]">طويل الأمد</div>
               <p className="text-sm text-white/80">عقود حكومية برؤية متعددة السنوات</p>
             </div>
             <div>
@@ -937,8 +995,8 @@ const TestimonialsSection = () => {
           
           {/* Golden Minute Stat */}
           <div className="text-center mb-12">
-            <div className="font-heading text-4xl sm:text-5xl font-bold text-[#8B4513] mb-2">
-              الذهبية <span className="relative"><span className="opacity-50">الساعة</span><span className="absolute left-0 right-0 top-1/2 h-[3px] bg-[#1E3A5F]"></span></span> <span className="font-body text-[#1E3A5F]">الدقيقة</span>
+            <div className="font-heading text-3xl sm:text-4xl font-bold text-[#8B4513] mb-2">
+              الاستجابة من أول دقيقة - <span className="text-[#1E3A5F]">الدقيقة الذهبية</span>
             </div>
             <p className="font-body text-[#3D1C1C]/80">تحسين زمن الاستجابة</p>
           </div>
@@ -947,15 +1005,15 @@ const TestimonialsSection = () => {
           <div className="bg-white/80 rounded-lg p-8 border border-[#6B8CAE]/20 mb-8">
             <h3 className="font-heading text-xl font-bold text-[#1E3A5F] mb-6">عملاؤنا يشملون</h3>
             <div className="grid sm:grid-cols-3 gap-6">
-              <div className="flex items-center justify-center gap-3 p-4 flex-row-reverse">
+              <div className="flex items-center justify-center gap-3 p-4">
                 <Building className="h-8 w-8 text-[#1E3A5F]" />
                 <span className="font-subheading font-semibold text-[#3D1C1C]">البلديات</span>
               </div>
-              <div className="flex items-center justify-center gap-3 p-4 flex-row-reverse">
+              <div className="flex items-center justify-center gap-3 p-4">
                 <Shield className="h-8 w-8 text-[#1E3A5F]" />
                 <span className="font-subheading font-semibold text-[#3D1C1C]">الوزارات</span>
               </div>
-              <div className="flex items-center justify-center gap-3 p-4 flex-row-reverse">
+              <div className="flex items-center justify-center gap-3 p-4">
                 <Hospital className="h-8 w-8 text-[#1E3A5F]" />
                 <span className="font-subheading font-semibold text-[#3D1C1C]">القطاع الصحي</span>
               </div>
@@ -963,9 +1021,9 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Milestone */}
-          <div className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white px-6 py-3 rounded-full mb-8 flex-row-reverse">
+          <div className="inline-flex items-center gap-2 bg-[#1E3A5F] text-white px-6 py-3 rounded-full mb-8">
+            <span className="font-subheading font-semibold">جاهزة للسوق</span>
             <CheckCircle className="h-5 w-5 text-[#C4A77D]" />
-            <span className="font-subheading font-semibold">جميع المنتجات جاهزة للنشر</span>
           </div>
           
           {/* CTA to Contact */}
@@ -1177,24 +1235,26 @@ const Footer = () => {
 // Main App Component
 function App() {
   return (
-    <div className="min-h-screen" dir="rtl">
-      <Toaster position="top-right" richColors />
-      <Header />
-      <main>
-        <HeroSection />
-        <SolutionsSection />
-        <CapabilitiesSection />
-        <BenefitsSection />
-        <MarketOpportunitySection />
-        <WhyWeWinSection />
-        <BusinessModelSection />
-        <DemoSection />
-        <TestimonialsSection />
-        <TrustComplianceSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen" dir="rtl">
+        <Toaster position="top-right" richColors />
+        <Header />
+        <main>
+          <HeroSection />
+          <SolutionsSection />
+          <CapabilitiesSection />
+          <BenefitsSection />
+          <MarketOpportunitySection />
+          <WhyWeWinSection />
+          <BusinessModelSection />
+          <DemoSection />
+          <TestimonialsSection />
+          <TrustComplianceSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

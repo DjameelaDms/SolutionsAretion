@@ -82,11 +82,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: auto;
 }
 
-/* Fix flex direction for RTL */
-[dir="rtl"] .flex-row {
-    flex-direction: row-reverse;
-}
-
 /* Ensure proper spacing in RTL */
 [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 1;

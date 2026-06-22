@@ -50,6 +50,13 @@ Create a visually appealing and informative landing page for ARETION Informatics
   - Arabic fonts (Tajawal, Noto Naskh Arabic)
   - RTL-specific CSS adjustments
   - All content translated with "sense-for-sense" approach
+  - Icons positioned correctly for RTL reading (on the right of text)
+- [x] **Language Toggle Button** - Globe icon in header to switch between AR/EN (localStorage persisted)
+- [x] **Text Updates - June 2026**:
+  - "لماذا ننتصر" → "لماذا لا يوجد منافس لنا"
+  - "طويل الأجل" → "طويل الأمد"  
+  - Golden Minute: "الاستجابة من أول دقيقة - الدقيقة الذهبية"
+  - "جميع المنتجات جاهزة للنشر" → "جاهزة للسوق"
 
 ### Tech Stack
 - Frontend: React + Tailwind CSS + Framer Motion
@@ -61,8 +68,8 @@ Create a visually appealing and informative landing page for ARETION Informatics
 ## Prioritized Backlog
 
 ### P1 - High Priority
-- [ ] Refactor App.js (1200+ lines) into smaller components (HeroSection, SolutionsSection, Footer, etc.)
-- [ ] Add explicit RTL Tailwind utilities where needed
+- [ ] Refactor App.js (1260+ lines) into smaller components (HeroSection, SolutionsSection, Footer, etc.)
+- [ ] Implement full English content for language toggle (currently toggles state but needs EN content)
 
 ### P2 - Medium Priority
 - [ ] Remove legacy /api/contact backend endpoint (dead code)
@@ -70,7 +77,6 @@ Create a visually appealing and informative landing page for ARETION Informatics
 - [ ] Add downloadable investor deck PDF
 
 ### P3 - Nice to Have
-- [ ] Add language toggle (Arabic/English)
 - [ ] Video embed for company overview
 - [ ] Interactive case studies section
 

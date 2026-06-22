@@ -145,7 +145,7 @@ const solutions = [
     icon: Users,
     comingSoon: false,
     size: "",
-    bgImage: SOLUTION_IMAGES.triage
+    bgImage: null
   },
   {
     id: 5,
@@ -165,7 +165,7 @@ const solutions = [
     icon: Stethoscope,
     comingSoon: false,
     size: "",
-    bgImage: SOLUTION_IMAGES.teleintubation
+    bgImage: null
   },
   {
     id: 7,
@@ -589,11 +589,11 @@ const CapabilitiesSection = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
                   >
-                    <div className="flex items-center gap-4 mb-4 flex-row-reverse">
+                    <div className="flex items-center gap-4 mb-4">
                       <div className="w-10 h-10 rounded-lg bg-[#1E3A5F] flex items-center justify-center flex-shrink-0">
                         <item.icon className="h-5 w-5 text-[#C4A77D]" />
                       </div>
-                      <h4 className="font-heading text-lg font-semibold text-[#1E3A5F] text-right">
+                      <h4 className="font-heading text-lg font-semibold text-[#1E3A5F] text-right flex-1">
                         {item.title}
                       </h4>
                     </div>
@@ -670,7 +670,7 @@ const MarketOpportunitySection = () => {
     { icon: Zap, title: "إلحاح المناخ", description: "تزايد تواتر وحدة الكوارث الطبيعية يدفع الاستعداد الإلزامي" },
     { icon: Building, title: "التفويضات الحكومية", description: "مخصصات بمليارات الدولارات للبنية التحتية المرنة عالمياً" },
     { icon: Radio, title: "نضج IoT والذكاء الاصطناعي", description: "التقنية أصبحت موثوقة بما يكفي للنشر في المهام الحرجة" },
-    { icon: Shield, title: "رياح تنظيمية مواتية", description: "أنظمة الإنذار المبكر أصبحت إلزامية قانونياً عبر الولايات القضائية" },
+    { icon: Shield, title: "رياح تنظيمية مواتية", description: "أنظمة الإنذار المبكر أصبحت إلزامية قانونياً عبر الكثير من الدول" },
   ];
 
   return (
@@ -723,11 +723,11 @@ const MarketOpportunitySection = () => {
           <h3 className="font-heading text-2xl font-bold text-[#1E3A5F] text-center mb-8">لماذا الآن؟</h3>
           <div className="grid sm:grid-cols-2 gap-6">
             {growthDrivers.map((driver, index) => (
-              <div key={index} className="flex gap-4 items-start flex-row-reverse text-right">
+              <div key={index} className="flex gap-4 items-start text-right">
                 <div className="w-12 h-12 rounded-lg bg-[#1E3A5F] flex items-center justify-center flex-shrink-0">
                   <driver.icon className="h-6 w-6 text-[#C4A77D]" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <h4 className="font-heading text-lg font-semibold text-[#1E3A5F] mb-1">{driver.title}</h4>
                   <p className="font-body text-sm text-[#3D1C1C]/70">{driver.description}</p>
                 </div>

@@ -382,7 +382,7 @@ const HeroSection = () => {
                 تواصل معنا
               </a>
               <a 
-                href="https://aretion.co.uk/governance"
+                href="https://platform.aretion.org/advisors"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"

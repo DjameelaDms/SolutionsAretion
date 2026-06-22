@@ -57,6 +57,11 @@ Create a visually appealing and informative landing page for ARETION Informatics
   - "طويل الأجل" → "طويل الأمد"  
   - Golden Minute: "الاستجابة من أول دقيقة - الدقيقة الذهبية"
   - "جميع المنتجات جاهزة للنشر" → "جاهزة للسوق"
+- [x] **Link Updates - June 2026**:
+  - "تواصل معنا" → https://platform.aretion.org/contact
+  - "تعرف على فريقنا" → https://platform.aretion.org/advisors
+  - All contact categories (Investor Relations, Partnerships, Media, General) → https://platform.aretion.org/contact
+- [x] **Backend Cleanup - June 2026**: Removed legacy /api/contact endpoint (dead code), simplified server.py
 
 ### Tech Stack
 - Frontend: React + Tailwind CSS + Framer Motion
@@ -72,9 +77,8 @@ Create a visually appealing and informative landing page for ARETION Informatics
 - [ ] Implement full English content for language toggle (currently toggles state but needs EN content)
 
 ### P2 - Medium Priority
-- [ ] Remove legacy /api/contact backend endpoint (dead code)
-- [ ] Replace partner logo placeholders with actual logos when available
 - [ ] Add downloadable investor deck PDF
+- [ ] Add partner/client logos when assets become available
 
 ### P3 - Nice to Have
 - [ ] Video embed for company overview

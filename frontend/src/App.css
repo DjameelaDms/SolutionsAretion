@@ -15,15 +15,15 @@
 
 /* Typography */
 .font-heading {
-    font-family: 'Tajawal', 'Noto Naskh Arabic', 'Playfair Display', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 .font-subheading {
-    font-family: 'Tajawal', 'Noto Naskh Arabic', 'Playfair Display', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 .font-body {
-    font-family: 'Tajawal', 'Noto Naskh Arabic', 'Playfair Display', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 /* Header */
@@ -164,7 +164,7 @@
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     width: 4px;
     height: 100%;
     background: linear-gradient(180deg, var(--navy) 0%, var(--rust) 100%);
@@ -211,7 +211,7 @@
     padding: 0.875rem 2rem;
     background-color: var(--navy);
     color: white;
-    font-family: 'Tajawal', 'Noto Naskh Arabic', 'Playfair Display', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     font-size: 0.875rem;
     border-radius: 50px;
@@ -232,7 +232,7 @@
     padding: 0.875rem 2rem;
     background-color: transparent;
     color: var(--navy);
-    font-family: 'Tajawal', 'Noto Naskh Arabic', 'Playfair Display', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     font-size: 0.875rem;
     border-radius: 50px;
@@ -261,10 +261,9 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     color: white;
-    font-family: 'Tajawal', 'Noto Naskh Arabic', 'Playfair Display', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 1rem;
     transition: border-color 0.3s ease, background-color 0.3s ease;
-    text-align: right;
 }
 
 .form-input::placeholder {
@@ -325,9 +324,9 @@
     content: '"';
     position: absolute;
     top: 1rem;
-    right: 1.5rem;
+    left: 1.5rem;
     font-size: 4rem;
-    font-family: 'Tajawal', 'Noto Naskh Arabic', serif;
+    font-family: 'Playfair Display', serif;
     color: var(--tan);
     line-height: 1;
     opacity: 0.3;

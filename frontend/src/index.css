@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -53,46 +52,16 @@ html {
 }
 
 body {
-    font-family: 'Tajawal', 'Noto Naskh Arabic', 'Playfair Display', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     background-color: var(--cream);
     color: var(--maroon-dark);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    direction: rtl;
-    text-align: right;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Tajawal', 'Noto Naskh Arabic', 'Playfair Display', Georgia, serif;
-}
-
-/* RTL specific adjustments */
-[dir="rtl"] .text-left {
-    text-align: right;
-}
-
-[dir="rtl"] .ml-auto {
-    margin-left: 0;
-    margin-right: auto;
-}
-
-[dir="rtl"] .mr-auto {
-    margin-right: 0;
-    margin-left: auto;
-}
-
-/* Ensure proper spacing in RTL */
-[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
-}
-
-[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
-}
-
-[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 /* Scrollbar styling */

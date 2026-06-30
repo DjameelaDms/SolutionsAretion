@@ -64,7 +64,7 @@ import { Toaster, toast } from "sonner";
 const API_URL = process.env.REACT_APP_BACKEND_URL || "";
 
 // Logo URL
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_aretion/artifacts/iwj7jhxb_logo.png";
+const LOGO_URL = "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/0hzqlwr8_A_Logo-39.png";
 
 // Solution Images (Original uploaded images)
 const SOLUTION_IMAGES = {

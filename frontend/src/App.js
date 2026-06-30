@@ -66,17 +66,17 @@ const API_URL = process.env.REACT_APP_BACKEND_URL || "";
 // Logo URL
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_aretion/artifacts/iwj7jhxb_logo.png";
 
-// Solution Images
+// Solution Images (Original uploaded images)
 const SOLUTION_IMAGES = {
-  disasterms: "https://images.unsplash.com/photo-1639313521811-fdfb1c040ddb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxlbWVyZ2VuY3klMjBjb21tYW5kJTIwY2VudGVyJTIwb3BlcmF0aW9uc3xlbnwwfHx8fDE3ODIxNjIyMzh8MA&ixlib=rb-4.1.0&q=85",
-  chatbot: "https://images.unsplash.com/photo-1684369175833-4b445ad6bfb5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwxfHxBSSUyMGFzc2lzdGFudCUyMGNoYXRib3QlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzgyMTYyMjMwfDA&ixlib=rb-4.1.0&q=85",
-  predictive: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxwcmVkaWN0aXZlJTIwYW5hbHl0aWNzJTIwd2VhdGhlciUyMGRhdGF8ZW58MHx8fHwxNzgyMTYyMjI5fDA&ixlib=rb-4.1.0&q=85",
-  triage: "https://images.unsplash.com/photo-1599700403969-f77b3aa74837?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwdHJpYWdlJTIwZW1lcmdlbmN5JTIwaG9zcGl0YWx8ZW58MHx8fHwxNzgyMTYyMjM4fDA&ixlib=rb-4.1.0&q=85",
-  emcc: "https://images.unsplash.com/photo-1511233744044-194342066754?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwxfHxlbWVyZ2VuY3klMjBicm9hZGNhc3QlMjBjb21tdW5pY2F0aW9uJTIwbmV0d29ya3xlbnwwfHx8fDE3ODIxNjIyNDh8MA&ixlib=rb-4.1.0&q=85",
-  teleintubation: "https://images.unsplash.com/photo-1758691463620-188ca7c1a04f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwyfHx0ZWxlbWVkaWNpbmUlMjB2aWRlbyUyMGNvbnN1bHRhdGlvbiUyMGRvY3RvcnxlbnwwfHx8fDE3ODIxNjIyMzh8MA&ixlib=rb-4.1.0&q=85",
-  codeblue: "https://images.unsplash.com/photo-1512102438733-bfa4ed29aef7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwxfHxob3NwaXRhbCUyMG1lZGljYWwlMjBlcXVpcG1lbnQlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc4MjE2MjI0OHww&ixlib=rb-4.1.0&q=85",
-  protocol: "https://images.pexels.com/photos/5380618/pexels-photo-5380618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  consultation: "https://images.pexels.com/photos/8376211/pexels-photo-8376211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  disasterms: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/uhcudkwx_DisasterMS.jpeg",
+  chatbot: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/r17o5z6g_Chatbot.jpeg",
+  predictive: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/8p6d6ixy_Predictive%20Models.jpeg",
+  triage: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/3vpmqdvv_Triage.jpeg",
+  emcc: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/fo7g0r4a_EM%20-CC.jpeg",
+  teleintubation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/bu492laq_Tele-Intubation.jpeg",
+  codeblue: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/8qdv50zu_Tele%20Code%20Blue%20Kit.jpeg",
+  protocol: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/98h2v114_Protocol%20designer.jpeg",
+  consultation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/bu492laq_Tele-Intubation.jpeg"
 };
 
 // Solutions Data

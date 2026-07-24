@@ -153,6 +153,16 @@ const solutions = [
   },
   {
     id: 8,
+    title: "PolicyAuth",
+    subtitle: "Policy & Procedure Authentication",
+    description: "Multi-agency portal for authenticating disaster-response policies and SOPs — evacuation protocols, HAZMAT procedures, EOC coordination plans, inter-agency MOUs. Structured review workflow from document owner through SME, legal, and compliance validation to final signatory. Bilingual Arabic/English, built to government-grade security standards with encryption at rest, multi-factor authentication, and tamper-evident audit trails.",
+    icon: Shield,
+    comingSoon: false,
+    size: "",
+    bgImage: null
+  },
+  {
+    id: 9,
     title: "Consultation Platform",
     subtitle: "Virtual Care Infrastructure",
     description: "Self-hosted telehealth platform live in production today. Secure video consultations, scheduling, and case management — deployed on infrastructure we control end to end, not rented from a third-party cloud. Serving telemedicine, specialist consultation, and medical education.",
@@ -503,7 +513,7 @@ const SolutionsSection = () => {
             Disruptive Solutions Suite
           </h2>
           <p className="font-body text-base sm:text-lg text-[#3D1C1C]/80 max-w-3xl mx-auto">
-            Eight breakthrough platforms transforming how critical infrastructure organizations operate, respond, and protect what matters.
+            Nine breakthrough platforms transforming how critical infrastructure organizations operate, respond, and protect what matters.
           </p>
         </motion.div>
 

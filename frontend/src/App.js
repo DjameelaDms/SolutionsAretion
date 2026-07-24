@@ -175,7 +175,7 @@ const solutions = [
     icon: Video,
     comingSoon: false,
     size: "",
-    bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/4no9ttam_Screenshot%202026-07-24%20at%2017.59.51.png",
+    bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/tr6alny8_consultation-platform-controlroom.png",
     badge: "Live in Production",
     hasCta: true
   }

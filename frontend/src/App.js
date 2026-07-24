@@ -165,11 +165,17 @@ const solutions = [
     id: 9,
     title: "Consultation Platform",
     subtitle: "Virtual Care Infrastructure",
-    description: "Self-hosted telehealth platform live in production today. Secure video consultations, scheduling, and case management — deployed on infrastructure we control end to end, not rented from a third-party cloud. Serving telemedicine, specialist consultation, and medical education.",
+    description: "Self-hosted telehealth platform live in production today, connecting advisors and clients end to end.",
+    features: [
+      "WhatsApp-integrated scheduling and automated reminders",
+      "Video by choice: Zoom, Microsoft Teams, or built-in video",
+      "Full accounting with ZATCA-compliant e-invoicing",
+      "Runs on infrastructure we control — full data residency"
+    ],
     icon: Video,
     comingSoon: false,
     size: "",
-    bgImage: null,
+    bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/4no9ttam_Screenshot%202026-07-24%20at%2017.59.51.png",
     badge: "Live in Production",
     hasCta: true
   }
@@ -521,11 +527,9 @@ const SolutionsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {solutions.map((solution, index) => {
             const isConsultation = solution.title === "Consultation Platform";
-            const cardStyle = isConsultation 
-              ? { backgroundColor: '#1E3A5F' } 
-              : solution.bgImage 
-                ? { backgroundImage: `url(${solution.bgImage})` } 
-                : {};
+            const cardStyle = solution.bgImage 
+              ? { backgroundImage: `url(${solution.bgImage})` } 
+              : {};
             
             return (
               <motion.div
@@ -537,17 +541,27 @@ const SolutionsSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 style={cardStyle}
               >
-                <div className={`solution-card-content ${isConsultation ? 'text-white' : ''}`}>
-                  <div className={`solution-icon-wrapper ${isConsultation ? 'bg-white/20' : ''}`}>
-                    <solution.icon className={`solution-icon ${isConsultation ? 'text-white' : ''}`} />
+                <div className="solution-card-content">
+                  <div className="solution-icon-wrapper">
+                    <solution.icon className="solution-icon" />
                   </div>
                   <div>
-                    <h3 className={`solution-title ${isConsultation ? 'text-white' : ''}`}>{solution.title}</h3>
-                    <p className={`solution-subtitle text-xs mb-2 ${isConsultation ? 'text-white/70' : 'text-[#6B8CAE]'}`}>{solution.subtitle}</p>
+                    <h3 className="solution-title">{solution.title}</h3>
+                    <p className="solution-subtitle text-xs text-[#6B8CAE] mb-2">{solution.subtitle}</p>
                   </div>
-                  <p className={`solution-description ${isConsultation ? 'text-white/80' : ''}`}>{solution.description}</p>
+                  <p className="solution-description">{solution.description}</p>
+                  {solution.features && (
+                    <ul className="mt-3 space-y-1">
+                      {solution.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-xs text-[#3D1C1C]/70">
+                          <CheckCircle className="h-3 w-3 text-[#8B4513] flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   <div className="flex items-center gap-3 mt-4">
-                    <span className={`solution-badge ${isConsultation ? 'bg-[#C4A77D] text-[#1E3A5F]' : ''}`}>
+                    <span className={`solution-badge ${solution.badge === 'Live in Production' ? 'bg-[#8B4513] text-white' : ''}`}>
                       {solution.badge || 'Available'}
                     </span>
                     {solution.hasCta && (
@@ -557,7 +571,7 @@ const SolutionsSection = () => {
                           e.preventDefault();
                           document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="text-xs font-semibold text-[#C4A77D] hover:text-white transition-colors"
+                        className="text-xs font-semibold text-[#8B4513] hover:text-[#1E3A5F] transition-colors"
                       >
                         Request a Demo →
                       </a>

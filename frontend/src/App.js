@@ -94,8 +94,8 @@ const solutions = [
   {
     id: 2,
     title: "AI Assistant",
-    subtitle: "Enterprise Intelligence",
-    description: "Next-generation RAG architecture delivering unprecedented accuracy. Enterprise AI that transforms how organizations access critical knowledge and make decisions.",
+    subtitle: "Sovereign Enterprise Intelligence",
+    description: "Fully on-premise AI. Language models run entirely inside your own infrastructure — no data leaves your perimeter, no foreign cloud dependency, air-gap capable. Next-generation RAG grounds every answer in your organization's own documents, with source citations. Arabic and English, natively.",
     icon: Brain,
     comingSoon: false,
     size: "",
@@ -103,9 +103,9 @@ const solutions = [
   },
   {
     id: 3,
-    title: "Predictive Analytics",
-    subtitle: "Climate Risk Intelligence",
-    description: "Proprietary ML models predicting climate-related hazards before they strike. Serving healthcare, utilities, and government sectors.",
+    title: "DisasPred",
+    subtitle: "Disaster Prediction Engine",
+    description: "Proprietary forecasting models that predict climate and infrastructure hazards hours to days before onset — floods, heat events, and equipment-driven incidents. Trained on real regional deployments and tuned for GCC climate conditions. Predictions feed directly into DisasterMS for automated early warning and response.",
     icon: TrendingUp,
     comingSoon: false,
     size: "",
@@ -133,16 +133,6 @@ const solutions = [
   },
   {
     id: 6,
-    title: "Tele-Intubation",
-    subtitle: "Remote Airway Management",
-    description: "Remote robotic intubation technology that redefines critical airway management, delivering specialist expertise to any location instantly.",
-    icon: Stethoscope,
-    comingSoon: false,
-    size: "",
-    bgImage: SOLUTION_IMAGES.teleintubation
-  },
-  {
-    id: 7,
     title: "Code Blue Kit",
     subtitle: "Remote Resuscitation",
     description: "Revolutionary hardware-software system for remote emergency coordination that transforms cardiac arrest response.",
@@ -152,7 +142,7 @@ const solutions = [
     bgImage: SOLUTION_IMAGES.codeblue
   },
   {
-    id: 8,
+    id: 7,
     title: "Protocol Designer",
     subtitle: "Emergency Protocol Engine",
     description: "AI-powered platform revolutionizing emergency protocol design and implementation. From weeks to hours.",
@@ -162,14 +152,16 @@ const solutions = [
     bgImage: SOLUTION_IMAGES.protocol
   },
   {
-    id: 9,
+    id: 8,
     title: "Consultation Platform",
     subtitle: "Virtual Care Infrastructure",
-    description: "Flexible telehealth infrastructure serving telemedicine, consultation, and education sectors. One platform, unlimited applications.",
+    description: "Self-hosted telehealth platform live in production today. Secure video consultations, scheduling, and case management — deployed on infrastructure we control end to end, not rented from a third-party cloud. Serving telemedicine, specialist consultation, and medical education.",
     icon: Video,
     comingSoon: false,
     size: "",
-    bgImage: SOLUTION_IMAGES.consultation
+    bgImage: null,
+    badge: "Live in Production",
+    hasCta: true
   }
 ];
 
@@ -193,6 +185,22 @@ const capabilitySections = [
         icon: Shield,
         title: "CBRN Threat Detection & Response",
         description: "Advanced chemical, biological, radiological, and nuclear threat detection integrated into our early warning ecosystem. Real-time monitoring and automated response protocols protecting personnel and infrastructure."
+      }
+    ]
+  },
+  {
+    id: "sovereign-ai",
+    title: "Sovereign AI Stack",
+    items: [
+      {
+        icon: Database,
+        title: "On-Premise Language Intelligence",
+        description: "Enterprise language models deployed on client-controlled hardware — from a single facility to national scale. No external API calls in the critical path, full data residency, air-gap capable."
+      },
+      {
+        icon: TrendingUp,
+        title: "Predictive Forecasting Models",
+        description: "DisasPred forecasting models anticipate hazards before they strike. Every deployment runs within the client's own environment, keeping operational data under client control while improving prediction quality over time."
       }
     ]
   },
@@ -251,6 +259,7 @@ const benefits = [
   { title: "Innovation by Design", description: "We challenge what's possible, delivering technology that creates new categories" },
   { title: "Disaster Management Focus", description: "Every solution purpose-built for emergency response and crisis management" },
   { title: "AI-First Approach", description: "Machine learning and automation at the core of everything we build" },
+  { title: "Sovereign by Design", description: "AI that deploys entirely within national borders and client infrastructure. Full data residency, regulator-ready." },
   { title: "Proven Innovation", description: "Four patents pending protecting our breakthrough methodologies" },
   { title: "Scalable Architecture", description: "Cloud-native platforms designed for rapid deployment and growth" },
   { title: "Field-Tested", description: "Created and tested by field disaster specialists in real emergency situations" },
@@ -278,6 +287,7 @@ const growthDrivers = [
 // Competitive Advantages
 const competitiveAdvantages = [
   { title: "Advanced Technologies", description: "AI-powered predictive detection identifying disasters before they occur, with sub-second automated response." },
+  { title: "Sovereign Deployment", description: "Competitors resell foreign cloud AI. Our language models and prediction engines run where the data lives — inside client infrastructure, under client control." },
   { title: "Built by Domain Experts", description: "Designed by leading specialists in disaster management, business continuity, healthcare operations, and clinical research." },
   { title: "Field-Tested Solutions", description: "Created and tested by field disaster specialists in real emergencies—not theoretical simulations." },
   { title: "Enterprise-Designed", description: "Purpose-built for governments, municipalities, and critical infrastructure operators—not repurposed consumer technology." },
@@ -306,7 +316,9 @@ const certifications = [
   { title: "ISO 27001", description: "Information Security Management" },
   { title: "CSA STAR Level 2", description: "Cloud Security Certification" },
   { title: "HIPAA Ready", description: "Healthcare Compliance" },
-  { title: "SOC 2 Type II", description: "Security Audit Certification" }
+  { title: "SOC 2 Type II", description: "Security Audit Certification" },
+  { title: "PDPL Aligned", description: "Saudi Personal Data Protection Law" },
+  { title: "NCA ECC Aligned", description: "Saudi Essential Cybersecurity Controls" }
 ];
 
 // Header Component
@@ -425,7 +437,7 @@ const HeroSection = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-1" />
-                  <span><strong>Breakthrough Innovation:</strong> First integrated platform combining disaster management, telemedicine, and predictive analytics</span>
+                  <span><strong>Breakthrough Innovation:</strong> First integrated platform combining disaster prediction, disaster management, telemedicine, and sovereign on-premise AI</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-[#8B4513] flex-shrink-0 mt-1" />
@@ -491,35 +503,60 @@ const SolutionsSection = () => {
             Disruptive Solutions Suite
           </h2>
           <p className="font-body text-base sm:text-lg text-[#3D1C1C]/80 max-w-3xl mx-auto">
-            Nine breakthrough platforms transforming how critical infrastructure organizations operate, respond, and protect what matters.
+            Eight breakthrough platforms transforming how critical infrastructure organizations operate, respond, and protect what matters.
           </p>
         </motion.div>
 
         {/* Solutions Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {solutions.map((solution, index) => (
-            <motion.div
-              key={solution.id}
-              className={`solution-card ${solution.bgImage ? 'has-bg-image' : ''}`}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              style={solution.bgImage ? { backgroundImage: `url(${solution.bgImage})` } : {}}
-            >
-              <div className="solution-card-content">
-                <div className="solution-icon-wrapper">
-                  <solution.icon className="solution-icon" />
+          {solutions.map((solution, index) => {
+            const isConsultation = solution.title === "Consultation Platform";
+            const cardStyle = isConsultation 
+              ? { backgroundColor: '#1E3A5F' } 
+              : solution.bgImage 
+                ? { backgroundImage: `url(${solution.bgImage})` } 
+                : {};
+            
+            return (
+              <motion.div
+                key={solution.id}
+                className={`solution-card ${solution.bgImage ? 'has-bg-image' : ''} ${isConsultation ? 'consultation-card' : ''}`}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                style={cardStyle}
+              >
+                <div className={`solution-card-content ${isConsultation ? 'text-white' : ''}`}>
+                  <div className={`solution-icon-wrapper ${isConsultation ? 'bg-white/20' : ''}`}>
+                    <solution.icon className={`solution-icon ${isConsultation ? 'text-white' : ''}`} />
+                  </div>
+                  <div>
+                    <h3 className={`solution-title ${isConsultation ? 'text-white' : ''}`}>{solution.title}</h3>
+                    <p className={`solution-subtitle text-xs mb-2 ${isConsultation ? 'text-white/70' : 'text-[#6B8CAE]'}`}>{solution.subtitle}</p>
+                  </div>
+                  <p className={`solution-description ${isConsultation ? 'text-white/80' : ''}`}>{solution.description}</p>
+                  <div className="flex items-center gap-3 mt-4">
+                    <span className={`solution-badge ${isConsultation ? 'bg-[#C4A77D] text-[#1E3A5F]' : ''}`}>
+                      {solution.badge || 'Available'}
+                    </span>
+                    {solution.hasCta && (
+                      <a 
+                        href="#contact" 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className="text-xs font-semibold text-[#C4A77D] hover:text-white transition-colors"
+                      >
+                        Request a Demo →
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h3 className="solution-title">{solution.title}</h3>
-                  <p className="solution-subtitle text-xs text-[#6B8CAE] mb-2">{solution.subtitle}</p>
-                </div>
-                <p className="solution-description">{solution.description}</p>
-                <span className="solution-badge">Available</span>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

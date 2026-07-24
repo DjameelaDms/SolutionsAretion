@@ -159,7 +159,7 @@ const solutions = [
     icon: Shield,
     comingSoon: false,
     size: "",
-    bgImage: null
+    bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/zyu1ykfn_policy.png"
   },
   {
     id: 9,

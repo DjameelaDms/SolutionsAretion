@@ -101,7 +101,7 @@ const solutions = [
     comingSoon: false,
     size: "",
     bgImage: SOLUTION_IMAGES.chatbot,
-    price: "3,279,000"
+    showQuote: true
   },
   {
     id: 3,
@@ -112,7 +112,7 @@ const solutions = [
     comingSoon: false,
     size: "",
     bgImage: SOLUTION_IMAGES.predictive,
-    price: "2,690,000"
+    showQuote: true
   },
   {
     id: 4,
@@ -123,7 +123,7 @@ const solutions = [
     comingSoon: false,
     size: "",
     bgImage: SOLUTION_IMAGES.triage,
-    price: "485,000"
+    showQuote: true
   },
   {
     id: 5,
@@ -156,7 +156,7 @@ const solutions = [
     comingSoon: false,
     size: "",
     bgImage: SOLUTION_IMAGES.protocol,
-    price: "1,125,000"
+    showQuote: true
   },
   {
     id: 8,
@@ -167,7 +167,7 @@ const solutions = [
     comingSoon: false,
     size: "",
     bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/zyu1ykfn_policy.png",
-    price: "2,980,000"
+    showQuote: true
   },
   {
     id: 9,
@@ -197,7 +197,7 @@ const solutions = [
     size: "",
     bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/u65v4etl_Screenshot%202026-07-25%20at%2014.33.14.webp",
     badge: "Live in Production",
-    price: "2,650,000"
+    showQuote: true
   }
 ];
 

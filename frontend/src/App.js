@@ -570,16 +570,6 @@ const SolutionsSection = () => {
                     </ul>
                   )}
                   
-                  {/* Pricing Display */}
-                  {solution.price && (
-                    <div className="mt-4 pt-3 border-t border-[#1E3A5F]/10">
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-lg font-bold text-[#1E3A5F]">{solution.price}</span>
-                        <span className="text-sm font-medium text-[#6B8CAE]">SAR</span>
-                      </div>
-                    </div>
-                  )}
-                  
                   <div className="flex items-center gap-3 mt-4">
                     <span className={`solution-badge ${solution.badge === 'Live in Production' ? 'bg-[#8B4513] text-white' : ''}`}>
                       {solution.badge || 'Available'}
@@ -598,8 +588,20 @@ const SolutionsSection = () => {
                     )}
                   </div>
                   
-                  {/* Get a Quote Button */}
-                  {(solution.price || solution.showQuote) && (
+                  {/* Buy Button with Price */}
+                  {solution.price && (
+                    <a 
+                      href={`https://platform.aretion.org/contact?product=${encodeURIComponent(solution.title)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center justify-center w-full px-4 py-2 text-sm font-semibold text-white bg-[#1E3A5F] hover:bg-[#8B4513] rounded-lg transition-colors duration-200"
+                    >
+                      Buy: SAR {solution.price}
+                    </a>
+                  )}
+                  
+                  {/* Get a Quote Button (only for items without price) */}
+                  {solution.showQuote && !solution.price && (
                     <a 
                       href={`https://platform.aretion.org/contact?product=${encodeURIComponent(solution.title)}`}
                       target="_blank"

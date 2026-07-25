@@ -95,7 +95,7 @@ const solutions = [
     id: 2,
     title: "AI Assistant",
     subtitle: "On-Prem Sovereign Enterprise Intelligence",
-    description: "Language models run entirely inside your own infrastructure.",
+    description: "Fully on-premise AI. Language models run entirely inside your own infrastructure — no data leaves your perimeter, no foreign cloud dependency, air-gap capable. Next-generation RAG grounds every answer in your organization's own documents, with source citations. Arabic and English, natively.",
     icon: Brain,
     comingSoon: false,
     size: "",

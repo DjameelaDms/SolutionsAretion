@@ -883,6 +883,9 @@ const BusinessModelSection = () => {
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
             Sustainable & Growing Revenue
           </h2>
+          <p className="font-body text-base sm:text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">
+            We deliver enterprise-grade solutions that empower buyers to generate recurring revenue—deploy standalone or embed within their SaaS platform to monetize through annual subscription licenses distributed to agencies and stakeholders.
+          </p>
         </motion.div>
 
         {/* Revenue Models */}

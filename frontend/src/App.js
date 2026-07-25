@@ -89,17 +89,19 @@ const solutions = [
     icon: ShieldCheck,
     comingSoon: false,
     size: "large",
-    bgImage: SOLUTION_IMAGES.disasterms
+    bgImage: SOLUTION_IMAGES.disasterms,
+    showQuote: true
   },
   {
     id: 2,
-    title: "AI Assistant",
+    title: "Sovereign Enterprise Intelligence",
     subtitle: "On-Prem Sovereign Enterprise Intelligence",
     description: "Fully on-premise AI. Language models run entirely inside your own infrastructure — no data leaves your perimeter, no foreign cloud dependency, air-gap capable. Next-generation RAG grounds every answer in your organization's own documents, with source citations. Arabic and English, natively.",
     icon: Brain,
     comingSoon: false,
     size: "",
-    bgImage: SOLUTION_IMAGES.chatbot
+    bgImage: SOLUTION_IMAGES.chatbot,
+    price: "3,279,000"
   },
   {
     id: 3,
@@ -109,7 +111,8 @@ const solutions = [
     icon: TrendingUp,
     comingSoon: false,
     size: "",
-    bgImage: SOLUTION_IMAGES.predictive
+    bgImage: SOLUTION_IMAGES.predictive,
+    price: "2,690,000"
   },
   {
     id: 4,
@@ -119,7 +122,8 @@ const solutions = [
     icon: Users,
     comingSoon: false,
     size: "",
-    bgImage: SOLUTION_IMAGES.triage
+    bgImage: SOLUTION_IMAGES.triage,
+    price: "485,000"
   },
   {
     id: 5,
@@ -129,7 +133,8 @@ const solutions = [
     icon: Radio,
     comingSoon: false,
     size: "",
-    bgImage: SOLUTION_IMAGES.emcc
+    bgImage: SOLUTION_IMAGES.emcc,
+    showQuote: true
   },
   {
     id: 6,
@@ -139,7 +144,8 @@ const solutions = [
     icon: HeartPulse,
     comingSoon: false,
     size: "",
-    bgImage: SOLUTION_IMAGES.codeblue
+    bgImage: SOLUTION_IMAGES.codeblue,
+    showQuote: true
   },
   {
     id: 7,
@@ -149,7 +155,8 @@ const solutions = [
     icon: FileText,
     comingSoon: false,
     size: "",
-    bgImage: SOLUTION_IMAGES.protocol
+    bgImage: SOLUTION_IMAGES.protocol,
+    price: "1,125,000"
   },
   {
     id: 8,
@@ -159,7 +166,8 @@ const solutions = [
     icon: Shield,
     comingSoon: false,
     size: "",
-    bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/zyu1ykfn_policy.png"
+    bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/zyu1ykfn_policy.png",
+    price: "2,980,000"
   },
   {
     id: 9,
@@ -177,7 +185,8 @@ const solutions = [
     size: "",
     bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/tr6alny8_consultation-platform-controlroom.png",
     badge: "Live in Production",
-    hasCta: true
+    hasCta: true,
+    showQuote: true
   }
 ];
 
@@ -560,6 +569,17 @@ const SolutionsSection = () => {
                       ))}
                     </ul>
                   )}
+                  
+                  {/* Pricing Display */}
+                  {solution.price && (
+                    <div className="mt-4 pt-3 border-t border-[#1E3A5F]/10">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-lg font-bold text-[#1E3A5F]">{solution.price}</span>
+                        <span className="text-sm font-medium text-[#6B8CAE]">SAR</span>
+                      </div>
+                    </div>
+                  )}
+                  
                   <div className="flex items-center gap-3 mt-4">
                     <span className={`solution-badge ${solution.badge === 'Live in Production' ? 'bg-[#8B4513] text-white' : ''}`}>
                       {solution.badge || 'Available'}
@@ -577,6 +597,18 @@ const SolutionsSection = () => {
                       </a>
                     )}
                   </div>
+                  
+                  {/* Get a Quote Button */}
+                  {(solution.price || solution.showQuote) && (
+                    <a 
+                      href={`https://platform.aretion.org/contact?product=${encodeURIComponent(solution.title)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center justify-center w-full px-4 py-2 text-sm font-semibold text-white bg-[#1E3A5F] hover:bg-[#8B4513] rounded-lg transition-colors duration-200"
+                    >
+                      Get a Quote →
+                    </a>
+                  )}
                 </div>
               </motion.div>
             );

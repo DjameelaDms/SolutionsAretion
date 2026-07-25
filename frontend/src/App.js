@@ -187,6 +187,20 @@ const solutions = [
     badge: "Live in Production",
     hasCta: true,
     showQuote: true
+  },
+  {
+    id: 10,
+    title: "ClinicalFlow",
+    subtitle: "Clinical Research OS",
+    description: "ClinicalFlow streamlines clinical research contracting from feasibility to signed agreement in one audit-ready platform. It unifies FEAs, CTAs, IRBs, CDAs, financial transactions, reviews, and e-signatures—eliminating spreadsheets and email/version chaos.",
+    extendedDescription: "With role-based dashboards, legally binding e-signatures and immutable audit logs, real-time collaboration (threads, mentions, notifications), enterprise security, and automated reminders/escalations, every step stays tracked, compliant, and on schedule.",
+    icon: FileText,
+    comingSoon: false,
+    size: "",
+    bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/u65v4etl_Screenshot%202026-07-25%20at%2014.33.14.webp",
+    badge: "Live in Production",
+    usedBy: "Used by 21 companies",
+    price: "2,650,000"
   }
 ];
 
@@ -528,7 +542,7 @@ const SolutionsSection = () => {
             Disruptive Solutions Suite
           </h2>
           <p className="font-body text-base sm:text-lg text-[#3D1C1C]/80 max-w-3xl mx-auto">
-            Nine breakthrough platforms transforming how critical infrastructure organizations operate, respond, and protect what matters.
+            Ten breakthrough platforms transforming how critical infrastructure organizations operate, respond, and protect what matters.
           </p>
         </motion.div>
 
@@ -559,6 +573,9 @@ const SolutionsSection = () => {
                     <p className="solution-subtitle text-xs text-[#6B8CAE] mb-2">{solution.subtitle}</p>
                   </div>
                   <p className="solution-description">{solution.description}</p>
+                  {solution.extendedDescription && (
+                    <p className="solution-description mt-2">{solution.extendedDescription}</p>
+                  )}
                   {solution.features && (
                     <ul className="mt-3 space-y-1">
                       {solution.features.map((feature, idx) => (
@@ -568,6 +585,11 @@ const SolutionsSection = () => {
                         </li>
                       ))}
                     </ul>
+                  )}
+                  
+                  {/* Used By line */}
+                  {solution.usedBy && (
+                    <p className="mt-3 text-xs font-semibold text-[#1E3A5F]/80">{solution.usedBy}</p>
                   )}
                   
                   <div className="flex items-center gap-3 mt-4">

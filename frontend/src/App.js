@@ -185,7 +185,6 @@ const solutions = [
     size: "",
     bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/tr6alny8_consultation-platform-controlroom.png",
     badge: "Live in Production",
-    hasCta: true,
     showQuote: true
   },
   {
@@ -193,13 +192,11 @@ const solutions = [
     title: "ClinicalFlow",
     subtitle: "Clinical Research OS",
     description: "ClinicalFlow streamlines clinical research contracting from feasibility to signed agreement in one audit-ready platform. It unifies FEAs, CTAs, IRBs, CDAs, financial transactions, reviews, and e-signatures—eliminating spreadsheets and email/version chaos.",
-    extendedDescription: "With role-based dashboards, legally binding e-signatures and immutable audit logs, real-time collaboration (threads, mentions, notifications), enterprise security, and automated reminders/escalations, every step stays tracked, compliant, and on schedule.",
     icon: FileText,
     comingSoon: false,
     size: "",
     bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/u65v4etl_Screenshot%202026-07-25%20at%2014.33.14.webp",
     badge: "Live in Production",
-    usedBy: "Used by 21 companies",
     price: "2,650,000"
   }
 ];

@@ -79,6 +79,23 @@ const SOLUTION_IMAGES = {
   consultation: "https://customer-assets.emergentagent.com/job_medical-solutions/artifacts/bu492laq_Tele-Intubation.jpeg"
 };
 
+/**
+ * Slugify a product title for the enquiry link, e.g.
+ * "Sovereign Enterprise Intelligence" -> "sovereign-enterprise-intelligence".
+ * A slug keeps the contact URL readable (no %20 escapes) and stable if the
+ * displayed title is ever reworded. platform.aretion.org maps it back to the
+ * full product name on arrival.
+ */
+const productSlug = (title) =>
+  String(title)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+/** Contact URL for a product enquiry, carrying the product slug. */
+const enquiryUrl = (title) =>
+  `https://platform.aretion.org/contact?product=${productSlug(title)}`;
+
 // Solutions Data
 const solutions = [
   {
@@ -610,7 +627,7 @@ const SolutionsSection = () => {
                   {/* Buy Button with Price */}
                   {solution.price && (
                     <a 
-                      href={`https://platform.aretion.org/contact?product=${encodeURIComponent(solution.title)}`}
+                      href={enquiryUrl(solution.title)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center justify-center w-full px-4 py-2 text-sm font-semibold text-white bg-[#1E3A5F] hover:bg-[#8B4513] rounded-lg transition-colors duration-200"
@@ -622,7 +639,7 @@ const SolutionsSection = () => {
                   {/* Get a Quote Button (only for items without price) */}
                   {solution.showQuote && !solution.price && (
                     <a 
-                      href={`https://platform.aretion.org/contact?product=${encodeURIComponent(solution.title)}`}
+                      href={enquiryUrl(solution.title)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center justify-center w-full px-4 py-2 text-sm font-semibold text-white bg-[#1E3A5F] hover:bg-[#8B4513] rounded-lg transition-colors duration-200"

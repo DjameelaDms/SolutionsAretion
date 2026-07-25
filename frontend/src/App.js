@@ -954,7 +954,7 @@ const DemoSection = () => {
           {/* Golden Minute Stat */}
           <div className="text-center mb-12">
             <div className="font-heading text-4xl sm:text-5xl font-bold text-[#8B4513] mb-2">
-              Golden <span className="relative"><span className="opacity-50">Hour</span><span className="absolute left-0 right-0 top-1/2 h-[3px] bg-[#1E3A5F]"></span></span> <span className="font-body text-[#1E3A5F]">Minute</span>
+              Golden <span className="relative"><span className="opacity-50">Hour</span><span className="absolute left-0 right-0 top-[65%] h-[3px] bg-[#1E3A5F]"></span></span> <span className="font-body text-[#1E3A5F]">Minute</span>
             </div>
             <p className="font-body text-[#3D1C1C]/80">Response time improvement</p>
           </div>

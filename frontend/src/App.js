@@ -198,6 +198,17 @@ const solutions = [
     bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/u65v4etl_Screenshot%202026-07-25%20at%2014.33.14.webp",
     badge: "Live in Production",
     showQuote: true
+  },
+  {
+    id: 11,
+    title: "The Council",
+    subtitle: "Decision Intelligence Platform",
+    description: "First-of-its-kind AI advisory council for high-stakes organizational decisions. Eight specialist agents — spanning mathematical analysis, behavioral psychology, risk, economics, and source-restricted legal counsel — deliberate through a formal parliamentary process: evidence gathering, structured debate, recorded divisions, and a final human decision with documented rationale. Deterministic engines quantify expected value, tail risk, and the value of waiting; outcomes are scored against hindsight so the council's judgment measurably improves. Fully self-hosted with tamper-evident, append-only audit trails.",
+    icon: Users,
+    comingSoon: false,
+    size: "",
+    bgImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_8720f327-be4c-4e32-beb5-a7d1c88ed5ed/artifacts/u4jl1w2t_Screenshot%202026-08-05%20at%2009.50.13.png",
+    showQuote: true
   }
 ];
 
@@ -539,7 +550,7 @@ const SolutionsSection = () => {
             Disruptive Solutions Suite
           </h2>
           <p className="font-body text-base sm:text-lg text-[#3D1C1C]/80 max-w-3xl mx-auto">
-            Ten breakthrough platforms transforming how critical infrastructure organizations operate, respond, and protect what matters.
+            Eleven breakthrough platforms transforming how critical infrastructure organizations operate, respond, and protect what matters.
           </p>
         </motion.div>
 

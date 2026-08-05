@@ -558,6 +558,7 @@ const SolutionsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {solutions.map((solution, index) => {
             const isConsultation = solution.title === "Consultation Platform";
+            const isCouncil = solution.title === "The Council";
             const cardStyle = solution.bgImage 
               ? { backgroundImage: `url(${solution.bgImage})` } 
               : {};
@@ -565,7 +566,7 @@ const SolutionsSection = () => {
             return (
               <motion.div
                 key={solution.id}
-                className={`solution-card ${solution.bgImage ? 'has-bg-image' : ''} ${isConsultation ? 'consultation-card' : ''}`}
+                className={`solution-card ${solution.bgImage ? 'has-bg-image' : ''} ${isConsultation ? 'consultation-card' : ''} ${isCouncil ? 'the-council-card' : ''}`}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}

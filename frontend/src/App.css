@@ -376,3 +376,14 @@
 .delay-700 { animation-delay: 0.7s; }
 .delay-800 { animation-delay: 0.8s; }
 .delay-900 { animation-delay: 0.9s; }
+
+
+/* The Council Card - Custom Background Styling */
+.solution-card.the-council-card {
+    background-size: 200% !important;
+    background-position: top center !important;
+}
+
+.solution-card.the-council-card::after {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(245, 240, 232, 0.95) 100%) !important;
+}
